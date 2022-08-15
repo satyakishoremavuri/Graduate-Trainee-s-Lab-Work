@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+ let empObj={
+   firstName:"rohini",
+   lastName:"reddy",
+   //function
+   getFullName:function(){
+    return this.firstName+" "+this.lastName;
+   },
+   //nested objects
+   address:{
+    doorNumber:101,
+    areaName:"kphb",
+    cityName:"hyderabad"
+   }
+ };
+   empObj.mobile= "7893651990";
+   
+   if ( !empObj.hasOwnProperty("mobile")){
+    empObj.mobile= "9866701685";
+   }
+  
+   
+
+  console.log(empObj);
+  document.write("<h1> first Name:" +empObj.firstName);
+  document.write("<h1> last Name is:"+empObj['lastName']);
+  document.write("<h1> Full Name is:"+empObj.getFullName());
+  document.write("<h1> addressdetails------");
+  document.write("<h1> door Number is:" +empObj.address.doorNumber);
+  document.write("<h1> area Name is:" +empObj.address.areaName);
+  document.write("<h1> city Name is:" +empObj.address.cityName);  
+                
+   let custObj =new Object();
+   custObj.firstName ="mohan";
+   custObj.lastName ="krishna";
+   custObj['mobile']="9866501684";
+   let propertyName ="age";
+   custObj[propertyName]='37';
+   console.log(custObj);
+
+   let keys = Object.keys(custObj);
+   console.log(keys);
+   let values=Object.values(custObj);
+   console.log(values);
+   for (const key in custObj){
+    console.log(key,"-->", custObj[key]);
+    
+    for (const [key,value] of Object .entries(custObj)){
+        console.log(key," ",value);
+    }
+   }
+
+            
+
+
+    </script>
+
+   
+</head>
+<body>
+    
+</body>
+</html>
