@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //every,forEach,map,filter,reduce,sort,reverse
+
+        let marks = [45,55,77,67,88,90];
+
+        //forEach
+        marks.forEach((ele) => console.log(ele));
+
+        //every
+
+        let res = marks.every((ele) => {
+            if (ele >= 40)
+            return true;
+            else
+            return false;
+        });
+        if (res)
+        console.log("pass");
+        else
+        console.log("fail");
+
+        //map
+        let newMarks = marks.map((ele) => ele+9);
+        console.log(newMarks);
+
+        //filter
+        let averages = [45,56,55,54,67,87,90,75,88,82,83];
+        let first = averages.filter((ele) => 65)
+        console.log(first);
+
+        let second = averages.filter((ele) => 50 && ele < 60);
+        console.log(second);
+
+        let third = averages.filter((ele) => ele < 50)
+        console.log(third);
+
+        let elements = [1,2,0,false,true,null,undefined,"",-2];
+
+       //0,false,null,undefines,"" -- always returns false
+
+       let newElements = elements.filter((ele) => ele);
+       console.log(newElements);
+
+       //Reduce
+       
+       let totalMarks = marks.reduce((sum,ele) => {
+        sum = sum+ele;
+        return sum;
+       },0);
+       console.log(totalMarks);
+
+       //sort
+
+       let array = [12,16,26,94,95];
+       let newArray = array.sort((a,b) => {
+        if (a<b)
+        return -1;
+        else if(a>b)
+        return 1;
+        else
+        return 0;
+       });
+       console.log(newArray);
+
+       //reverse
+
+       let reverseArray = array.reverse();
+       console.log(reverseArray);
+
+       let employees = [
+        {empNumber:101, empName: 'Mounika', empSalary:80000},
+        {empNumber:102, empName: 'Mohan', empSalary:70000},
+        {empNumber:103, empName: 'Divya', empSalary:40000},
+        {empNumber:104, empName: 'Hira', empSalary:80000},
+        {empNumber:105, empName: 'Bhavani', empSalary:90000},
+       ];
+
+       let emps = employees.filter((emp) =>emp.empSalary >= 60000);
+       console.log(emps);
+
+       let sorted = employees.sort((a,b) => {
+        if (a.empSalary < b.empSalary)
+        return -1
+        else if (a.empSalary > b.empSalary)
+        return 1
+        else{
+            if (a.empName < b.empName)
+            return -1
+            else if (a.empName > b.empName)
+            return 1;
+            else
+             return 0;
+        }
+       });
+       console.log(sorted);
+
+       let str = "My Name is Mounika";
+       let strArray = str.split(" ");
+       console.log(strArray);
+       let newStr = strArray.join(" ");
+       console.log(newStr);
+
+       //Input Given
+       let Input = [1,2,3,1,2,3,1,2,3,4,5,6,2,3,1,2];
+
+       //Repeated Elements
+       outpu1 = [1,2,3];
+
+       //Non Repeated
+       outpu2 = [4,5,6];
+
+       //Unique Elements
+       output3 = [1,2,3,4,5,6];
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
