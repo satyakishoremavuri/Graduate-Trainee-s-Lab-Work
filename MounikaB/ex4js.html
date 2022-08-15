@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Non Returnbable Function
+        function showName() {
+            console.log("My name is Mounika");
+        }
+        showName();
+
+        function showName(name) {
+            console.log("My name is",name);
+        }
+        showName("Mounika");
+        showName("Boinapally");
+
+        // Returnable Function
+        function sum(a,b) {
+            return a+b;
+        }
+        console.log(sum(16,12));
+
+        function sum(a,b) {
+            return a+b;
+        }
+        console.log(sum(16,"12"));  //concatenated
+
+        sum1(1,2);
+        sum1(1,2,3,4);
+        sum1(1,2,3,4,7,8,9);
+        sum1(1,2,20,10,16,12,26);
+
+        function sum1() {
+            var s=0;
+            for(var i=0;i<arguments.length;i++) {
+                s=s+arguments[i];
+            }
+            console.log(s);
+        }
+
+        // Function Expression
+        var mul=function(a,b) {
+            return a*b;
+        }
+        console.log(mul(20,20));
+
+        //IIFE--> Immediately Invokable Function Expression
+        (function () {
+            console.log("This is display function");
+        })();
+
+        //Default Arguements
+        function calculate(a,b=300) {
+            return a*b;
+        }
+        console.log(calculate(10));
+
+        //Arrow Functions
+        var mul1 = (a,b) => a*b;
+        console.log(mul1(100,200));
+
+        var mul2 = a => a*100;
+        console.log(mul1(10));
+
+        var mul3 = () => 100*100;
+        console.log(mul3());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
