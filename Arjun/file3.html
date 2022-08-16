@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let empObj = {
+        firstName: "Arjun",
+        lastName: "Chandra",
+
+        getFullName: function () {
+            return this.firstName + " " + this.lastName
+        },
+
+        address: {
+            doorNumber: 301,
+            areaName: "Kothapet",
+            cityName: "Hyderabad",
+            stateName: "Telangana"
+
+        }
+
+    };
+
+    console.log(empObj);
+
+    document.write("<h1>First Name is :" + empObj.firstName);
+    document.write("<h1>Last Name is :" + empObj.lastName);
+    document.write("<h1>Full Name is :" + empObj.getFullName());
+    document.write("<h1>City Name is :" + empObj.address.cityName);
+    document.write("<h1>State Name Is :" + empObj.address.stateName);
+    document.write("<h1>Area Name is :" + empObj.address.areaName);
+
+
+    let custObj = new Object();
+    custObj.firstName = "Ram";
+    custObj.lastName = "Guru";
+    custObj.mobileNumber = "9908114678";
+
+    console.log(custObj);
+
+    let keys = Object.keys(empObj);
+    console.log(keys);
+
+    let values = Object.values(empObj);
+    console.log(values);
+
+</script>
+
+<body>
+
+</body>
+
+</html>
