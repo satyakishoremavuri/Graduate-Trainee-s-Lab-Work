@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> hi this is parcticing of reverse the string without using any function in java scripy</h3>
+         <ol>
+
+         <li> step take a sring </li>
+         <li> step split the string  --> split("") </li>
+         <li> stpe reverse the string --> reverse() </li>
+         <li> step join the reverse string   ---> join("") </li>
+         <li> step join the reverse join string  </li>
+
+        </ol>
+
+    <script>
+        // step1 take a sring
+        // step2 split the string  --> split("")
+        // stpe3 reverse the string --> reverse()
+        // step4 join the reverse string   ---> join("")
+        // step5 join the reverse join string 
+              
+           
+        var str = "hi this is sripathi"
+          b = str.length;
+          console.log(str[0])
+        
+          
+          //step 1
+          split_string = str.split("")
+          console.log(split_string)
+
+          //step2
+          reverse_string = split_string.reverse()
+          console.log(reverse_string)
+
+          //step3
+          join_reverse_string = reverse_string.join("")
+
+          //step4
+          console.log(join_reverse_string)
+
+          console.log(str.split("").reverse().join(""))
+
+
+
+          //using for loop and length (index of strig)
+
+          function reverse_Str(str){
+            let output = ' '
+            for (let i = str.length-1; i >= 0; i-- ){
+                  output = output + str[i]
+            }
+            return output
+          }
+         
+        console.log(reverse_Str(str))
+
+    </script>
+</body>
+</html>

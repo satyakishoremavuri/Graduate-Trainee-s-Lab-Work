@@ -1,0 +1,1 @@
+document.getElementById("div2").innerHTML="Division-2";
