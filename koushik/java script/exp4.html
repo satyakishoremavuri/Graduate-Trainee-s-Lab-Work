@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showName(name)
+        {
+            console.log("my name is",name);
+        }
+        showName("koushik");
+        function sum(a,b)
+        {
+            return a-b;
+        }
+        console.log(sum(10,"20"));
+        function sum1(){
+            var s=0;
+            for(var i=0;i<arguments.length;i++){
+                s=s+arguments[i];
+            }
+            console.log(s);
+        }
+        sum1(10,20,30);
+        sum1(20,30,40,50);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
