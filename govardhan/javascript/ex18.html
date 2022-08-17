@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function BaseClass() {
+            this.submitData = function () {
+                console.log("BaseClass Submit Method");
+            }
+            this.validateData = function () {
+                console.log("BaseClass Data Validation");
+            }
+        }
+
+        function DerivedClass() {
+            // this.submitData = function () {
+            //     console.log("DerivedClass Submit Method");
+            // }
+        }
+
+        let baseObj = new BaseClass();
+        //DerivedClass.prototype = baseObj;
+        DerivedClass.prototype.submitData = baseObj.submitData;
+
+        let derivedObj = new DerivedClass();
+        console.log(derivedObj);
+        derivedObj.submitData();
+
+
+        /*
+        function reverseString(str) {
+
+        }
+
+        let str = new String("Sathesh");
+        str.reverseString();
+
+        let str1=new String("anil");
+        str1.reverseString();
+        
+        */
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
