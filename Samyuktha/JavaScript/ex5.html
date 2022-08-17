@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //Hoisting
+
+        console.log(a);
+        var a = 100;
+
+        function show(){
+            console.log(a);
+            var a = 200;
+        }
+        show();
+        console.log(a);
+
+        console.log(window);
+
+        show();
+        function show(){
+        console.log("This is show function");
+        }
+
+        //var,let,const
+
+       function display() {
+        //console.log(x);
+        if (true) {
+            let x = 100;
+        }
+        //console.log(x);
+
+        }
+        display();
+
+        var y=100;
+        var y=100;
+
+        let z=100;
+        //let z=100;
+
+        const MAXAGE = 30;
+
+        MAXAGE = 40;
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
