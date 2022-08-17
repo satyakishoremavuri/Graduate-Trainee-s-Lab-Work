@@ -1,0 +1,25 @@
+div{
+    height: 50px;
+    width: 100px;
+    background-color: aquamarine;
+}
+#div3{
+    height: 50px;
+    width: 100px;
+    background-color:azure;  
+}
+.div4{
+    height: 50px;
+    width: 100px;
+    background-color:peachpuff;
+}
+div[title]{
+    height: 50px;
+    width: 100px;
+    background-color: rebeccapurple;
+}
+div[title=test]{
+    height: 50px;
+    width: 100px;
+    background-color:purple;
+}

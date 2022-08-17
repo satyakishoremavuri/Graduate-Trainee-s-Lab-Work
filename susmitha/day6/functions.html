@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //call, apply & bind
+
+        function getFullName( cityName, stateName) {
+         
+            console.log(`${this.firstName} ${this.lastName} from ${cityName} and State is ${stateName}`);
+        }
+        let empObj = {
+            firstName: 'Susmitha',
+            lastName: 'mavuri'
+        };
+
+        let custObj = {
+            firstName: 'sai',
+            lastName: 'mavuri'
+        };
+        //call
+        getFullName.call(empObj, "Hyderabad", "TS");
+        getFullName.call(custObj, "VIjayawada", "AP");
+
+        //apply
+        getFullName.apply(empObj, ['Hyderabad', "TS"]);
+        getFullName.apply(custObj, ["Vijayawada", "AP"]);
+
+        //bind
+        let ts = getFullName.bind(empObj, "Hyderabad", "TS");
+        let ap = getFullName.bind(custObj, "VIjayawada", "AP");
+        ts();
+        ap();
+        ts();
+        ap();
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
