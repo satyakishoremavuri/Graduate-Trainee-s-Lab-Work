@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: linear-gradient(to right, #9cecfb, #65c7f7, #0052d4);
+  width: 40%;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+#timeshow {
+  background: #7c7575;
+  width: 90%;
+  padding: 30px 0;
+  font-size: 20px;
+  text-align: center;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%);
+  font-size: 35px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #7c7575;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.buttons button {
+  padding: 10px 25px;
+  background: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="timeshow">00 : 00 : 00 : 000</div>
+
+      <div class="buttons">
+        <button id="start">start</button>
+        <button id="pause">pause</button>
+        <button id="reset">reset</button>
+      </div>
+    </div>
+
+    <script>
+        let milliseconds = 0,
+  seconds = 0,
+  minutes = 0,
+  hours = 0;
+let timeshow = document.getElementById("timeshow");
+let timeref;
+
+document.getElementById("start").onclick = function () {
+  timeref = setInterval(updateTime, 10);
+};
+
+function updateTime() {
+  milliseconds = milliseconds + 10;
+  if (milliseconds == 1000) {
+    seconds = seconds + 1;
+    milliseconds = 0;
+    if (seconds == 60) {
+      minutes = minutes + 1;
+      seconds = 0;
+      if (minutes == 60) {
+        hours = hours + 1;
+        minutes = 0;
+      }
+    }
+  }
+
+  let h, m, s, ms;
+  if (hours < 10) {
+    h = "0" + hours;
+  } else {
+    h = hours;
+  }
+
+  if (minutes < 10) {
+    m = "0" + minutes;
+  } else {
+    m = minutes;
+  }
+
+  if (seconds < 10) {
+    s = "0" + seconds;
+  } else {
+    s = seconds;
+  }
+
+  if (milliseconds < 10) {
+    ms = "0" + milliseconds;
+  } else if (milliseconds < 100) {
+    ms = "00" + milliseconds;
+  } else {
+    ms = milliseconds;
+  }
+
+  timeshow.innerHTML = `${h} : ${m} : ${s} : ${ms}`;
+
+  document.getElementById("pause").onclick = function () {
+    clearInterval(timeref);
+  };
+
+  document.getElementById("reset").onclick = function () {
+    clearInterval(timeref);
+    milliseconds = 0;
+    minutes = 0;
+    seconds = 0;
+    hours = 0;
+    timeshow.innerHTML = "00 : 00 : 00 : 000";
+  };
+}
+
+    </script>
+  </body>
+</html>
