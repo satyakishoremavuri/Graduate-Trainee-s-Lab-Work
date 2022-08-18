@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -18,17 +23,17 @@
 <tr>
     <td>Enter First Name</td>
     <td>
-        <input type="test" name="FirstName" id="FirstName" value="" placeholder="First Name"> 
+        <input type="test" name="FirstName" id="FirstName" value="" placeholder="First Name" required> 
     </td>
 </tr>
 <tr>
     <td>Enter Last Name </td>
     <td>
-        <input type="text" name="last name" id="last name" value="" placeholder="Last name">
+        <input type="text" name="last name" id="last name" value="" placeholder="Last name" required>
     </td>
 </tr>
 <tr>
-    <td>Enter Password </td>
+    <td>Enter Password <span>*</span></td>
     <td>
         <input type="password" placeholder="Password">
     </td>
@@ -79,6 +84,12 @@
     <td>Enter mail id</td>
     <td>
         <input type="email" id="email">
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <input type="submit" value="Register">
     </td>
 </tr>
 </table>
