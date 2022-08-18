@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+//object creation using object literal
+let empobj = {
+    //properties
+    firstName:"rupa",
+    lastName:"devi",
+    //functions
+    getFullName:function(){
+        return this.firstName+""+this.lastName;
+    },
+    //Nested objects
+    address:{
+        doorNumber:101,
+        areaName:"kondapur",
+        cityName:"hyderabad"
+    }
+};
+console.log(empobj);
+
+document.write("<h1>firstName:"+empobj.firstName);
+document.write("<h1>lastName:"+empobj.lastName);
+document.write("<h1>fullName:"+empobj.getFullName());
+document.write("<h1>address details---");
+document.write("<h1>door number is:"+empobj.address.doorNumber);
+document.write("<h1>area name is:"+empobj.address.cityName);
+
+    //object constructor topic
+    let custobj= new Object();
+    custobj.firstName="rupa";     
+    custobj.lastName="roops";
+    custobj.mobile="984888890";
+
+    let propertyName="age";
+    custobj[propertyName]=37;
+
+    console.log(custobj);
+
+    //To get all the keys, values from object
+    let keys=Object.keys(custobj);
+    console.log(keys);
+    
+    let values=Object.values(custobj);
+    console.log(values);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
