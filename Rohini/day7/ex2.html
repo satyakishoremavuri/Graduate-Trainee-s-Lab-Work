@@ -17,10 +17,21 @@
         },1000);
         console.log("5");
 
+        let i=1;
+        var timer = setInterval(()=>{
+            i++;
+            console.log(i);
+        },1000);
+
+        function stopTimer(){
+            clearInterval(timer);
+            clearTimeout(timer);
+        }
+
         
     </script>
 </head>
 <body>
-    
+    <input type="button" value="stop" onclick="stopTimer()">
 </body>
 </html>

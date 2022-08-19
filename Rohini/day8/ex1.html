@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <script>
+    let userName = "sathesh";
+    let emailId =  "sathesh@gmail.com";
+    localStorage.setItem("userName",userName);
+    localStorage.setItem("email",emailId);
+    sessionStorage.setItem("userName",userName);
+    sessionStorage.setItem("email",emailId);
+    console.log(localStorage.getItem("userName"));
+    console.log(localStorage.getItem("email"));
+    console.log(sessionStorage.getItem("userName"));
+    console.log(sessionStorage.getItem("email"));
+    localStorage.removeItem("userName");
+    sessionStorage.removeItem("email");
+    localStorage.clear();
+    sessionStorage.clear();
+
+    //date,time
+    let d = new Date();
+    // console.log(d.toLocaleString());
+    // console.log(d.getTime());
+     console.log(d.getHours(),d.getMinutes(),d.getSeconds());
+    
+     let date = new Date("08/02/2022");
+     console.log(date);
+
+     //array
+     let da = new Array(3);
+     for(let i=0; i<3;i++){
+        da[i] = new Array(3);
+     }
+     console.log(da);
+     let da1 = [[10,20],[30,40],[50,60]];
+     console.log(da1);
+   </script>
+
+</head>
+<body>
+    
+</body>
+</html>
