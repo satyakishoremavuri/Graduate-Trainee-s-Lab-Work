@@ -17,18 +17,29 @@ a<!DOCTYPE html>
         var c=parseFloat(a);
         console.log(typeof(c),c);
 
+        var n = 123;
+        var sod = 0;
+        while (n > 0) {
+            let d = Math.round(n % 10);
+            sod = sod + d;
+            n = n / 10;
+        }
+        console.log(sod);
 
+            //NaN
         // let val1 = '10t';
         // let val2 = '20';
-        // // if(isNaN(val1)&&isNaN(val2));
+        
         // console.log(val1-val2);
 
-
-        let val1 = 10;
+       //isNan
+       let val1 = 10;
         let val2 = 20;
-        // console.log(isNaN(val3));
-        if( ! isNaN(val1) && ! isNaN(val2));
-        console.log(val1 - val2);
+        if (!isNaN(val1) && !isNaN(val2))
+            console.log(val1 - val2);
+       
+
+
       let res = 416/6;
       console.log(Math.ceil(res));
     </script>

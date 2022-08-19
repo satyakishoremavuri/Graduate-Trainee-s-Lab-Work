@@ -6,29 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+        //call,apply,bind
         function getFullName(cityName,state){
             // console.log(this);
         console.log(`${this.firstName} ${this.lastName} from ${cityName} state is ${state}`);
             
         }
         let empObj = {
-            firstName:"tony",
+            firstName:"Tony",
             lastName:"Reddy"
         };
-        getFullName.call(empObj, "hyd","ts");
+        getFullName.call(empObj, "Hyd","TS");
 
         let custObj = {
-            firstName:"rohi",
+            firstName:"Rohi",
             lastName:"Reddy"
         };
-        getFullName.call(custObj, "vijaya","ap");
-
-        getFullName.apply(empObj, ["hyd","ts"]);
-        getFullName.apply(custObj, ["vijaya","ap"]);
-
-        getFullName.bind(custObj, "vijaya","ts");
-        getFullName.bind(empObj, "vijaya","ap");
-        // TS();
+        //call
+        getFullName.call(custObj, "Vijaya","AP");
+        //apply
+        getFullName.apply(empObj, ["Hyd","TS"]);
+        getFullName.apply(custObj, ["Vijaya","AP"]);
+        //bind
+       let ts= getFullName.bind(custObj, "Hyd","TS");
+        let ap=getFullName.bind(empObj, "Vijaya","AP");
+        ts();
+        ap();
+        ts();
+        ap();
 
     </script>
 </head>
