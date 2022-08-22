@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,31 +8,39 @@
     <title>Document</title>
 
     <script>
+
         console.log("1");
-        setTimeout(()=>{
+
+        setTimeout(() => {
             console.log("2");
-        },3000);
+        }, 3000);
+
         console.log("3");
-        setTimeout(()=>{
+
+        var timeout = setTimeout(() => {
             console.log("4");
-        },1000);
+        }, 0);
+
         console.log("5");
 
-        let i=1;
-        var timer = setInterval(()=>{
+        let i = 1;
+
+        var timer = setInterval(() => {
             i++;
             console.log(i);
-        },1000);
+        }, 1000);
 
-        function stopTimer(){
+
+        function stopTimer() {
             clearInterval(timer);
-            clearTimeout(timer);
+            clearTimeout(timeout);
         }
-
-        
     </script>
+
 </head>
+
 <body>
-    <input type="button" value="stop" onclick="stopTimer()">
+    <input type="button" value="Stop" onclick="stopTimer()">
 </body>
+
 </html>

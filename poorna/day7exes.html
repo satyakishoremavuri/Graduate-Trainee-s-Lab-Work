@@ -7,7 +7,7 @@
     <title>Document</title>
     <script>
         //promises -- pending ,reject,complete
-        let Promise = new Promise((resolve,reject)=>{
+        let promise = new Promise((resolve,reject)=>{
             let a =10;
             let b=2;
             let c=a / b;
@@ -16,8 +16,12 @@
                else
                reject("invalid Data");
         });
-        promise.then(data => console.log(data)).catch().finally();
-    </script>
+        promise
+        .then(data => console.log(data))
+        .catch(reason =>console.log(reason))
+        .finally(() => console.log("finally block"));
+
+     </script>
 </head>
 <body>
     

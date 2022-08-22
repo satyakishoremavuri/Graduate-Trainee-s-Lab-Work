@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*hoisting
+      console.log(a);
+      //console.log(b);
+      var a = 100;
+      //let b=200;
+      show();
+      function show() {
+        console.log("show function called");
+      }
+      function getData() {
+        console.log(a);
+        //var a=100;
+      }
+      getdata();*/
+
+      //ES5
+      function sum() {
+        console.log(Array.isArray(arguments));
+        let s = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          s = s + arguments[i];
+        }
+
+        console.log(s);
+      }
+      sum(10, 20, "sat");
+      sum(10, 20, 30);
+      sum(10, 20, 30, 40, 50);
+
+      //ES6 --Rest Parameters
+      function sum2(...arguments) {
+        console.log(Array.isArray(arguments));
+        let s = arguments.reduce((s, ele) => {
+          s = s + ele;
+          return s;
+        }, 0);
+        console.log(s);
+      }
+      sum(10, 20);
+      sum(10, 20, 30, 40);
+      sum(10, 20, 30, 40, 50, 60);
+
+      let a = [10, 20, 30, 40, 50];
+      console.log(...a);
+    </script>
+  </body>
+</html>

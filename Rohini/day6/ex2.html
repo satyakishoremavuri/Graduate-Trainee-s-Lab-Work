@@ -5,79 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        span{
-            color: red;
-        }
-    </style>
     <script>
-        function validateUserName(){
-            var userCntrl = document.getElementById('User Name');
-            if(userCntrl.value==""){
-                document.getElementById("User Name Error").innerHTML="User Name is Mandatory";
-                return false;
-                userCntrl.focus();
-            }
-            else{
-                if (userCntrl.value.length<6){
-                document.getElementById("User Name Error").innerHTML="Min 6 Characters are Required";
-                userCntrl.focus();
-                return false;
-                }
-                document.getElementById("User Name Error").innerHTML="";
-                return true;
-            }
+        //template iterals
+        let firstName = "sathesh";
+        let lastName = "Kumar";
+        let cityName = "Hyderabad";
+        let stateName = "TS";
+
+        //let str = "My Name is " + firstName + ", Last Name is " + lastName + " from " + cityName + " and State is " + stateName;
+
+        let str = `My First Name is ${firstName}, Last Name is ${lastName} from 
+        ${cityName} and State is ${stateName}, ${show()}, ${10 == 10}`;
+
+        console.log(str);
+
+        function show() {
+            console.log("This is Show Function");
         }
-        function validatePassword(){
-            var passCntrl = document.getElementById('Password');
-            if(passCntrl.value==""){
-                document.getElementById("PasswordError").innerHTML="Password is Mandatory";
-                return false;
-                passCntrl.focus();
-            }
-            else{
-                if (passCntrl.value.length<6){
-                document.getElementById("PasswordError").innerHTML="Min 6 Characters are Required";
-                passCntrl.focus();
-                return false;
-                }
-                document.getElementById("PasswordError").innerHTML="";
-                return true;
-            }
-        }
-        function validateData(){
-            let ustatus = validateUserName();
-            let pstatus = validatePassword();
-            if (ustatus== false || pstatus==false){
-                event.preventDefault()
-            }
-        }
+        //object destructing
+        let empobj ={
+            firstName:"rohini",
+            lastName:"reddy"
+
+        };
+        let {firstName:fName,lastName:lName} = empobj;
+        console.log(fName);
+        console.log(lName);
     </script>
+      
 </head>
 <body>
-    <form action="login.aspx" method="post" nonvalidate onsubmit="validateData">
-        <table border="1" cellpadding="10" cellspacing="0">
-            <tr>
-                <td>Enter User Name</td>
-                <td>
-                    <input type="text" id="username" value="" placeholder="User Name" onblur="validateUserName()" required><br>
-                    <span>id="User Name Error"</span>
-                </td>
-            </tr>
-            <tr>
-                <td>Enter Password</td>
-                <td>
-                    <input type="password" id="password" value="" placeholder="Enter Password" onblur="validatePassword()" required><br>
-                    <span>id="Password Error"</span>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Submit Details">
-                </td>
-            </tr>
-        </table>
-    </form>
+    
 </body>
 </html>
