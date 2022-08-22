@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 16pt;
+        }
+div>p{
+    color: red;
+}
+
+
+div p{
+    color: red;
+}
+div+p{
+    color: blue;
+}
+
+p:hover{
+    color: red;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+
+        p{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 16pt;
+        }
+
+        div p{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 16pt;
+        }
+
+        p,
+        span{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 16pt;
+        }
+/* Universal tag 
+        *{
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 16pt;
+         } */
+
+input:focus{
+    color: red;
+    outline-color: rebeccapurple ;
+    
+}
+
+input:active{
+    color: wheat;
+}
+
+    </style>
+</head>
+<body>
+    
+    <p>Rajesh Arora</p>
+
+    <div>
+        <span>Test Data</span>
+        <p>Hyderabad</p>
+        <ul>
+            <li>
+                <p> Paragraph Text</p>
+            </li>
+        </ul>
+    </div>
+    <p>Sample Data</p>
+    <p>Second Paragraph</p>
+    <span>Span Tag Ex</span>
+<br>
+
+Enter any Name : <input type="text" id="UserName" style="font-size:16pt;">
+
+</body>
+</html>
