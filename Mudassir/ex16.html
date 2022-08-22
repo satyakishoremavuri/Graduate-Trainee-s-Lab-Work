@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doccument</title>
+
+    <style>
+      div{
+        height: 50px;
+        width: 200px;
+        background-color: blueviolet ;
+      }
+
+      #div3{
+        height: 50px;
+        width: 250px;
+        background-color: aliceblue;
+      }
+
+      .div4{
+        height: 150px;
+        width: 220px;
+        background-color: aqua;
+        color:yellowgreen;
+      }
+
+      div[title]{
+        height: 50px;
+        width: 350px;
+        background-color: bisque;
+      }
+
+      div[title=Test]{
+        height: 50px;
+        width: 400px;
+        background-color: brown;
+
+        background-color: ;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 24pt ;
+      }
+    </style>
 </head>
+
 <body>
     
-    <div style="background-color: ;"></div>
-    <div>Division = 2  </div>
-    <div>Division = 3  </div>
-    <div>Division = 4  </div>
-    <div>Division = 5  </div>
-    <div>Division = 6  </div>
+    <div style="background-color:blue; height: 50px; width :150px;">Division - 1</div>
+    <div>Division - 2  </div>
+    <div id="div3">Division - 3  </div>
+    <div class="div4">Division - 4  </div>
+    <div class="div4 ">Division - 5  </div>
+    <div title="Sample">Division - 6  </div>
+    <div title="Test">Division - 7  </div>
+
 
 </body>
 </html>

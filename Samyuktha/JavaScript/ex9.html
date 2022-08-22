@@ -68,9 +68,52 @@
         let reverseArray = array.reverse();
         console.log(reverseArray);
 
-        //let employees = [
-           // {empNumber :101,empName: 'Samyuktha', empSalary : 35000},
-        //];
+        let employees = [
+          {empNumber: 101, empName:'Samyuktha', empSalary:35000},
+          {empNumber: 102, empName:'Sahithi', empSalary: 50000 },
+          {empNumber: 103, empName:'Karthik', empSalary: 65000},
+          {empNumber: 104, empName:'Latha', empSalary: 79000},
+          {empNumber: 105, empName:'Ramu',empSalary:85000}
+      
+        ];
+
+        let emps = employees.filter((emp) => emp.Salary >= 50000);
+        console.log(emps);
+
+        let sorted = employees.sort((a,b) => {
+          if(a.empsalary < b.empsalary)
+            return -1;
+          else if(a.empSalary > b.empSalary)
+            return 1;
+          else {
+            if(a.empName < b.empName)
+               return -1;
+             else if( a.empName>b.empName)
+             return 1;
+            else 
+            return 0;
+          }
+
+        });
+        console.log(sorted);
+
+        let str = "my name is samyuktha";
+        let strArray = str.split(" ");
+        console.log(strArray);
+        let newStr = strArray.join(" ");
+        console.log(newStr);
+        
+        //input given
+       // let input=[1,2,3,1,2,3,1,2,3,4,5,6,2,3,1,2];
+
+        //repeated elements
+        //output1=[1,2,3];
+
+        //non repeated
+        //output2=[4,5,6];
+
+        //unique elements
+        //output3 =[1,2,3,4,5,6];
 
 
 

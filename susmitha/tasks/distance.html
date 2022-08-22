@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //math.hypot function
+        //returns the square root of the sum of squares of its arguments
+        const distance = (x1, y1, x2, y2) => Math.hypot(x2 - x1, y2 - y1); 
+
+        var x1 = 1;
+        var y1 = 3;
+
+        var x2 = 4;
+        var y2 = 5;
+
+        var d = Math.round(distance(x1, y1, x2, y2));
+
+        console.log(`The distance between (${x1}, ${y1}) and (${x2}, ${y2}) is ${d}`);
+    </script>
+</body>
+</html>

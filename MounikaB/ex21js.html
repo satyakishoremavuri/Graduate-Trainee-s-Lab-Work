@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //ES5
+        function sum(){
+            console.log(Array.isArray(arguments));
+            let s = 0;
+            for (let i = 0; i < arguments.length; i++) {
+            s = s + arguments[i];
+        }
+        console.log(s);
+    }
+    sum(1,2);
+    sum(1,2,3);
+    sum(1,2,3,4,5);
+    
+    //ES6 Rest Parameters
+
+    function sum2(...arguments) {
+        console.log(Array.isArray(arguments));
+    let s = arguments.reduce((s,ele) =>{
+        s = s + ele;
+        return s;
+    }, 0);
+    console.log(s);
+   }
+    sum2(1,2);
+    sum2(1,2,3);
+    sum2(1,2,3,4,5);
+
+    let a = [1,2,3,4,5];
+    console.log(...a);
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
