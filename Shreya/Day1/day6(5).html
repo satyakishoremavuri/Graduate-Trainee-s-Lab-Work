@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Call,apply and bind
+
+      function getFullName(cityName, stateName) {
+        //console.log(this);
+
+        console.log(
+          `${this.firstName} ${this.lastName},from ${cityName} and state is ${stateName}`
+        );
+      }
+      //What is the context of a function in javascript?
+      let empObj = {
+        firstName: "Shreya",
+        lastName: "Tr",
+      };
+      let custObj = {
+        firstName: "Srikar",
+        lastName: "Tr",
+      };
+      //call
+      getFullName.call(empObj, "Hyderabad", "TS");
+      getFullName.call(custObj, "Vijayawada", "AP");
+      //apply
+      getFullName.apply(empObj, ["Hyderabad", "TS"]);
+      getFullName.apply(custObj, ["Vijayawada", "AP"]);
+      //bind
+      let ts = getFullName.bind(empObj, "Hyderabad", "TS");
+      let ap = getFullName.bind(custObj, "Vijayawada", "AP");
+      ts();
+      ap();
+      ts();
+      ap();
+    </script>
+  </body>
+</html>
