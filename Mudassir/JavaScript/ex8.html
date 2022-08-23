@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Array creation array literal
+        let a = [10, 20, 30, "Rajesh", true, null, undefined];
+        console.log(a);
+
+        //inserting element in the end
+        a.push(100);
+        console.log(a);
+        //remove element in the end
+        a.pop();
+        console.log(a);
+        //insert in the begining of array
+        a.unshift(100);
+        console.log(a);
+        //removing at the beginning
+        a.shift();
+        console.log(a);
+
+        let a1 = a.slice(2, 5);
+        console.log(a1);
+        console.log(a);
+
+        let pos = a.indexOf(30);
+        if (pos >= 0) {
+            a.splice(pos, 1); //splice modifies original here
+
+        }
+        console.log(a);
+
+
+        a.splice(2, 0, 111, 222); //position, delete count,insert elements
+        console.log(a);
+
+        let a2 = [10, 20, 30];
+        let a3 = [40, 50, 60];
+        let a4 = [70, 80, 90]
+        // let a5 = a2.concat(a3).concat(a4);
+        // let a4 = a2.concat(a3);
+        let a5 = [...a2, ...a3, ...a4]
+        console.log(a4);
+        console.log(a5);
+
+        let da = [[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+        console.log(da);
+
+        let da1 = new Array(3);
+        for (let i = 0; i < da1.length; i++) {
+            da1[i] = new Array(3);
+        }
+        console.log(da1);
+
+
+
+
+        //array creation using array constructor
+        // let array = new Array(5);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
