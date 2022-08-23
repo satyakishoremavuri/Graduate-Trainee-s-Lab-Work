@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //class
+        function Customer() {
+            //Private
+            this.custId;
+            var custName;
+            var custAmount;
+            //public
+            this.setData = function (id, name, amount) {
+                this.custId = id;
+                custName = name;
+                custAmount = amount;
+            }
+            this.showData = function () {
+                // console.log(custId, custName, custAmount);
+            }
+        }
+        let cust = new Customer();
+        cust.setData(111, "Rajesh", 50000);
+        cust.showData();
+        // console.log(cust.custId); //prive wont access at the out side the class
+        //hoisting doesnt work for class
+
+        const reverse = str => str.split('').reverse().join('');
+        console.log(reverse('Rajesh'));
+
+        const reverseString = (str = null) => {
+            let newStr = [];
+            let string = "";
+            let reverseStr = "";
+            for (i = 0; i < str.length; i++) {
+                if (str[i] == " ") {
+                    newStr.push(string);
+                    string = "";
+                } else {
+                    string += str[i];
+                }
+            }
+            if (string) {
+                newStr.push(string);
+            }
+            for (i = newStr.length - 1; i >= 0; i--) {
+                reverseStr += newStr[i] + " ";
+            }
+            return reverseStr;
+        };
+        let val = reverseString("My name is ravi shankar");
+        console.log(val);
+
+        const ReverseString = str => [...str].reverse().join('');
+        console.log(ReverseString("Rajesh"))
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
