@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        span{
-            color: red;
-        }
+      span {
+        color: red;
+      }
     </style>
     <script>
-
-        function reverse(a) {
-            var newString = "";                             //intializing null vallue to store reverse string
-            for (var i = a.length - 1; i >= 0; i--) {     //using decrementing for loop to separate each character from the end    
-                console.log(a[i])
-                newString += a[i];
-            }
-            console.log(newString)
-            return newString;                  //retruning the resulted string
+      function reverse(a) {
+        var newString = ""; //intializing null vallue to store reverse string
+        for (var i = a.length - 1; i >= 0; i--) {
+          //using decrementing for loop to separate each character from the end
+          console.log(a[i]);
+          newString += a[i];
         }
-        
-        function submit() {
-            var userCtrl = document.getElementById('input');
-            if (userCtrl.value == "") {
-                document.getElementById("inputerror").innerHTML = "Please Type the value";
-                
-                
-            }
-            else{
-                document.getElementById("div1").innerHTML= "result: "+ reverse(userCtrl.value);
+        console.log(newString);
+        return newString; //retruning the resulted string
+      }
 
-            }
+      function submit() {
+        var userCtrl = document.getElementById("input");
+        if (userCtrl.value == "") {
+          document.getElementById("inputerror").innerHTML =
+            "Please Type the value";
+        } else {
+          document.getElementById("div1").innerHTML =
+            "result: " + reverse(userCtrl.value);
         }
+      }
     </script>
-</head>
-<body>
-    <br>
+  </head>
+  <body>
+    <br />
     <h3>Reverse of A string</h3>
-    <input type="text" id="input" value="" placeholder="Enter Text">
-    <span id="inputerror">
-
-    </span>
-    <br>
-    <input type="submit" onclick="submit()" >
-    <br>
-    <div id="div1">
-        
-    </div>
-</body>
+    <input type="text" id="input" value="" placeholder="Enter Text" />
+    <span id="inputerror"> </span>
+    <br />
+    <input type="submit" onclick="submit()" />
+    <br />
+    <div id="div1"></div>
+  </body>
 </html>
