@@ -38,11 +38,11 @@ console.log("This is console")
 // showName("Rama");
 // showName("Krishna");
 
-function sum(a: number, b: number) {
+function sum1(a: number, b: number) {
     return a + b;
 
 }
-console.log(sum(10, 20));
+console.log(sum1(10, 20));
 // const empobj={
 //     firstName:"Rama";
 //     lastName:"Krishna";
