@@ -1,3 +1,4 @@
+export {}
 let firstName: String = "Samyuktha";
 let lastname = "Alakanti";// inferred type
 let a1: number = 100;
