@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.input-label {
+    width: 200px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.input-container {
+    margin: 10px;
+    width: 30vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    color: red;
+}
