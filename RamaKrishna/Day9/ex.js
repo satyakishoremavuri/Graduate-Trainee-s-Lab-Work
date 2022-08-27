@@ -23,16 +23,24 @@ console.log("This is console");
 // let a4 = new Array();
 // let a5 = new Array<number | boolean>();
 // let a6: any[] = new Array<any>();
-// function showName(myName: string): void {
-//     console.log("My Name is ", myName);
-// }
-// showName("Rama");
-// showName("Krishna");
-function sum(a, b) {
+function showName(myName) {
+    console.log("My Name is ", myName);
+}
+showName("Rama");
+showName("Krishna");
+function sum1(a, b) {
     return a + b;
 }
-console.log(sum(10, 20));
-// const empobj={
-//     firstName:"Rama";
-//     lastName:"Krishna";
-// };
+console.log(sum1(10, 20));
+var empobj = {
+    firstName: "Rama",
+    lastName: "Krishna"
+};
+console.log(empobj);
+empobj.firstName = "RAMA";
+empobj.lastName = "Rao";
+console.log(empobj);
+//empobj = {};
+var array = [10, 20, 30];
+array[1] = 100;
+console.log(array);
