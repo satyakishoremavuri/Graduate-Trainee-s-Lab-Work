@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    title = 'MyFirstApp';
+
+    firstName = "Mounika";
+
+    public show() {
+        console.log("This is show method");
+    }
+
+
 }
