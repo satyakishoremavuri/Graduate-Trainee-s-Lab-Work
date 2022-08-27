@@ -13,6 +13,8 @@ function myFirstName() {
   Every callback depends for the previous callback. This effects the code structure.    
 
 
+
+
 2Q- Iterating an object in javascript:-
 
 Iterating an object in javascript is known as object increament/ decreament. 
@@ -28,6 +30,9 @@ let tempObj = {};
             }
           }
           console.log(tempObj);
+          
+          
+          
 
  3Q- PROMISES
  A promise is fixed value and cannot be changed.A promise is that produce the data and consume the data. 
@@ -49,6 +54,9 @@ let tempObj = {};
     function(value) 
     function(error) 
   );
+  
+  
+  
 
   5Q- passed by value , passed by reference
 //passed by value:-
@@ -70,6 +78,9 @@ function myFunction(x, y) {
   function functionName(parameter1, parameter2, parameter3) {
   }
 
+
+
+
   6Q- Flex and CSS grid:-
   (i) The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
   There were four layout modes:
@@ -89,6 +100,8 @@ Positioned, for explicit position of an element
     height: 400px;
     align-content: center;
   }
+  
+  
 
   8Q-Prototype inheritance
   (i)=> A prototype inheritance in which an object of base class is derived
@@ -111,6 +124,10 @@ let str=new string("rupa");
 cons.log(str);
 str.reverseString();
 
+
+
+
+
 9Q- javascript:- javascript is a loosely typed and easy to access.
 It is provided and executed as plain text and does not need special preparation or compilation to run.
 It is denoted with (.js)
@@ -118,11 +135,17 @@ It is denoted with (.js)
 Typescript:TypeScript is an open-source language to build large-scale web apps.
  whereas JavaScript is a server-side programming language that helps to develop interactive web pages.
  It is denoted with (.ts)
+ 
+ 
 
  10Q- Accessing data in javascript:-
  <script> src="customescript.js"></script>
  => By using multiple <script>..... </script> blocks we can access data
  => by using script tags we can acces data from one block to another
+ 
+ 
+ 
+ 
 
  11Q- FORM
  function valiDataUserName(){
@@ -178,5 +201,4 @@ function validateData(){
 
 }
     
-</body>
-</html>
+
