@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration form</title>
+    
+    <script type="text/javascript" src="program.js"></script>
+    <link rel="stylesheet" href="program.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form>
+        <div class="input-container">
+          <label class="input-label">Enter User Name <span>*</span> </label>
+          <input id="userName" placeholder="User Name" required/>
+        </div>
+        <div class="input-container">
+          <label class="input-label">Enter Password <span>*</span> </label>
+          <input id="password" placeholder="password" required/>
+        </div>
+        <div class="input-container">
+          <label class="input-label">Enter Mobile Number <span>*</span> </label>
+          <input id="mobileNumber" placeholder="Mobile Number" required />
+        </div>
+        <div class="input-container">
+          <label class="input-label">Date of birth <span>*</span> </label>
+          <input id="dob" placeholder="Date of Birth" required/>
+        </div>
+        <div class="input-container">
+          <label class="input-label">Enter Address <span>*</span> </label>
+          <textarea id="address" placeholder="Address" required></textarea>
+        </div>
+        <div class="input-container" >
+          <button id="submitBtn" onclick="submitData">Register User</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

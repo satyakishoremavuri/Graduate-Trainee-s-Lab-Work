@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  empName = "Krishna";
+  empName = "Morsu";
 
   constructor() { }
 
