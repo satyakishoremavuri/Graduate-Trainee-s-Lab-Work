@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color:red;
+        }
+    </style>
+
+    <script>
+        //Data Validation
+        function validateUserName() {
+            var userctrl = document.getElementById("userName");
+            if (userctrl.value == "") {
+                document.getElementById("userNameError").innerHTML = "User Name is Mandatory";
+                userctrl.focus();
+            }
+            else {
+                document.getElementById("userNameError").innerHTML = "";
+            }
+
+        }
+
+        function validatePassword() {
+            var passctrl = document.getElementById("password");
+            if (passctrl.value == "") {
+                document.getElementById("passwordError").innerHTML = "Password is Mandatory";
+                passctrl.focus();
+            }
+            else {
+                document.getElementById("passwordError").innerHTML = "";
+            }
+
+        }
+        
+
+    </script>
+</head>
+<body>
+    <form action="register.aspx" method="post">
+        <table border="1" cellpadding="10" cellspacing="0">
+       <tr>
+        <td>Enter User Name</td>
+        <td>
+            <input type="text" id="userName" value="" placeholder="User Name" onblur="validateUserName()"> <br>
+            <span id="userNameError"></span>
+
+        </td>
+       </tr>  
+       <tr>
+        <td>Enter Password</td>
+        <td>
+            <input type="password" id="password" value="" placeholder="Enter Password"> <br>
+            <span id="passwordError"></span>
+        </td>
+       </tr>
+       <tr>
+        <td></td>
+        <td>
+            <input type="submit" value="Submit Details">
+        </td>
+       </tr>
+    
+</body>
+</html>
