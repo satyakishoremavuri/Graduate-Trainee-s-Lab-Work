@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>promise</h3>
+
+
+    <script>
+        let promise = new promise((resolve,reject) =>{
+            let a = 8;
+            let b = 4;
+            let c = a / b;
+            if (c >= 0)
+                resolve(c);
+            else
+                reject("invalid data");
+        });
+
+        promise
+        .then(data => console.log(data))
+        .catch(reason => console.log(reason))
+        .finally(()=> console.log("finally block"))
+
+        let result = fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(responce => tesponce.json())
+        .then(json => console.log(json))
+
+    </script>
+</body>
+</html>
