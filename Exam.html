@@ -1,0 +1,198 @@
+What is call back function ad callback hell in javascript??
+A. Javascript is a popular lightweight interpreted complied client-side scripting language. Most web application use javascrip on the client side. By providing Javascript with a runtime environment.
+Call back: A call back is a function that is passed as an argument to another function that executes the callback based on the result.it is a important of asynchronous javascript
+// Main function
+const mainFunction = (callback)
+setTimeout(() => {
+    callback([2,3,4]);
+}, 2000)
+}
+
+
+// Add function
+const add = (array =>) {
+    let sum = 0;
+    for(let i of array) {
+        sum += i;
+    }
+    console.log(sum);
+}
+// Calling main function
+mainFunction(add);
+
+
+
+
+
+
+
+
+2. Explain how to iterate an object in javascript??
+A. const items = 'first': new Date(), 'second': 2, 'third': 'test'
+items.map(itern =>{})
+items.forEach(item=>{})
+for(const item of items){}
+for(const item in items){console.log(item)}
+object.entries(items).map(item=>{console.log(item)})object
+
+
+
+
+
+
+
+
+
+3.Explain about promises and create a custom promise with simple example
+A. The promise object support two properites: state and result. While a promise object pending the result is undefined. when the promise object is fulfilled, the result is a value.when the promise object is rejected, the result is an error object
+syntax: constmyCar = color: 'blue', type: 'sedan', doors: '4'
+
+
+
+
+
+
+
+4. What is implicit and type conversion in javascript??
+A. Implicit conversion javascript automatically converts one datatype into another datatype this process does not required user involvment.It happens only when two datatypes are compatible and also when we assign the data of smaller type to larger type.
+Type conversion: the process of converting data into one type to another. for example string datatype to number.
+
+
+
+
+5.Explain passed by value and passed by reference in javascript??
+A. Passed by value: the method parameter values are copied to another variable and then the copied subject is passed that is why it is called pass by value.
+Passed by reference: An reference to actual parameter is passed to the method before the value that's why it is called pass by reference. 
+The compiler copies the value of an argument in a calling function to a correspondent non pointer or non reference parameter in pass by value.
+
+
+
+
+
+
+
+6.What is the difference between flex and css grid explain with example??
+A. Grid: Css grid layout is two dimensional grid based layout system with rows and columns making it easy to web design page without having to use positioning.
+Example: <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    . main {
+        display: grid;
+        display: grid;
+        grid: auto auto/ auto auto auto auto;
+        grid-gap: 10px;
+        background-color: green;
+        padding: 10px;
+        
+    }
+    .gfg{
+        background-color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 25px 0;
+        font-size: 30px;
+    }
+</style>
+<body>
+    <h2 style = 'text-align: center:'>Welcome to Snad Developers</h2>
+    <div class = " main">
+        <div class = "gfg">Home</div>
+        <div class = "gfg">Read</div>
+        <div class = "gfg">Write</div>
+        <div class = "gfg">About Us</div>
+        <div class = "gfg">Contact Us</div>
+    </div>
+</body>
+</html>
+
+
+Flexbox: It is one dimensional layout it is helpul in allocating in aligning the space among items in a container it works with all kinds of display devices and screen sizes.
+
+
+
+7.Explain about Currying with example??
+A. Currying is an advance technique of working with functions, it is not used only in javascript but also in other languages as well. Currying is a transformation of fucntions that runs with from Callable as f(a,b,c) into f(a)(b)(c).
+currying does not call function it just transforms.
+
+function curry(f) {
+    return function(a) {
+        return fucntion(b) {
+            return f(a,b);
+        };
+
+      };
+    }
+
+// usage
+function sum(a,b) {
+    return a+b;
+}
+let curriedSum = curry(sum);
+alert(curridSum(1)(2) ); 
+
+
+
+
+
+
+8. Expain about object protoype and add reverse method to String class to reverse a given string??
+A. Object prototype: prototypes are the mechanisms which help javascript objects features from one another. 
+const myObject = {
+    city: 'Madrid',
+    greet() {
+        console.log('Greeting from ${this.city}');
+
+    }
+}
+myObject.greet();
+
+
+
+
+
+
+9.What is the difference between javascript and typescript??
+A. Typescript is an object oriented programming language where as javascript is the programming language for the web. typescript is an open source language to build large scale web apps whereas javascript is the server side programming language which helps in developing the interactive web page.
+
+
+
+11. Create the following registration and write validations using javascript??
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<title>JavaScript Form Validation using a sample registration form</title>
+<meta name="keywords" content="example, JavaScript Form Validation, Sample registration form" />
+<meta name="description" content="This document is an example of JavaScript Form Validation using a sample registration form. " />
+<link rel='stylesheet' href='js-form-validation.css' type='text/css' />
+<script src="sample-registration-form-validation.js"></script>
+</head>
+<body onload="document.registration.userid.focus();">
+<h1>Registration Form</h1>
+Use tab keys to move from one input field to the next.
+<form name='registration' onSubmit="return formValidation();">
+<ul>
+<li><label for="userid">User id:</label></li>
+<li><input type="text" name="userid" size="12" /></li>
+<li><label for="passid">Password:</label></li>
+<li><input type="password" name="passid" size="12" /></li>
+<li><label for="username">Name:</label></li>
+<li><input type="text" name="username" size="50" /></li>
+<li><label for="address">Address:</label></li>
+<li><input type="text" name="address" size="50" /></li>
+</select></li>
+<li><label>Language:</label></li>
+<li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>
+<li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li>
+<li><label for="desc">About:</label></li>
+<li><textarea name="desc" id="desc"></textarea></li>
+<li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
+</body>
+</html>

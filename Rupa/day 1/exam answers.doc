@@ -1,0 +1,204 @@
+1Q- (i) CALLBACK FUNCTION:-
+ A callback is a function passed as an argument to another function.
+A function which call it self is know as callback function.
+
+// EXAMPLE:- 
+function myFirstName() {
+    myDisplayer("rupa");
+  } 
+  myFirst();
+  
+  (ii) callback hell function:-
+  Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. 
+  Every callback depends for the previous callback. This effects the code structure.    
+
+
+
+
+2Q- Iterating an object in javascript:-
+
+Iterating an object in javascript is known as object increament/ decreament. 
+when we assign a value to object then it starts iterating from initialization.
+//EXAMPLE
+let tempObj = {};
+          for (let i= 0; i>=a;i++){
+            if(tempObj(a)) {
+                tempObj(a)++;
+            }
+            else{
+                tempObj(a)=1;
+            }
+          }
+          console.log(tempObj);
+          
+          
+          
+
+ 3Q- PROMISES
+ A promise is fixed value and cannot be changed.A promise is that produce the data and consume the data. 
+ It has three types in it, they are:
+ // pending, fullfilled, rejected
+
+ EXAMPLE:-
+ let myPromise = new Promise(function(myResolve, myReject) {
+    let x = 0;
+
+    if (x == 0) {
+      myResolve("OK");
+    } else {
+      myReject("Error");
+    }
+  });
+  
+  myPromise.then(
+    function(value) 
+    function(error) 
+  );
+  
+  
+  
+
+  5Q- passed by value , passed by reference
+//passed by value:-
+Function parameters are the names listed in the function definition.
+Function arguments are the real values passed to (and received by) the function.
+
+=> The function only gets to know the values, not the argument's locations.
+EXAMPLE-
+function myFunction(x, y) {
+    if (y === undefined) {
+      y = 2;
+    }
+  }
+
+  //passed by reference:-
+  objects will behave like they are passed by reference:
+  If a function changes an object property, it changes the original value.
+  //example
+  function functionName(parameter1, parameter2, parameter3) {
+  }
+
+
+
+
+  6Q- Flex and CSS grid:-
+  (i) The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+  There were four layout modes:
+Block, for sections in a webpage
+Inline, for text
+Table, for two-dimensional table data
+Positioned, for explicit position of an element
+//example:
+<div class="flex-container"></div>
+
+(ii) CSS grid
+=> Grid containers consist of grid items, placed inside columns and rows.
+=>To make an HTML element behave as a grid container, you have to set the display property to grid or inline-grid.
+//example:
+.grid-container {
+    display: grid;
+    height: 400px;
+    align-content: center;
+  }
+  
+  
+
+  8Q-Prototype inheritance
+  (i)=> A prototype inheritance in which an object of base class is derived
+  derived=>base class=>object
+  //example
+  function BaseClass(){
+    this.submitData=function(){
+        console.log("BaseClass submit method");
+    }
+}
+function DerivedClass(){
+}
+let baseObj=new BaseClass();
+DerivedClass.prototype=baseObj;
+
+(ii) reverse of a string:-
+function reverseString(str){
+}
+let str=new string("rupa");
+cons.log(str);
+str.reverseString();
+
+
+
+
+
+9Q- javascript:- javascript is a loosely typed and easy to access.
+It is provided and executed as plain text and does not need special preparation or compilation to run.
+It is denoted with (.js)
+
+Typescript:TypeScript is an open-source language to build large-scale web apps.
+ whereas JavaScript is a server-side programming language that helps to develop interactive web pages.
+ It is denoted with (.ts)
+ 
+ 
+
+ 10Q- Accessing data in javascript:-
+ <script> src="customescript.js"></script>
+ => By using multiple <script>..... </script> blocks we can access data
+ => by using script tags we can acces data from one block to another
+ 
+ 
+ 
+ 
+
+ 11Q- FORM
+ function valiDataUserName(){
+    var userCtrl=document.getElementById('userName');
+    if(userCtrl.value==""){
+        document.getElementById("userName error").innerHTML="userName is mandatory";
+        userCtrl.focus();
+    }
+}
+function valiDataPassword(){
+    var passCtrl=document.getElementById("password");
+    if(passCtrl.value==""){
+        document.getElementById("password error").innerHTML="password is mandatory";
+        passCtrl.focus();
+        return false;
+    }
+    else{
+        document.getElementById("password error"),innerHTML=" ";
+        return true;
+    }
+}
+function valiData MobileNumber(){
+    var userCtrl=document.getElementById('MobileNumber');
+    if(userCtrl.value==""){
+        document.getElementById("userName error").innerHTML="MobileNumber is mandatory";
+        userCtrl.focus();
+    }
+}
+function valiData dob(){
+    var userCtrl=document.getElementById('dob');
+    if(userCtrl.value==""){
+        document.getElementById("userName error").innerHTML="dob is mandatory";
+        userCtrl.focus();
+    }
+}
+
+function valiData email(){
+    var userCtrl=document.getElementById('email');
+    if(userCtrl.value==""){
+        document.getElementById("userName error").innerHTML="email is mandatory";
+        userCtrl.focus();
+    }
+}
+function validateData(){
+    let uStatus=valiDataUserName();
+    let pStatus=valiDataPassword();
+    let MStatus=valiDataPassword();
+    let dobStatus=valiDataPassword();
+    let emailStatus=valiDataPassword();
+    if(uStatus==false|| pStatus==false){
+        event.preventDefault();
+    }
+
+}
+    
+

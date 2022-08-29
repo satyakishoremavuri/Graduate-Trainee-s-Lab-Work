@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+<form action="register.aspx" methods="post">
+
+     
+
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <td>Enter First Name</td>
+    <td>
+        <input type="test" name="FirstName" id="FirstName" value="" placeholder="First Name" required> 
+    </td>
+</tr>
+<tr>
+    <td>Enter Last Name </td>
+    <td>
+        <input type="text" name="last name" id="last name" value="" placeholder="Last name" required>
+    </td>
+</tr>
+<tr>
+    <td>Enter Password <span>*</span></td>
+    <td>
+        <input type="password" placeholder="Password">
+    </td>
+    <tr>
+        <td>Gender</td>
+        <td>
+           <input type="radio" name="gender" value="1">Male &nbsp;
+           <input type="radio" name="gender1" value="2">Female &nbsp;
+
+         </td>
+    </tr>
+</tr>
+<tr>
+    <td>Languages Known</td>
+    <td>
+        <input type="checkbox" name="lan" value="English">English <br>
+        <input type="checkbox" name="lan" value="Hindi">Hindi <br>
+        <input type="checkbox" name="lan" value="Telugu">Telugu <br>
+
+    </td>
+</tr>
+<tr>
+    <td>Select city</td>
+    <td>
+        <select name="city name">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Delhi">Delhi</option>
+
+
+        </select>
+    </td>
+</tr>
+<tr>
+    <td> Select Your Date of Birth</td>
+    <td>
+        <input type="data" name="dob">
+    </td>
+</tr>
+<tr>
+    <td>Select Your Photo</td>
+    <td>
+        <input type="file" name="photo">
+    </td>
+</tr>
+
+<tr>
+    <td>Enter mail id</td>
+    <td>
+        <input type="email" id="email">
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td>
+        <input type="submit" value="Register">
+    </td>
+</tr>
+</table>
+</form>
+
+
+</body>
+</html>      

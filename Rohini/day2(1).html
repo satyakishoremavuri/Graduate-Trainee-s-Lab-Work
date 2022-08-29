@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+        <form action="register.aspx" method="post">
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <td>Enter First Name <span>*</span></td>
+            <td>
+                <input type="text" name="firstname" id="firstname" value="" placeholder="firstname" required>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Enter Last Name <span>*</span></td>
+            <td>
+                <input type="text" name="lastname" id="lastname" value="" placeholder="Last Name" required>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Enter Password <span>*</span></td>
+            <td>
+                <input type="password" placeholder="Password">
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="1">male
+                <input type="radio" name="gender" value="1">female
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+            languages known
+            </td>
+            <td> 
+                <input type="checkbox" name="lan" value="English">English <br>
+                <input type="checkbox" name="lan" value="Telugu">Telugu <br>
+                <input type="checkbox" name="lan" value="Hindi">Hindi <br>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>Select City</td>
+            <td>
+                <select name="Select City">
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Siddipet">Siddipet</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Date Of Birth
+            </td>
+            <td>
+                <input type="date" name="dob">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Select Your Photo
+            </td>
+            <td>
+                <input type="file" name="photo">
+            </td>
+        </tr>
+        <tr>
+            <td>Enter your Mail Id <span>*</span></td>
+            <td>
+                <input type="email" id="email" required>
+            </td>
+        </tr>
+        <tr>
+        <td></td>
+        
+                <td> <input type="submit" value="Register Here"></td>
+            
+        </tr>
+    </table>
+        </form>
+    
+    
+</body>
+</html>
