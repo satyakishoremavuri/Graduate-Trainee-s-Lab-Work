@@ -1,0 +1,52 @@
+<form name = "addEmployee">
+
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <input type="checkbox" [(ngModel)]="checkAllStatus" (change)="checkAll()">
+            </th>
+            <th>SI.Number</th>
+            <th>Emp.Number</th>
+            <th>Emp.Name</th>
+            <th>Emp.Salary</th>
+            <th>Emp.Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- [ngStyle]="emp.empSalary>=60000?{'color': 'red'} : {'color': 'black'}" -->
+        <tr *ngFor = "let emp of employees; let i=index;"  [ngClass]="{'lessSalary less': emp.empSalary<35000}">
+            <td>
+               
+                <input type="checkbox" [(ngModel)]="emp.isSelected" (change)="checkStatus()">
+              
+            </td>
+            <td>{{i+1}}</td>
+            <td>{{emp.empNumber}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empSalary}}</td>
+            <td>{{emp.empAddress==null?'--':emp.empAddress}}</td>
+
+        </tr>
+    </tbody>
+    <br>
+    <a [routerLink]="[]" (click)="selectTab(1)">Tab-1</a> &nbsp; |&nbsp;
+    <a [routerLink]="[]" (click)="selectTab(2)">Tab-2</a> &nbsp; |&nbsp;
+    <a [routerLink]="[]" (click)="selectTab(3)">Tab-3</a> &nbsp; |&nbsp;
+    <a [routerLink]="[]" (click)="selectTab(4)">Tab-4</a> <br>
+
+
+    <div [ngSwitch] = "optionValue">
+        <div *ngSwitchCase = "1">Output-1</div>
+        <div *ngSwitchCase = "2">Output-2</div>
+        <div *ngSwitchCase = "3">Output-3</div>
+        <div *ngSwitchCase = "4">Output-4</div>
+        <div *ngSwitchDefault>"Invalid choice"</div>
+        
+
+
+    </div>
+
+</table>

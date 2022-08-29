@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+
+        table {
+            margin: auto
+        }
+
+        form {
+            background-color: bisque;
+        }
+
+        tr {
+            border-color: red;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+            background-color: aquamarine;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Welcome To Snad Developers</h1>
+
+    <form action="register.aspx" method="post">
+        <table border="1" cellpadding="30" cellspacing="10">
+            <tr>
+                <td>Enter User Name <span>*</span></td>
+                <td>
+                    <input type="text" name="username" id="username" value="" placeholder="User Name" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Password <span>*</span></td>
+                <td>
+                    <input type="password" placeholder="password" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Mobile Number <span>*</span></td>
+                <td>
+                    <input type="number" placeholder="Mobile Number" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Date Of Birth <span>*</span></td>
+                <td>
+                    <input type="date" name="DOB" required>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Your Email <span>*</span></td>
+                <td>
+                    <input type="email" id="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register User">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+
+</html>
