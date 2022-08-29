@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheets" href="styles.css">
+</head>
+<body>
+    <h1>Table</h1>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <thead>
+            <tr>
+                <th> emp name</th>
+                <th>emp no </th>
+                <th>emp salary </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td align="center">koushik</td>
+                <td align="center">1</td>
+                <td align="right">1000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" align="center">END OF THE TABLE</td>
+            </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <h1>Form</h1>
+    <form action="resgister.aspx" method="post">
+        <table border="1" cellspacing="0" cellpadding="10">
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="name" id="name" placeholder="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email"  placeholder="Email" >
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" placeholder="password">
+                </td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="gender" value="1">Male &nbsp;
+                    <input type="radio" name="gender" value="2">Female
+                </td>
+            </tr>
+            <tr>
+                <td>Languages known</td>
+                <td>
+                    <input type="checkbox" name="lang" value="English">English<br>
+                    <input type="checkbox" name="lang" value="Telugu">Telugu
+                </td>
+            </tr>
+            <tr>
+                <td>city</td>
+                <td>
+                    <select name="city name">
+                        <option value="hyderabad">hyderabad</option>
+                        <option value="bengaluru">bengaluru</option>
+                        <option value="warangal">warangal</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>date of joining</td>
+                <td>
+                    <input type="date" name="dob">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input  type="submit" value="register">
+                    <input type="reset" value="cancel">
+                </td>
+            </tr>
+
+
+        </table>
+
+    </form>
+    <hr>
+    <h1>Division Tags</h1>
+    <div >divison 1</div>
+    <div>division 2</div>
+    <div>division 3</div>
+    <div>division 4</div>
+    
+</body>
+</html>

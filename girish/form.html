@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form novalidate onsubmit="validateData()">
+    Enter User Name : <input type="text" id="userName" value=""  onblur="validateUserName()"> <br>
+    <span id="userNameError" style="color: red;"></span>
+    <br>
+    <div>
+        Enter Password :<input type="password" id="password" name="username"onblur="validatepassword()" > 
+        <span id="userpassword" style="color: red;"></span>
+     </div>
+     <br>
+     <div>
+        Enter Mobile number:<input type="number" id="user" name="username" onblur="validatenumber()"  maxlength="10"> 
+        <span id="usernumber" style="color: red;"></span>
+        </div>
+        <div>
+            <br>
+            Date Of Birth :<input type="date" id="user" name="username"   onblur="validatedob()"> 
+            </div>
+            <br>
+            <div>
+                Enter Address:<input type="text" class="address" id="user" name="username" onblur="validateaddress()"> 
+                </div>
+                <br>
+                
+                    <input type="submit" id="submit" name="username" value="Register Here"  class="button"> 
+                </form>
+                   
+    
+</body>
+<script>
+    function validateUserName() {
+            var userCtrl = document.getElementById('userName');
+            if (userCtrl.value == "") {
+                document.getElementById("userNameError").innerHTML = "User Name is mandatory";
+                userCtrl.focus();
+                return false;
+            }
+            else {
+                if (userCtrl.value.length < 6) {
+                    document.getElementById("userNameError").innerHTML = "Min. 6 characters are required";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("userNameError").innerHTML = "";
+                return true;
+            }
+        }
+        function validatepassword() {
+            var userCtrl = document.getElementById('password');
+            if (userCtrl.value == "") {
+                document.getElementById("userpassword").innerHTML = "Password is mandatory";
+                userCtrl.focus();
+                return false;
+            }
+            else {
+                if (userCtrl.value.length < 8) {
+                    document.getElementById("userNameError").innerHTML = "Min. 8 characters are required";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("userNameError").innerHTML = "";
+                return true;
+            }
+        }
+        function validatenumber() {
+            var userCtrl = document.getElementById('password');
+            if (userCtrl.value == "") {
+                document.getElementById("usernumber").innerHTML = " number is required";
+                userCtrl.focus();
+                return false;
+            }
+            else {
+                if (userCtrl.value.length > 10) {
+                    document.getElementById("usernumber").innerHTML = "Max. 10 numbers are required";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("usernumber").innerHTML = "";
+                return true;
+            }
+        }
+        function validateData(){
+            let udata=validateUserName();
+            let pdata=validatepassword(); 
+            let ndata=validatenumber();
+            
+            if (udata ==false || pdata ==false){
+                event.preventDefault();
+            }
+        }
+</script>
+<style>
+    .address{
+      padding: 4%;
+    }
+</style>
+</html>
