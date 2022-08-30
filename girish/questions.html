@@ -1,0 +1,178 @@
+        <Question:2->iteration in java script?
+        Answer:iteration can be done by "for" loop condition for an object,for example
+        for(i=0;i<3;i++) 
+        something based on the requirement the loop continues until the output is achieved.
+
+
+
+        Question:3 ->promises in java script?
+         Answer:Promises are basically of three types 
+        1. resolve
+        2. reject
+        3. always
+        *Resolve -this condition executes when the output is ssuccesfully compiled.
+        *reject  - this is executed when the output is not compiled and produce errors.
+        *always  -this condition is executed all the times 
+        sample:
+        let a="20";
+        let b="50";
+        let c="a/b";
+        resolve(){
+            console.log("this is executed");
+
+        }
+        reject(){
+            console.log("5")
+        }
+        finally(){
+            console.log("always executed");
+        }
+        ->In this case the output would be "5" and "always executed".
+        let promise = new Promise((resolve,reject) =>{
+            a = 20;
+            b = 4;
+            c = a/b;
+            if(a>b)
+            resolve(c);
+            else 
+            reject("invalid output");
+        });
+            promise 
+            .then(data =>console.log(data))
+            .catch(reason=> console.log(reason))
+            .finally(() => console.log("always executes"))
+             let result = fetch('https://jsonplaceholder.typicode.com/comments')
+             .then(response => response.json())
+             .then(json  => console.log(json))
+             .catch(reason => console.log(reason))
+
+
+
+
+
+
+       * <Question:6 ->difference between flex and grid?
+       Answer:
+      -> In grid css  the entire view changes in the format of rows and columns i.e in the grid view.we can use the css in style tag
+
+       example:display:grid;
+        
+      ->In flex css, basically it is used for responsiveness of an apllication or web page .It provides space for entire div tag , and when we remove the div the div tag it eliminates the entire DOM elements spac.
+      for example:
+
+      display:flex;
+      flex-direction:justify;(this helps us to adjust the directions.)
+
+
+
+      <Question:9 ->difference between java script and type script 
+        Answer:
+        *type script : Basically type is very much typed script unlike java script
+        *we should definitely mention the data type when we decalre a variable.
+        *type script also accepts all the Javascript files to compile
+         
+        Javascript:
+        *java script supports node js libraries.
+        *java script is loosely typed comapred to type script.
+         *in Javascript it is not mandatory to declare data type for a variable . 
+
+
+
+         <Question:5 -> pass by value and pass by refernce?
+            Answer:
+            *pass by value->
+            basically pass by value  does not depend on the variable we passed inside the function ,
+            even if we change the initial value , the output would be the first assigned value.
+            for example:
+            var a="4";
+            let change = (val) => {
+                val = 9
+             }
+             change(a);
+             document.write(a);
+             now the output will be "4" only .
+             *pass by refernce->
+             firstly, it depends on the outer function changes , outer functions defiitely change the output of the the entire variable 
+             that is decalred outside or inside the function
+             for example:
+             var a={num:1};
+             let change= value=>{
+                var.num=89;
+
+             }
+             cahnge(a);
+             console.log(a);
+             the output cahnges the value of a from "1" to "89".
+
+             <Question:10:->Access data from one script to another ?
+                Answer:
+                basically we use export and import statements to access the data from one script to another 
+                 
+                export statment can be used ,
+                for accessing the data from another script block i.e methods classes or any variables too, 
+                by calling its name
+
+                for example:
+                export{}
+
+                import statment can be used for importing the entire file by using its path location
+                for example ;
+                import(../components/src/hello.js)
+                this is how we import the blocks directly in to other script block.
+
+
+
+
+                <Question :1-> call back function and call back hell?
+                    Answer:
+                    a function which is to be executed after another function has finished execution
+                    for example
+                    setTimeout(greet, 2000);
+                    sayName('John');
+                    it will execute after 2 seconds.
+
+
+
+                    <question :8-> reverse string 
+                        Answer:
+                        the main goal is to obtain the reverse form of any string that has been asked by the user
+                        for example:
+                        const string = prompt('Enter a string: ');
+
+                         const result = reverseString(string);
+                          console.log(result);
+                          the output will be reverse of what the user enters in the prompt box.
+
+
+
+                          object prototype:
+                        
+	function Student() {
+		this.name = 'girish';
+		this.gender = 'Male';
+	}
+
+	Student.prototype.age = 15;
+
+	var studObj1 = new Student();
+	alert(studObj1.age); 
+
+	var studObj2 = new Student();
+	alert(studObj2.age); 
+
+    Age="15" for student object2.
+	
+     the answer is if we want to add any extra feature to the existing object the possible way is by using prototype.
+     it will automatically reflect to the other object.  
+
+
+     <Question:4-> type conversion?
+        Answer: 
+        converrting one data type to another data type is called as type conversion.
+        for example:
+        The Number() method converts a variable (or value) into a number:
+        same asstring () method converts  a variable (or value) into a string:
+        for example :
+        x.toString()
+        (123).toString()
+       (100 + 23).toString() 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function funct1(funct) {
+
+            setTimeout(() => {
+                console.log("funct1");
+            }, 3000)
+            console.log("funct1")
+            funct();
+
+        }
+        function funct2() {
+            console.log("funct2");
+        }
+        funct1(funct2);
+
+
+    </script>
+</head>
+
+<body>
+    <dl>Callback Function:</dl>
+    <dd>when we pass a function as argument in another function that executes function </dd>
+
+    <dl>Callback Hell:</dl>
+    <dd> it is nothing but nested callback functions it depends on one another's execution</dd>
+
+
+</body>
+
+</html>
