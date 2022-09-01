@@ -2,18 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
-import { CustomerComponent } from './customer/customer.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [
-    CustomerComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule,
-    CustomerRoutingModule,
-    ReactiveFormsModule
+    CustomerRoutingModule
   ]
 })
 export class CustomerModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { IEmployee } from '../employee-model';
 
 @Component({
@@ -56,6 +57,13 @@ export class EmployeeComponent implements OnInit {
       this.checkAllStatus = true;
     else
       this.checkAllStatus = false;
+  }
+  public addEmployee(f: NgForm) {
+
+    this.employees.push(this.employee);
+    alert("Employee Added");
+    this.employee = {} as IEmployee;
+    f.resetForm();
   }
 }
 
