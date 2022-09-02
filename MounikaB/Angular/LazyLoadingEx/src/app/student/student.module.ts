@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { EmployeeRoutingModule } from './employee-routing.module';
-import { EmployeeComponent } from './employee/employee.component';
+import { StudentRoutingModule } from './student-routing.module';
+import { StudentComponent } from './student/student.component';
 import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    EmployeeComponent
+    StudentComponent
   ],
   imports: [
     CommonModule,
-    EmployeeRoutingModule,
+    StudentRoutingModule,
     FormsModule
   ]
 })
-export class EmployeeModule { }
+export class StudentModule { }
