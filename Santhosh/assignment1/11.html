@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +69,7 @@
                 return false;
             }
             else {
-                if (userCtrl.value.date < 1985 ) {
+                if (userCtrl.value.date < 1985) {
                     document.getElementById("DOBerror").innerHTML = "Min. age is required";
                     passCtrl.focus();
                     return false;
@@ -79,17 +80,17 @@
         }
         function validateAddress() {
             var userCtrl = document.getElementById('Address');
-            var atposition=x.indexOf("@");  
-            var dotposition=x.lastIndexOf(".");  
-            
+            var atposition = x.indexOf("@");
+            var dotposition = x.lastIndexOf(".");
+
             if (userCtrl.value == "") {
                 document.getElementById("ADDerror").innerHTML = "Enter Address";
                 userCtrl.focus();
                 return false;
             }
             else {
-                if ( userCtrl.value <10 ) {
-                    document.getElementById("ADDerror").innerHTML = "Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition;
+                if (userCtrl.value < 10) {
+                    document.getElementById("ADDerror").innerHTML = "Please enter a valid e-mail address \n atpostion:" + atposition + "\n dotposition:" + dotposition;
                     passCtrl.focus();
                     return false;
                 }
@@ -108,18 +109,18 @@
             }
         }
         function sConsole() {
-        var userCtrl = document.getElementById("userName");
-        var userCtrl = document.getElementById("password");
-        var userCtrl = document.getElementById("number");
-        var userCtrl = document.getElementById("date");
-        var userCtrl = document.getElementById("Address");
-        console.log(userName.value());
-        console.log(password.value());
-        console.log(number.value());
-        console.log(date.value());
-        console.log(Address.value());
-}
-       sConsole();
+            var userCtrl = document.getElementById("userName");
+            var userCtrl = document.getElementById("password");
+            var userCtrl = document.getElementById("number");
+            var userCtrl = document.getElementById("date");
+            var userCtrl = document.getElementById("Address");
+            console.log(userName.value());
+            console.log(password.value());
+            console.log(number.value());
+            console.log(date.value());
+            console.log(Address.value());
+        }
+        sConsole();
 
     </script>
 
@@ -127,8 +128,8 @@
 
 <body>
 
-    <form  action="login.aspx"  method="post" onsubmit="validateData()">
-        <table border="2" cellpadding="10" cellspacing="0">
+    <form action="login.aspx" method="post" onsubmit="validateData()">
+        <table border="2" cellpadding="10" cellspacing="0" align="center">
             <tr>
                 <td>Enter User Name</td>
                 <td>
@@ -147,7 +148,8 @@
             <tr>
                 <td>Enter Mobile Number</td>
                 <td>
-                    <input type="number" id="number" value="" placeholder="Mobile number" onblur="validateMobilenumb()"> <br>
+                    <input type="number" id="number" value="" placeholder="Mobile number" onblur="validateMobilenumb()">
+                    <br>
                     <span id="MBerror" style="color: red;"></span>
                 </td>
             </tr>
@@ -164,8 +166,8 @@
                     <input name="Address" id="Address" cols="30" rows="10" onblur="validateAddress()">
                 </td>
             </tr>
-            
-            
+
+
             <tr>
                 <td></td>
                 <td>
