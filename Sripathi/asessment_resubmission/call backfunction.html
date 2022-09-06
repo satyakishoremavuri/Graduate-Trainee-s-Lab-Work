@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>whats is call back function :-
+
+    </h3>
+
+    <p>A callback is a function that is passed as an argument to another function
+
+         that executes the callback based on the result. 
+
+         They are basically functions that are executed only after a result is produced.
+
+          Callbacks are an important part of asynchronous JavaScript.
+    </p>
+
+
+        <br><br>
+
+
+        <h3>what is call back hell</h3>
+
+        <p> Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. 
+
+            Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.
+    </p>
+
+        
+
+
+        <script>
+            // 1.call back function
+
+            function first(a){
+                a(),
+                document.write("this is first function")
+                
+            }
+
+            function second(){
+                document.write("this is second function")
+            }
+
+            first(second)
+
+               // 2.call back hellfunction
+
+               function step1(){
+                setTimeout(()=>{
+                    console.log("step one done")
+                    setTimeout(()=>{
+                        console.log("step2 done")
+                        setTimeout(()=>{
+                            console.log("step3 done")
+                            setTimeout(()=>{
+                                console.log("step4 done")
+                                setTimeout(()=>{
+                                    console.log("step5 done")
+                                },1000)
+                            },1000)
+                        },2000)
+                    },2000)
+                },2000)
+               }
+
+               step1()
+
+
+
+        </script>
+    
+</body>
+</html>

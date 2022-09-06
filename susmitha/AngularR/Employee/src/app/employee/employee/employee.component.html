@@ -3,7 +3,7 @@
         <!-- {{employee|json}} -->
         <div class="mb-3">
             <label for="empNumber" class="form-label">Employee Number</label>
-            <input type="text" name="empNumber" #empNumber="ngModel" id="empNumber" class="form-control"
+            <input type="text" name='empNumber' #empNumber="ngModel" id="empNumber" class="form-control"
                 placeholder="Employee Number" aria-describedby="empNumber" [(ngModel)]="employee.empNumber" required>
             <small *ngIf="(empNumber.invalid && empNumber.touched) || (empNumber.invalid && addEmp.submitted)"
                 id="empNumber" class="text-muted">Employee Number is
