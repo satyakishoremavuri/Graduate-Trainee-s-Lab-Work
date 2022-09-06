@@ -149,9 +149,9 @@ body{
                     </span>
                     <span class="material-symbols-outlined error">
                         error
-                        </span>
+                        </span>  
                 <small>Error Message</small>
-            </div>
+            </div>  
             <div class="field">
                 <label>Enter Mobile Number</label>
                 <input type="number" placeholder="9640982218" class="number" id="number">
@@ -163,7 +163,7 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
-            <div class="field">
+             <div class="field">
                 <label>Date of Birth</label>
                 <input type="date" placeholder="Date of birth" id="date_of_birth">
                 <span class="material-symbols-outlined success">
@@ -204,7 +204,9 @@ body{
         const password = document.getElementById("password")
 
 
-        const date_of_birth = document.getElementById("date_of_birth")
+          const date_of_birth = document.getElementById("date_of_birth")
+
+         const address = document.getElementById("address")
 
 
         
@@ -221,7 +223,7 @@ body{
          let numberValue = number.value.trim()
           let passwordValue = password.value.trim()
          let addressValue = address.value.trim()
-         
+
          
          if(nameValue === ''){
           setError(uname,"user name can not be empty")
@@ -241,9 +243,19 @@ body{
             setError(number,'Enter valid mobile number')
           }
          else{
-            setSuccesss(number)
+            setSuccesss(number)   
          }
               if (addressValue === ''){
+              setError(address,"addess can  not be empty")
+             }
+             else if(!addressCheck(addressValue)){
+              setError(address,"special character are not allowed")
+             }
+             else{
+             setSuccesss(address)
+            }
+
+            if (addressValue === ''){
               setError(address,"addess can  not be empty")
              }
              else if(!addressCheck(addressValue)){
@@ -285,6 +297,13 @@ body{
          function numberCheck(input){
             let numberReg = /^\d{10}$/;
             let valid1 = numberReg.test(input)
+            console.log(valid1)
+            return valid1
+         }
+
+          function addressCheck(input){
+            let addressReg = /[^a-zA-Z0-9\-\/]/;
+           let valid1 = addressReg.test(input)
             console.log(valid1)
             return valid1
          }
