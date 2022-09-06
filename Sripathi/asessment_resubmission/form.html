@@ -163,7 +163,7 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
-            <div class="field">
+             <div class="field">
                 <label>Date of Birth</label>
                 <input type="date" placeholder="Date of birth" id="date_of_birth">
                 <span class="material-symbols-outlined success">
@@ -204,7 +204,9 @@ body{
         const password = document.getElementById("password")
 
 
-        const date_of_birth = document.getElementById("date_of_birth")
+          const date_of_birth = document.getElementById("date_of_birth")
+
+         const address = document.getElementById("address")
 
 
         
@@ -220,8 +222,7 @@ body{
          let nameValue = uname.value.trim()
          let numberValue = number.value.trim()
           let passwordValue = password.value.trim()
-         let date_of_birthValue = date_of_birth.value.trim()
-         let tandcValue = tandc.value
+         let addressValue = address.value.trim()
 
          if(nameValue === ''){
           setError(uname,"user name can not be empty")
@@ -243,6 +244,16 @@ body{
          else{
             setSuccesss(number)
          }
+
+            if (addressValue === ''){
+              setError(address,"addess can  not be empty")
+             }
+             else if(!addressCheck(addressValue)){
+              setError(address,"special character are not allowed")
+             }
+             else{
+             setSuccesss(address)
+            }
 
 
          if(passwordValue===''){
@@ -279,6 +290,13 @@ body{
             console.log(valid)
             return valid
          }
+
+          function addressCheck(input){
+            let addressReg = /[^a-zA-Z0-9\-\/]/;
+           let valid1 = addressReg.test(input)
+            console.log(valid1)
+            return valid1
+        }
 
         }      
     </script>
