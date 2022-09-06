@@ -8,6 +8,24 @@
     <script>
         function validateUserName() {
             var userCtrl = document.getElementById('userName');
+            var iChars = "!`@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";   
+            var data = document.getElementById("userName").value;
+
+                for (var i = 0; i < data.length; i++)
+
+                {      
+
+                    if (iChars.indexOf(data.charAt(i)) != -1)
+
+                    {    
+
+                    document.getElementById("userNameError").innerHTML = "special char are not allowed";
+                    document.getElementById("userName").value = "";
+                    userCtrl.focus();
+                    return false;
+                    } 
+
+                }
             if (userCtrl.value == "") {
                 document.getElementById("userNameError").innerHTML = "Enter your user name";
                 userCtrl.focus();
@@ -16,12 +34,13 @@
             else {
                 if (userCtrl.value.length < 6) {
                     document.getElementById("userNameError").innerHTML = "Min. 6 characters are required";
-                    passCtrl.focus();
+                    userCtrl.focus();
                     return false;
                 }
                 document.getElementById("userNameError").innerHTML = "";
                 return true;
             }
+            
             console.log(userCtrl);
         }
         function validateMobilenumb() {
@@ -93,7 +112,7 @@
       }
 
      else {
-           lblError.innerHTML = "Enter DOB."
+           lblError.innerHTML = ""
                 return false;
  }
         }
@@ -106,8 +125,8 @@
                 return false;
             }
             else {
-                if ( userCtrl.value <10 ) {
-                    document.getElementById("ADDerror").innerHTML = "Please enter a valid e-mail address ";
+                if ( userCtrl.value == "!`@#$%^&*()+=-[]\\\';./{}|\":<>?~_" ) {
+                    document.getElementById("ADDerror").innerHTML = "Please enter a valid  address ";
                     passCtrl.focus();
                     return false;
                 }
