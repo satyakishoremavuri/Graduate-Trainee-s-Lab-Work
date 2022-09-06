@@ -223,7 +223,12 @@ body{
          let numberValue = number.value.trim()
           let passwordValue = password.value.trim()
          let addressValue = address.value.trim()
+<<<<<<< HEAD
 
+=======
+         
+         
+>>>>>>> 19b3fa095394283ccfe3f951f37e6b350c9dcf66
          if(nameValue === ''){
           setError(uname,"user name can not be empty")
          }
@@ -244,6 +249,15 @@ body{
          else{
             setSuccesss(number)   
          }
+              if (addressValue === ''){
+              setError(address,"addess can  not be empty")
+             }
+             else if(!addressCheck(addressValue)){
+              setError(address,"special character are not allowed")
+             }
+             else{
+             setSuccesss(address)
+            }
 
             if (addressValue === ''){
               setError(address,"addess can  not be empty")
@@ -286,9 +300,9 @@ body{
 
          function numberCheck(input){
             let numberReg = /^\d{10}$/;
-            let valid = numberReg.test(input)
-            console.log(valid)
-            return valid
+            let valid1 = numberReg.test(input)
+            console.log(valid1)
+            return valid1
          }
 
           function addressCheck(input){
