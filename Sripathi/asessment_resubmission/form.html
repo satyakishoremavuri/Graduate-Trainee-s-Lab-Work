@@ -220,7 +220,6 @@ body{
          let nameValue = uname.value.trim()
          let numberValue = number.value.trim()
           let passwordValue = password.value.trim()
-         let date_of_birthValue = date_of_birth.value.trim()
          let tandcValue = tandc.value
 
          if(nameValue === ''){
@@ -243,6 +242,15 @@ body{
          else{
             setSuccesss(number)
          }
+              if (addressValue === ''){
+              setError(address,"addess can  not be empty")
+             }
+             else if(!addressCheck(addressValue)){
+              setError(address,"special character are not allowed")
+             }
+             else{
+             setSuccesss(address)
+            }
 
 
          if(passwordValue===''){
@@ -275,9 +283,9 @@ body{
 
          function numberCheck(input){
             let numberReg = /^\d{10}$/;
-            let valid = numberReg.test(input)
-            console.log(valid)
-            return valid
+            let valid1 = numberReg.test(input)
+            console.log(valid1)
+            return valid1
          }
 
         }      
