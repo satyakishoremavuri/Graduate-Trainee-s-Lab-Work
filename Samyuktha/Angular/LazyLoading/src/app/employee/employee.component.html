@@ -3,7 +3,7 @@
         <tr>
             <th>
             <input type="checkbox" [(ngModel)]="checkAllStatus" (change)="checkAll()">
-            {{checkAllStatus}}
+           
             </th>
             <th>Sl. Number</th>
             <th>Emp. Number</th>
@@ -14,9 +14,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let emp of employees; let i=index;">
+        <tr *ngFor="let emp of employees; let i=index;" [ngClass]="{'lessSalary less': emp.empSalary<35000}">
+        
             <td>
-                <input type ="checkbox" >
+                <input type ="checkbox" [(ngModel)]="emp.isSelected" (change)="checkStatus()">
             </td>
             <td>{{i+1}}</td>
             <td>{{emp.empNumber}}</td>
