@@ -28,9 +28,9 @@ export class EmployeeComponent implements OnInit {
 
     this.shareddata = {
       data : this.employees,
-      isActionrow : true
+      isActionrow : false
     }
-    console.log(this.shareddata)
+    // console.log(this.shareddata)
   }
 
   public addEmployee(f: NgForm) {

@@ -5,7 +5,7 @@
             <th *ngFor="let col of gridColumns">
                 <a [routerLink]="[]" (click)="sortData(col)"> {{col}}</a>
             </th>
-            <th>Action</th>
+            <th  *ngIf="isActiverow">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +13,7 @@
             <td *ngFor="let col of gridColumns">
                 {{row[col]}}
             </td>
-            <td>
+            <td *ngIf="isActiverow">
                 <a [routerLink]="[]" (click)="selectRecord(row)">Edit</a> &nbsp;|&nbsp;
                 <a [routerLink]="[]" (click)="deleteRecord(row)">Delete</a>
             </td>

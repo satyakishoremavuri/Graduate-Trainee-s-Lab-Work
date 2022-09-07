@@ -14,10 +14,12 @@ export class GridComponent implements OnInit {
 
   @Input("dataList")
   public set setData(dataList: any) {
-    if (dataList.length) {
+    if (dataList.data.length) {
       this.gridColumns = Object.keys(dataList.data[0]);
       this.gridData = dataList.data;
       this.isActiverow = dataList.isActionrow;
+    console.log(dataList.data[0],"abc")
+
     }
   }
 
@@ -32,7 +34,8 @@ export class GridComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.gridColumns,this.gridData, this.isActiverow)
+    // console.log(this.gridColumns,this.gridData, this.isActiverow)
+
   }
 
   public selectRecord(row: any) {
