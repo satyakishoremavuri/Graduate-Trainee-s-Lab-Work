@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Object creation using Object literal
+        //JSON --> Javascript Object Notation
+        let empObj = {
+            //Properties
+            firstName: "Sathesh",
+            lastName: 'Kumar',
+
+            //functions
+            getFullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+
+            //Nested Objects
+            address: {
+                doorNumber: 101,
+                areaName: "KPHB",
+                cityName: "Hyderabad"
+            }
+        };
+
+        empObj.mobile = "7013814324";
+
+        if (!empObj.hasOwnProperty("mobile")) {
+            empObj.mobile = "9885811057";
+        }
+
+
+        console.log(empObj);
+
+        document.write("<h1>First Name :" + empObj.firstName);
+        document.write("<h1>Last Name is :" + empObj['lastName']);
+        document.write("<h1>Full Name is :" + empObj.getFullName());
+        document.write("<h1>Address Details....");
+        document.write("<h1>Door Number is :" + empObj.address.doorNumber);
+        document.write("<h1>Area Name is :" + empObj.address['cityName']);
+        document.write("<h1>City Name is :" + empObj['address']['cityName']);
+        document.write("<h1>Mobile Number :" + empObj.mobile);
+
+
+        //Object creation using Object Constructor
+        let custObj = new Object();
+        custObj.firstName = "Mohan";
+        custObj.lastName = "Krishna";
+        custObj['mobile'] = "9885811057";
+        let propertyName = "age";
+        custObj[propertyName] = 37;
+
+        console.log(custObj);
+
+        let keys = Object.keys(empObj);
+        console.log(keys);
+
+        let values = Object.values(empObj);
+        console.log(values);
+
+        for (const key in custObj) {
+            console.log(key, "-->", custObj[key]);
+        }
+
+        for (const [key, value] of Object.entries(custObj)) {
+            console.log(key, "-", value);
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -128,7 +128,10 @@ body{
         <div class="header">
             <h2>Register Here</h2>
         </div>
+
         <form action="index.html" class="form" id="form">
+
+            <!--user name field-->
             <div class="field">
                 <label>UserName</label>
                 <input type="text" placeholder="Enter User Nmae" id="uname">
@@ -140,8 +143,10 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
-           
-            <div class="field">
+
+
+                <!--password field-->
+            <div class="field" style="margin-bottom: 5px;">
                 <label>Password</label>
                 <input type="password" placeholder="password" id="password">
                 <span class="material-symbols-outlined success">
@@ -149,12 +154,15 @@ body{
                     </span>
                     <span class="material-symbols-outlined error">
                         error
-                        </span>  
+                        </span>
                 <small>Error Message</small>
-            </div>  
+            </div>
+
+
+                <!--mobile number field-->
             <div class="field">
                 <label>Enter Mobile Number</label>
-                <input type="number" placeholder="9640982218" class="number" id="number">
+                <input type="number" placeholder="Mobile number" class="unmber" id="unumber">
                 <span class="material-symbols-outlined success">
                     check_circle
                     </span>
@@ -163,9 +171,11 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
-             <div class="field">
-                <label>Date of Birth</label>
-                <input type="date" placeholder="Date of birth" id="date_of_birth">
+           
+            <!--date field-->
+            <div class="field">
+                <label>Date of birth</label>
+                <input type="date" placeholder="Date of birth" id="dob">
                 <span class="material-symbols-outlined success">
                     check_circle
                     </span>
@@ -174,8 +184,11 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
-           <div class="field">
-                <label>Enter address</label>
+
+
+            <!--address field-->
+            <div class="field">
+                <label>Enter Address</label>
                 <input type="text" placeholder="address" id="address">
                 <span class="material-symbols-outlined success">
                     check_circle
@@ -185,6 +198,7 @@ body{
                         </span>
                 <small>Error Message</small>
             </div>
+
             <input type="submit" class="button">
         </form>
     </div>
@@ -193,88 +207,96 @@ body{
 
     <script >
         const form = document.getElementById("form")
-
     
         const uname = document.getElementById("uname")
 
-
-        const number = document.getElementById("number")
-
-
         const password = document.getElementById("password")
 
+        const dateofbirth = document.getElementById("dob");
 
-          const date_of_birth = document.getElementById("date_of_birth")
+        const unumber = document.getElementById("unumber") 
 
-         const address = document.getElementById("address")
-
-
-        
+        const address = document.getElementById("address")      
 
 
         form.addEventListener('submit',(e)=>{
             e.preventDefault()
+        
             Validate()
         })
 
 
-        function Validate(){
-         let nameValue = uname.value.trim()
-         let numberValue = number.value.trim()
-          let passwordValue = password.value.trim()
-         let addressValue = address.value.trim()
 
+        function Validate(){
+          let nameValue = uname.value.trim()
+          let passwordValue = password.value.trim()
+          let mnumberValue = unumber.value.trim()
+          let addressValue = address.value.trim()
+          
          
+         // user name validation
+
          if(nameValue === ''){
           setError(uname,"user name can not be empty")
+          
          }
          else if(nameValue.length<8){
-         setError(uname,'user name should be minium 8 character')
+         setError(uname,'user name should be minium 6 character')
+         }
+         else if(!unmCheck(nameValue)){
+            setError(uname,"user name does not allow special charactors & numbers")
          }
          else{
           setSuccesss(uname)
          }
- 
 
-         if (numberValue === ''){
-            setError(number,'number cannot be empty')
-         }
-         else if(!numberCheck(numberValue)){
-            setError(number,'Enter valid mobile number')
-          }
-         else{
-            setSuccesss(number)   
-         }
-              if (addressValue === ''){
-              setError(address,"addess can  not be empty")
-             }
-             else if(!addressCheck(addressValue)){
-              setError(address,"special character are not allowed")
-             }
-             else{
-             setSuccesss(address)
-            }
 
-            if (addressValue === ''){
-              setError(address,"addess can  not be empty")
-             }
-             else if(!addressCheck(addressValue)){
-              setError(address,"special character are not allowed")
-             }
-             else{
-             setSuccesss(address)
-            }
-
+         
+         //password validation
 
          if(passwordValue===''){
           setError(password,'password cannot be empty')
          } 
-         else if(password.length<8){
-         setError(password,'password shoud be minimum 8 charatcers')
+         else if(passwordValue.length<6){
+         setError(password,'password shoud be minimum 6 charatcers')
+         }
+         else if(!passwordCheck(passwordValue)){
+            setError(password,"password contain one upper & lower case & special charactor")
          }
          else{
           setSuccesss(password)
          }
+
+
+         //mobile number validation
+
+         if(mnumberValue === ''){
+            setError(unumber,"number can not be empty")
+         }
+         else if(!umnCheck(mnumberValue)){
+            setError(unumber,"enter valid number")
+         }
+         else{
+            setSuccesss(unumber)
+         }
+
+        
+       
+         
+         // address validation
+
+         if (addressValue === ''){
+            setError(address,"address can not be empty")
+         }
+         else if(!adCheck(addressValue)){
+            setError(address,"enter valid adress")
+         }
+         else{
+            setSuccesss(address)
+         }
+
+        
+
 
 
 
@@ -294,21 +316,70 @@ body{
          }
 
 
-         function numberCheck(input){
-            let numberReg = /^\d{10}$/;
-            let valid1 = numberReg.test(input)
-            console.log(valid1)
-            return valid1
-         }
 
-          function addressCheck(input){
-            let addressReg = /[^a-zA-Z0-9\-\/]/;
-           let valid1 = addressReg.test(input)
-            console.log(valid1)
-            return valid1
-         }
+           //username condition check
 
-        }      
+           function unmCheck(input){
+                let userReg = /^[a-zA-Z\_]+$/;
+                let valid = userReg.test(input)
+                console.log(valid)
+                return valid
+                userCtrl.focus();
+                
+
+            }
+
+            // password condition check
+
+            function passwordCheck(input){
+                let passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+                let valid = passReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            // mobile number condition check
+
+            function umnCheck(input){
+                let umnReg = /^\d{10}$/
+                let valid = umnReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            // addres condition check
+
+            function adCheck(input){
+                let adReg = /^[a-zA-Z\,]+$/;
+                let valid = adReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            //date of borth validatio
+            
+            
+             if (dateofbirth.value == "") {
+               setError(dob,"Date of Birth is not valid")
+               return false;
+            }
+            else{
+                setSuccesss(dob)
+            }
+            
+           // sir actually this is not wire frame from internet, this my practice validation form, sorry for the putting this form actually that day i am going to home so i am did that, pls check the resubmission form i am satisfy all your form validation conditions except date validation , i am unable to under stand the date validation, i am taking current date in JavaScript by newDate() method and  getting individual date , month , year  from current date, how to compare these current date to user given date, how to split and get individual date , month , year from user given date.
+            
+
+           
+       
+
+
+        
+            
+            
+
+        };
+        
     </script>
 
 </body>

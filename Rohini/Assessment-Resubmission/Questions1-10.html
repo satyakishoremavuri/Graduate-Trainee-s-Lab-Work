@@ -1,0 +1,450 @@
+1.What is a Callback function and Callbackhell in javaScript?
+A callback is a function that is passed as an argument to another function that executes the callback based on the result. They are basically functions that are executed only after a result is produced. Callbacks are an important part of asynchronous JavaScript.
+// Main function
+const mainFunction = (callback) => {
+	setTimeout(() => {
+		callback([2, 3, 4]);
+	}, 2000)
+}
+
+// Add function
+const add = (array) => {
+	let sum = 0;
+	for(let i of array) {
+		sum += i;
+	}
+	console.log(sum);
+}
+
+// Calling main function
+mainFunction(add);
+Callbackhell: Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code. 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport" content=
+		"width=device-width, initial-scale=1.0">
+
+	<title>Callback Hell</title>
+	
+	<style>
+		* {
+			padding: none;
+			margin: none;
+			box-sizing: border-box;
+		}
+
+		.word {
+			color: #308d46;
+			font-size: 4rem;
+			transition: all .5s ease-in;
+			margin: 0 5px;
+			transform: translateY(3.8rem);
+			opacity: 0;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 95vw;
+			height: 95vh;
+		}
+
+		.container {
+			overflow: hidden;
+			display: flex;
+			flex-direction: row;
+		}
+
+		.animate {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h2 class="word">Rohini</h2>
+		<h2 class="word">Reddy</h2>
+		<h2 class="word">Chinni</h2>
+	</div>
+</body>
+<script>
+	let words = document.querySelectorAll(".word");
+
+	const animateAll = (animate) => {
+		setTimeout(() => {
+			animate(words[0]);
+			setTimeout(() => {
+				animate(words[1]);
+				setTimeout(() => {
+					animate(words[2]);
+				}, 1000)
+			}, 1000)
+		}, 1000)
+	}
+
+	const animate = (word) => {
+		word.classList.add("animate");
+	}
+
+	animateAll(animate);
+</script>
+
+</html>
+2.Explain how to iterate an object in javaScript?
+Method 1: Using for…in loop: The properties of the object can be iterated over using a for..in loop. This loop is used to iterate over all non-Symbol iterable properties of an object.The hasOwnProperty() method can be used to check if the property belongs to the object itself. The value of each key of the object can be found by using the key as the index of the object.
+syntax:for (let key in exampleObj) {
+	if (exampleObj.hasOwnProperty(key)) {
+		value = exampleObj[key];
+		console.log(key, value);
+	}
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		How to iterate over
+		a JavaScript object?
+	</title>
+</head>
+
+<body>
+	<h1 style="color: green">
+		GeeksforGeeks
+	</h1>
+	
+	<b>
+		How to iterate over
+		a JavaScript object?
+	</b>
+	
+	<p>
+		Click on the button to iterate
+		through the javascript object.
+	</p>
+	
+	<p>
+		Check the console
+		for the output
+	</p>
+	
+	<button onclick="iterateObject()">
+		Iterate Object
+	</button>
+	
+	<script type="text/javascript">
+		function iterateObject() {
+			let exampleObj = {
+				book: "Sherlock Holmes",
+				author: "Arthur Conan Doyle",
+				genre: "Mystery"
+			};
+	
+			for (let key in exampleObj) {
+				if (exampleObj.hasOwnProperty(key))
+				{
+					value = exampleObj[key];
+					console.log(key, value);
+				}
+			}
+		}
+	</script>
+</body>
+
+</html>
+Method 2: Object.entries() map: The Object.entries() method is used to return an array of the object’s own enumerable string-keyed property pairs. The returned array is used with the map() method to extract the key and value from the pairs.
+Object.entries(exampleObj).map(entry => {
+	let key = entry[0];
+	let value = entry[1];
+	console.log(key, value);
+});
+<!DOCTYPE html>
+<html>
+	
+<head>
+	<title>
+		How to iterate over
+		a JavaScript object?
+	</title>
+</head>
+
+<body>
+	<h1 style="color: green">
+		GeeksforGeeks
+	</h1>
+	
+	<b>
+		How to iterate over
+		a JavaScript object?
+	</b>
+	
+	<p>
+		Click on the button to iterate
+		through the javascript object.
+	</p>
+	
+	<p>
+		Check the console
+		for the output
+	</p>
+	
+	<button onclick="iterateObject()">
+		Iterate Object
+	</button>
+	
+	<script type="text/javascript">
+		function iterateObject() {
+			let exampleObj = {
+				book: "Sherlock Holmes",
+				author: "Arthur Conan Doyle",
+				genre: "Mystery"
+			};
+	
+			Object.entries(exampleObj).map(entry => {
+				let key = entry[0];
+				let value = entry[1];
+				console.log(key, value);
+			});
+		}
+	</script>
+</body>
+
+</html>
+3.Explain about promises and create a custom promises with simple examples?
+A JavaScript Promise object contains both the producing code and calls to the consuming code 
+syntax:let myPromise = new Promise(function(myResolve, myReject) {
+    // "Producing Code" (May take some time)
+    
+      myResolve(); // when successful
+      myReject();  // when error
+    });
+    
+    // "Consuming Code" (Must wait for a fulfilled Promise)
+    myPromise.then(
+      function(value) { /* code if successful */ },
+      function(error) { /* code if some error */ }
+    );
+    example:<!DOCTYPE html>
+    <html>
+    <body>
+    
+    <h2>JavaScript Promise</h2>
+    
+    <p id="demo"></p>
+    
+    <script>
+    function myDisplayer(some) {
+      document.getElementById("demo").innerHTML = some;
+    }
+    
+    let myPromise = new Promise(function(myResolve, myReject) {
+      let req = new XMLHttpRequest();
+      req.open('GET', "mycar.html");
+      req.onload = function() {
+        if (req.status == 200) {
+          myResolve(req.response);
+        } else {
+          myReject("File not Found");
+        }
+      };
+      req.send();
+    });
+    
+    myPromise.then(
+      function(value) {myDisplayer(value);},
+      function(error) {myDisplayer(error);}
+    );
+    </script>
+    
+    </body>
+    </html>
+4.What is implicit type coercion in javaScript?    
+type conversion is the process of converting data of one type to another. For example: converting String data to Number.
+Implicit Conversion - automatic type conversion
+n certain situations, JavaScript automatically converts one data type to another (to the right type). This is known as implicit conversion.
+// numeric string used with + gives string type
+let result;
+
+result = '3' + 2; 
+console.log(result) // "32"
+
+result = '3' + true; 
+console.log(result); // "3true"
+
+result = '3' + undefined; 
+console.log(result); // "3undefined"
+
+result = '3' + null; 
+console.log(result); // "3null"
+5.Explain passed by value and passed by referrence in javaScript?
+Pass By Value: In Pass by value, function is called by directly passing the value of the variable as an argument. So any changes made inside the function does not affect the original value.In Pass by value, parameters passed as an arguments create its own copy
+function Passbyvalue(a, b) {
+	let tmp;
+	tmp = b;
+	b = a;
+	a = tmp;
+	console.log(`Inside Pass by value
+		function -> a = ${a} b = ${b}`);
+}
+
+let a = 1;
+let b = 2;
+console.log(`Before calling Pass by value
+		Function -> a = ${a} b = ${b}`);
+
+Passbyvalue(a, b);
+
+console.log(`After calling Pass by value
+	Function -> a =${a} b = ${b}`);
+Pass by Reference: In Pass by Reference, Function is called by directly passing the reference/address of the variable as an argument. So changing the value inside the function also change the original value. In JavaScript array and Object follows pass by reference property.
+function PassbyReference(obj) {
+	let tmp = obj.a;
+	obj.a = obj.b;
+	obj.b = tmp;
+
+	console.log(`Inside Pass By Reference
+		Function -> a = ${obj.a} b = ${obj.b}`);
+}
+
+let obj = {
+	a: 10,
+	b: 20
+
+}
+console.log(`Before calling Pass By Reference
+	Function -> a = ${obj.a} b = ${obj.b}`);
+
+PassbyReference(obj)
+
+console.log(`After calling Pass By Reference
+	Function -> a = ${obj.a} b = ${obj.b}`);
+6.What is difference between flex and css grid explain with examples?
+CSS Grid Layout, is a two-dimensional grid-based layout system with rows and columns, making it easier to design web pages without having to use floats and positioning. Like tables, grid layout allow us to align elements into columns and rows.To get started you have to define a container element as a grid with display: grid, set the column and row sizes with grid-template-columns and grid-template-rows, and then place its child elements into the grid with grid-column and grid-row.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.main{
+			
+			display: grid;
+			display: grid;
+			grid: auto auto / auto auto auto auto;
+			grid-gap: 10px;
+			background-color: green;
+			padding: 10px;
+		}
+		.gfg {
+			background-color: rgb(255, 255, 255);
+			text-align: center;
+			padding: 25px 0;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center;">Welcome To GeeksForGeeks </h2>
+	<div class="main">
+		<div class="gfg">Home</div>
+		<div class="gfg">Read</div>
+		<div class="gfg">Write</div>
+		<div class="gfg">About Us</div>
+		<div class="gfg">Contact Us</div>
+		<div class="gfg">Privacy Policy</div>
+	</div>
+</body>
+</html>
+Flexbox:The CSS Flexbox offers a one-dimensional layout. It is helpful in allocating and aligning the space among items in a container (made of grids). It works with all kinds of display devices and screen sizes.
+To get started you have to define a container element as a grid with display: flex;
+Example:<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		.main{
+			
+			display: flex;
+			display: flex;
+			grid: auto auto / auto auto auto auto;
+			grid-gap: 10px;
+			background-color: green;
+			padding: 10px;
+		}
+		.gfg {
+			background-color: rgb(255, 255, 255);
+			text-align: center;
+			padding: 25px 0;
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h2 style="text-align: center;">Welcome To GeeksForGeeks </h2>
+	<div class="main">
+		<div class="gfg">Home</div>
+		<div class="gfg">Read</div>
+		<div class="gfg">Write</div>
+		<div class="gfg">About Us</div>
+		<div class="gfg">Contact Us</div>
+		<div class="gfg">Privacy Policy</div>
+	</div>
+</body>
+</html>
+7.Explain about Currying with examples?
+Currying is a technique of evaluating function with multiple arguments, into sequence of functions with single argument.In other words, when a function, instead of taking all arguments at one time, takes the first one and return a new function that takes the second one and returns a new function which takes the third one, and so forth, until all arguments have been fulfilled.
+Uses of currying function: a) It helps to avoid passing same variable again and again. b) It is extremely useful in event handling. 
+syntax:
+
+     function Myfunction(a) {
+        return (b) => {
+           return (c) => {
+             return a * b * c
+            }
+        } 
+    }
+Example:html>
+<body>
+<script>
+   function volume(length, width, height) {
+      return length * width * height;
+   }
+   document.write((volume(11,2,3)));
+</script>
+</body>
+</html>
+8.Explain about object prototype and reverse method to string class to reverse a given string?  
+All JavaScript objects inherit properties and methods from a prototype.
+function Person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+  }
+  
+  Person.prototype.name = function() {
+    return this.firstName + " " + this.lastName;
+  }; 
+  Use the reverse() method to reverse the new created array
+  function reverseString(str) {
+  var reverseArray = splitString.reverse(); 
+  const string = prompt('Enter a string: ');
+  }
+ const result = reverseString(string);
+ console.log(result);
+// var reverseArray = ["h", "e", "l", "l", "o"].reverse();
+  // ["o", "l", "l", "e", "h"] 
+ 9.What is the differences between javascript and Typescript?  
+ TypeScript is known as an Object-oriented programming language whereas JavaScript is a prototype based language.
+TypeScript has a feature known as Static typing but JavaScript does not support this feature.
+TypeScript supports Interfaces but JavaScript does not.
+TypeScript is a strongly type.javascript is a loosely type.
+TypeScript allow the data types. javascript didnt allow the all datatypes.
+10.How to acess data from one script block to another script block in javaScript?
+in Javascript one script block to another script block using external script.js file
+Ex:document.getElementById”div1”.innerHTML”Division-1”
