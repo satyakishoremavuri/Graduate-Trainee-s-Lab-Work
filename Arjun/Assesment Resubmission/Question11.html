@@ -5,7 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration form with validations</title>
+    <title>Registration form</title>
+    <style>
+        body {
+            font-family: Calibri;
+            background-color: antiquewhite;
+        }
+
+        form {
+            text-align: center;
+            font-family: Calibri;
+            font-size: 20px;
+            width: 400px;
+            margin: 70px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(255, 0, 106);
+        }
+    </style>
     <script>
         function validateUserName() {
             var userCtrl = document.getElementById('userName');
@@ -34,7 +53,7 @@
             }
             else {
                 if (userCtrl.value.length < 10) {
-                    document.getElementById("MBerror").innerHTML = "Min. 10 numbers are required";
+                    document.getElementById("MBerror").innerHTML = "Mobile number Should be 10 digits only";
                     passCtrl.focus();
                     return false;
                 }
@@ -52,8 +71,8 @@
             }
 
             else {
-                if (userCtrl.value.length < 6) {
-                    document.getElementById("MBerror").innerHTML = "Min. 6 characters are required";
+                if (passCtrl.value.length < 6) {
+                    document.getElementById("passwordError").innerHTML = "Min. 6 characters are required";
                     passCtrl.focus();
                     return false;
                 }
@@ -61,27 +80,23 @@
                 return true;
             }
         }
-        function validateDOB() {
-            var userCtrl = document.getElementById('date');
-            if (userCtrl.value == "") {
-                document.getElementById("DOBerror").innerHTML = "Enter DOB";
-                userCtrl.focus();
+        function validateDateofBirth() {
+            var dateofbirth = document.getElementById("dob");
+            if (dateofbirth.value == "") {
+                document.getElementById("doberror").innerHTML = "Date of Birth is mandatory";
+                dateofbirth.focus();
                 return false;
             }
+
             else {
-                if (userCtrl.value.date < 1985) {
-                    document.getElementById("DOBerror").innerHTML = "Min. age is required";
-                    passCtrl.focus();
-                    return false;
-                }
-                document.getElementById("DOBerror").innerHTML = "";
+
+                document.getElementById("doberror").innerHTML = "";
                 return true;
+
             }
         }
         function validateAddress() {
             var userCtrl = document.getElementById('Address');
-            var atposition = x.indexOf("@");
-            var dotposition = x.lastIndexOf(".");
 
             if (userCtrl.value == "") {
                 document.getElementById("ADDerror").innerHTML = "Enter Address";
@@ -90,7 +105,7 @@
             }
             else {
                 if (userCtrl.value < 10) {
-                    document.getElementById("ADDerror").innerHTML = "Please enter a valid e-mail address \n atpostion:" + atposition + "\n dotposition:" + dotposition;
+                    document.getElementById("ADDerror").innerHTML = "Please enter a valid e-mail address ";
                     passCtrl.focus();
                     return false;
                 }
@@ -112,12 +127,12 @@
             var userCtrl = document.getElementById("userName");
             var userCtrl = document.getElementById("password");
             var userCtrl = document.getElementById("number");
-            var userCtrl = document.getElementById("date");
+            var userCtrl = document.getElementById("txtDate");
             var userCtrl = document.getElementById("Address");
             console.log(userName.value());
             console.log(password.value());
             console.log(number.value());
-            console.log(date.value());
+            console.log(txtDate.value());
             console.log(Address.value());
         }
         sConsole();
@@ -127,9 +142,10 @@
 </head>
 
 <body>
+    <h1>Welcome</h1>
 
-    <form action="login.aspx" method="post" onsubmit="validateData()">
-        <table border="2" cellpadding="10" cellspacing="0" align="center">
+    <form action="login.aspx" method="post" onsubmit="event.preventDefault();validateData();">
+        <table border="2" cellpadding="10" cellspacing="0">
             <tr>
                 <td>Enter User Name</td>
                 <td>
@@ -156,14 +172,15 @@
             <tr>
                 <td>Enter Date Of Birth</td>
                 <td>
-                    <input type="date" id="date" value="" onblur="validateDOB()"> <br>
-                    <span id="DOBerror" style="color: red;"></span>
+                    <input type="date" id="txtDate" value="" onblur="validateDOB()"> <br>
+                    <span class="error" id="lblError" style="color: red;"></span>
                 </td>
             </tr>
             <tr>
                 <td>Enter Address</td>
                 <td>
-                    <input name="Address" id="Address" cols="30" rows="10" onblur="validateAddress()">
+                    <input name="Address" id="Address" cols="30" rows="10" onblur="validateAddress()"><br>
+                    <span id="ADDerror" style="color: red;"></span>
                 </td>
             </tr>
 
