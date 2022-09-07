@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  myName = "Sathesh Kumar";
+  /*
+  Directives :-
+  1. Component Directives
+  2. Attribute Directives
+  3. Structural Directives
+      1. ngIf
+      2. ngFor
+      3. ngSwitch
+  */
+
+  messageStatus = true;
 
   constructor() { }
 
