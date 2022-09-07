@@ -134,7 +134,7 @@ body{
             <!--user name field-->
             <div class="field">
                 <label>UserName</label>
-                <input type="text" placeholder="Enter User Nmae" id="uname" onblur="validateUserName()">
+                <input type="text" placeholder="Enter User Nmae" id="uname">
                 <span class="material-symbols-outlined success">
                     check_circle
                     </span>
@@ -215,8 +215,6 @@ body{
         const dateofbirth = document.getElementById("dob");
 
         const unumber = document.getElementById("unumber") 
-        
-        //date
 
         const address = document.getElementById("address")      
 
@@ -228,9 +226,10 @@ body{
         })
 
 
+
         function Validate(){
           let nameValue = uname.value.trim()
-          let passwordValue = password.value.trim()  
+          let passwordValue = password.value.trim()
           let mnumberValue = unumber.value.trim()
           let addressValue = address.value.trim()
           
@@ -357,45 +356,25 @@ body{
                 return valid
             }
 
-            //date of borth validation
-
-            function validateDateofBirth() {
-                let dateofbirth = dateofbirth.value
-            let parts = dateofbirth.value.split('-');
-            let now = new Date();
-            let year = parseInt(parts[0], 10);
-            let currentYear = now.getFullYear();
-            let day = ( parts[1][0] === '0') ? parseInt(parts[1][1], 10) : parseInt(parts[1], 10);
-            let month = ( parts[2][0] === '0') ? parseInt(parts[2][1], 10) : parseInt(parts[2], 10);
-            }
-
-            if (dateofbirth.value == "") {
+            //date of borth validatio
+            
+            
+             if (dateofbirth.value == "") {
                setError(dob,"Date of Birth is not valid")
                return false;
             }
-            else if( year >= currentYear) {
-                setError(dob,"Date of Birth is not valid")
-                return false;
+            else{
+                setSuccesss(dob)
             }
-            else if( (currentYear - year) < 18 || (currentYear - year) > 80) {
-                setError(dob,"Date of Birth is not valid")
-                return false;
-            }
-            else if( month < 1 || month > 12) {
-                setError(dob,"Date of Birth is not valid")
-                return false;
-                }
-            else if( day < 1 || day > 31 ) {
-                setError(dob,"Date of Birth is not valid")
-                return false;
-            }
-            else {
-                    setSuccesss(dob)  
-                    return true; 
-            }
+            
+           // sir actually this is not wire frame from internet, this my practice validation form, sorry for the putting this form actually that day i am going to home so i am did that, pls check the resubmission form i am satisfy all your form validation conditions except date validation , i am unable to under stand the date validation, i am taking current date in JavaScript by newDate() method and  getting individual date , month , year  from current date, how to compare these current date to user given date, how to split and get individual date , month , year from user given date.
+            
+
+           
+       
 
 
-          
+        
             
             
 
