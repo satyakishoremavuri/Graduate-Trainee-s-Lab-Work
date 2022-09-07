@@ -28,7 +28,28 @@ export class EmployeeComponent implements OnInit {
    }
    public checkAll(){
     if(this.checkAllStatus){
-      this.employees = this.employees.map((emp)) => emp.isSelected = true);
-    }
-   }
+      this.employees = this.employees.map((emp)=> {
+      emp.isSelected = true;
+      return emp;
+    });
 }
+else{
+  this.employees = this.employees.map((emp)=> {
+    emp.isSelected = false;
+    return emp;
+  });
+}
+   }
+   public checkStatus(){
+       let  checkedEmployees = this.employees.filter((emp) => { 
+        if (emp.isSelected)
+          return emp;
+        else
+         return null;
+       });
+       if(checkedEmployees.length==this.employees.length)
+       this.checkAllStatus=true;
+       else
+       this.checkAllStatus=false;
+   }
+  }

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+            margin: 80px;
+        }
+
+    </style>
+    <script>
+         function validateUserName() {
+        var userCtrl = document.getElementById('userName');
+        if (userCtrl.value == "") {
+            document.getElementById("userNameError").innerHTML = "User Name is mandatory";
+            userCtrl.focus();
+            return false;
+        }
+        else {
+            if (userCtrl.value.length < 6) {
+                document.getElementById("userNameError").innerHTML = "Min. 6 characters are required";
+                passCtrl.focus();
+                return false;
+            }
+            document.getElementById("userNameError").innerHTML = "";
+            return true;
+        }
+    }
+    function validatePassWord() {
+        var userCtrl = document.getElementById('password');
+        if (userCtrl.value == "") {
+            document.getElementById("passwordError").innerHTML = "Password is mandatory";
+            userCtrl.focus();
+            return false;
+        }
+        else {
+            if (userCtrl.value.length < 6) {
+                document.getElementById("PasswordError").innerHTML = "Min. 6 characters are required";
+                passCtrl.focus();
+                return false;
+            }
+            document.getElementById("PasswordError").innerHTML = "";
+            return true;
+        }
+    }
+    function validateMobileNumber() {
+        var userCtrl = document.getElementById('mobilenumber');
+        if (userCtrl.value == "") {
+            document.getElementById("mobilenumberError").innerHTML = "MobileNumber is mandatory";
+            userCtrl.focus();
+            return false;
+        }
+        else {
+            if (userCtrl.value.length < 10) {
+                document.getElementById("MobileNumberError").innerHTML = "Min. 10 characters are required";
+                passCtrl.focus();
+                return false;
+            }
+            document.getElementById("MobileNumberError").innerHTML = "";
+            return true;
+        }
+    }
+    function validateAddress() {
+        var userCtrl = document.getElementById('Address');
+        if (userCtrl.value == "") {
+            document.getElementById("AddressError").innerHTML = "Address is mandatory";
+            userCtrl.focus();
+            return false;
+        }
+        else {
+            if (userCtrl.value.length < 30) {
+                document.getElementById("AddressError").innerHTML = "Min. 30 characters are required";
+                passCtrl.focus();
+                return false;
+            }
+            document.getElementById("AddressError").innerHTML = "";
+            return true;
+        }
+    }
+   
+
+    </script>
+</head>
+<body>
+    <form action="" method="post">
+        Enter UserName: <input type="text" id="username" name="username" placeholder="UserName" value="" onblur="validateUserName" required><br>
+        <span>Enter UserName</span><br><br>
+        Enter Password: <input type="password" id="password" name="password" placeholder="Password" value="" onblur="validatePassWord" required><br>
+        <span>Enter Password</span><br><br>
+        Enter Mobile Number: <input type="text" id="mobilenumber " name="mobilenumber" value="" placeholder="MobileNumber" onblur="validateMobileNumber" required><br>
+        <span>Enter Mobile Number</span><br><br>
+        Enter Date of Birth: <input type="date" id="dateofbirth" name="dateofbirth" value="" placeholder="Date Of Birth"  required><br>
+        <span>Enter Date Of Birth</span><br><br>
+        Enter Address: <input type="text" id="address" name="address" value="" placeholder="Address" onblur="validateAddress"required><br>
+        <span>Enter Address</span><br><br>
+        <input type="text" name="registerhere" id="registerhere" value="" placeholder="Register Here"><br><br>
+
+    </form>
+</body>
+</html>
