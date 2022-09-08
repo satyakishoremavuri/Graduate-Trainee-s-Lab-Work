@@ -1,0 +1,296 @@
+Question Number 1
+
+What is Callback function and callback hell in javascript ?
+
+CallBack Function:
+
+Any function that is passed as an argument to another function so that it can be executed in that other function is
+called as a callback function
+They are basically functions that are executed only after a result is produced.
+Callbacks are an important part of asynchronous JavaScript.
+
+Example :
+
+function myFirst() {
+myDisplayer("Hello");
+}
+
+function mySecond() {
+myDisplayer("Goodbye");
+}
+
+myFirst();
+mySecond();
+
+CallBack Hell:
+
+Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure.
+Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability
+and maintainability of the code.
+
+Example :
+
+function step1(){
+setTimeout(()=>{
+console.log("step one done")
+setTimeout(()=>{
+console.log("step2 done")
+setTimeout(()=>{
+console.log("step3 done")
+setTimeout(()=>{
+console.log("step4 done")
+setTimeout(()=>{
+console.log("step5 done")
+},1000)
+},1000)
+},2000)
+},2000)
+},2000)
+}
+
+step1()
+
+Question Number 2
+
+Explain how to iterate an object in javaScript ?
+
+Iterating an object in javascript is known as object increament/ decreament.
+when we assign a value to object then it starts iterating from initialization.
+
+Example:
+
+function iterateObject() {
+let exampleObj = {
+book: "Shiva",
+author: "Shiva",
+genre: "Mystery"
+};
+
+for (let key in exampleObj) {
+if (exampleObj.hasOwnProperty(key))
+{
+value = exampleObj[key];
+console.log(key, value);
+}
+}
+}
+
+Question Number 3
+
+Explian about Promises and create a custome promise with Example ?
+
+A promise is fixed value and cannot be changed.A promise is that produce the data and consume the data.
+A promise is of 3 types: Pending, Reject, Complete
+
+Example:
+
+let promise=new Promise((resolve, reject) => {
+let a=10;
+let b=100;
+let c=b/a;
+if(a>b)
+resolve(c);
+else
+reject("invalid data");
+});
+promise
+.then(data=>console.log(data))
+.finally(()=>console.log("finally block"));
+
+Question Number 4
+
+What is implicit type conversion in javaScript ?
+
+Type conversion is the process of converting data of one type to another.
+
+There are two types of type conversion in JavaScript.
+
+Implicit Conversion - automatic type conversion
+Explicit Conversion - manual type conversion
+
+Implicit Type conversion Example:
+
+let result;
+
+result = '3' + 2;
+console.log(result) // "32"
+
+result = '3' + true;
+console.log(result); // "3true"
+
+result = '3' + undefined;
+console.log(result); // "3undefined"
+
+result = '3' + null;
+console.log(result); // "3null"
+
+When a number is added to a string, JavaScript converts the number to a string before concatenation.
+
+Example 2:
+
+let result;
+
+result = '4' - '2';
+console.log(result); // 2
+
+result = '4' - 2;
+console.log(result); // 2
+
+result = '4' * 2;
+console.log(result); // 8
+
+result = '4' / 2;
+console.log(result); // 2
+
+Question Number 5
+
+Explain pass by value and pass by reference in javaScript ?
+
+Pass by value:
+
+Here, function is called by directly passing the value of the variable as an argument. So any changes made inside the
+function does not affect the original value.
+In Pass by value, parameters passed as an arguments create its own copy. So any changes made inside the function is made
+to the copied value not to the original value .
+
+Example:
+
+function callByValue(varOne, varTwo) {
+console.log("Inside Call by Value Method");
+varOne = 100;
+varTwo = 200;
+console.log("varOne =" + varOne +"varTwo =" +varTwo);
+}
+let varOne = 10;
+let varTwo = 20;
+console.log("Before Call by Value Method");
+console.log("varOne =" + varOne +"varTwo =" +varTwo);
+callByValue(varOne, varTwo)
+console.log("After Call by Value Method");
+console.log("varOne =" + varOne +"varTwo =" +varTwo);
+
+Pass by Reference:
+
+In Pass by Reference, Function is called by directly passing the reference of the variable as the argument. Changing the
+argument inside the function affect the variable passed from outside the function. In Javascript objects and arrays
+follows pass by reference.
+
+Example:
+
+function callByReference(varObj) {
+console.log("Inside Call by Reference Method");
+varObj.a = 100;
+console.log(varObj);
+}
+let varObj = {a:1};
+console.log("Before Call by Reference Method");
+console.log(varObj);
+callByReference(varObj)
+console.log("After Call by Reference Method");
+console.log(varObj);
+
+Question Number 6
+
+What is the difference between Flex and CSS grid ?
+
+Flexbox:
+Flexbox allows designers to position responsive elements appropriately within screens of different sizes. The tools
+include:
+box layout for documents,
+an inline layout for defining the appearance of text on screens,
+a table layout to depict tabular data in one dimension,
+and a positioned layout mode that enables explicit positioning of responsive elements.
+
+It allows to create multiple instances of dynamic layouts and effortlessly align content within containers.
+
+Example:
+<div class="flex-container"></div>
+
+CSS grid:
+Grid containers consist of grid items, placed inside columns and rows.
+In order to make an HTML element behave as a grid container, you have to set the display property to grid or
+inline-grid.
+To define a grid container, you will have to pass a display: grid property to your element.
+CSS Grids helps to create the outer layout of the webpage. Ywe can build complex as well responsive design with this
+
+Example:
+.grid-container {
+display: grid;
+height: 400px;
+align-content: center;
+}
+
+Question Number 7
+
+Explain about currying with example ?
+
+Currying transforms a function with multiple arguments into a sequence/series of functions each taking a single
+argument.
+Currying is a function that takes one argument at a time and returns a new function expecting the next argument
+
+Currying simply means evaluating functions with multiple arguments and decomposing them into a sequence of functions
+with a single argument.
+In other terms, currying is when a function, instead of taking all arguments at one time, takes the first one and
+returns a new function, which takes the second one and returns a new function, which takes the third one, etc. until all
+arguments are completed.
+It helps you to avoid passing the same variable again and again.
+
+Example:
+
+const addCurry =(a) => {
+return (b)=>{
+return (c)=>{
+return a+b+c
+}
+}
+}
+console.log(addCurry(2)(3)(5))
+
+Question Number 8
+
+Explian about object prototype and add reverse method to string class to reverse a given string ?
+
+JavaScript function has a prototype object property that is empty by default.
+We can initialize methods and properties to this prototype for creating an object.
+We can create an object using this function constructor which will inherit the properties of this constructor.
+
+Example:
+
+function Employee(name, id, job) {
+this.name = name;
+this.id = id;
+this.job = job;
+}
+
+// creating an Object from prototype
+let Employee1 = new
+Employee('Mike', 2364, 'developer');
+console.log(Employee1);
+
+let Employee2 = new
+Employee('Kole', 8896, 'tester');
+console.log(Employee2);
+
+Question Number 9
+
+What are the differences between javascript and TypeScript ?
+
+JavaScript:
+JavaScript is a prototype based language.
+JavaScript does not support static typing feature.
+JavaScript does not support Interfaces.
+Javascript is a looselytyped and standalone
+Javascript allows all datatypes.
+
+TypeScript:
+TypeScript is known as an Object-oriented programming language
+TypeScript has a feature known as Static typing
+TypeScript supports Interfaces.
+
+Question Number 10
+
+How to access data from one script block to another script block ?
+
+Src attribute can be used in
+this case when a script should be taken into another script box. With the help of src attribute data can be derived from
+different script blocks.

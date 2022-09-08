@@ -14,16 +14,17 @@
             { empNumber: 104, empName: 'AJAAM', empSalary: 50000 },
             { empNumber: 105, empName: 'RAMU', empSalary: 60000 },
         ];
-        var str = "<table border='1' cellpadding='10' cellspacing='0'>";
-        str += "<tr><th>Employee Number</th>Employee Name<th>Employee Salary</th></tr>";
+        var str = "<table border ='1' cellpadding = '10' cellspacing='0'>";
+        str += "<tr><th>Employee Id</th><th>Employee Name</th><th>Employee Salary</th></tr>";
         for (let i = 0; i < employees.length; i++) {
             str += "<tr>";
-            str = "<td>" + employees[i].empNumber + "</td>";
-            str = "<td>" + employees[i].empName + "</td>";
-            str = "<td>" + employees[i].empSalary + "</td>";
-            str = "</tr>";
+            str += "<td>" + employees[i].empNumber + "</td>";
+            str += "<td>" + employees[i].empName + "</td>";
+            str += "<td>" + employees[i].empSalary + "</td>";
+            str += "</tr>";
+
         }
-        str = str + "</table>";
+        str += "</table>";
         document.write(str);
     </script>
 </head>
