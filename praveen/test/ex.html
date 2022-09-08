@@ -1,0 +1,86 @@
+1a) first question answer
+callback function is are used as parameters to the others functions and call back hell is concept of where it effect various call back functions 
+exmpl:if there is error in one function there will be effect in the other function aslo
+
+2A) secound question answer
+Using for...in statement
+Using Object.entries() method and for...of statement
+Using Object.keys() method and for...of statement
+
+3A) third question answer
+JavaScript Promise object contains both the producing code and calls to the consuming code
+exmple:
+let myPromise = new Promise(function(Resolve, Reject) {
+// "Producing Code"
+
+  Resolve(); // when successful
+  Reject();  // when error
+});
+
+// "Consuming Code" (Must wait for a fulfilled Promise)
+myPromise.then(
+  function(value) /* code if successful */
+  function(error) /* code if some error */
+)
+
+4A) fourth question answers 
+implicit type refers that converion of vaules of one data type to the another data type 
+ 
+ 5a)fifth question answer 
+ In passed by value a copy of the original variable is created 
+ In passed by reference we pass the reference of the actual parameter so no copy is created in the memory.
+ 
+ 6A)six question answers 
+  Flexbox is one dimensional and CSS grid is two-dimensional flex delas good with single dimesional layouts and css grid deals with 2 dimensional layouts 
+  that is the main difference 
+  
+  7A) seventh question answer
+  currying helps you to avoid passing the same variable again and again
+  curring helps to manage multiple arguments intlo single aruguments 
+  
+  9) ninght question answer 
+  the differnce between javascript and typescrpir are :
+  javascrpit is supported by the any web browser
+  typescrpit is not supported by the web browser and we can detect the error at run time in process
+  typescript must convert to the js file and must be exceuted.
+  javascript is loosly typed type script is strongly 
+  
+  10a) tenth question answer 
+  paste the entire script block and moving it into the headpart 
+  
+  11a) question answer 
+  creating a form 
+  <html>
+<head>
+<title>Javascript Login Form </title>
+
+<link rel="stylesheet" href="css/style.css"/>
+
+<script src="js/login.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<h2>Javascript Login Form Validation</h2>
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username"/><br><br>
+<label>Password :</label>
+<input type="password" name="password" id="password"/> <br> <br>
+<label> phonenumber : </label>
+<input type="tel" name="phonenumber" id="phonenumber"/> <br><br>
+<label>date of birth</label>
+<input type="date" name="date of birth" id ="date if birth"/> <br><br>
+<label>enter the address</label>
+<input type="text" name="address" id="address"> <br><br>
+<input type="button" value="Register User" id="submit" onclick="validate()"/>
+
+
+</form>
+<span> <b><br> <class="valid">User Name : sathesh<br/>Password : satish@123 <br> mobile:7013814324 <br> dob:07-07-1978 <br> address :{<br> door number: 101 <br>
+area number:kphb <br> city name :hyderbad }
+</b> </span>
+</div>
+</div>
+</body>
+</html>

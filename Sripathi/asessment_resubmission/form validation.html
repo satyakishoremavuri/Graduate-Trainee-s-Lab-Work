@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+        *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #607680;
+}
+
+.container{
+    background-color: white;
+    border-radius: 5px;
+    width: 400px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.header{
+    background-color: #f7f7f7;
+    padding: 20px 40px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.field{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.field label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.field input:not(.terms){
+    display: block;
+    border-radius: 4px;
+    border:2px solid #f0f0f0;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+}
+
+.field span{
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    visibility: hidden;
+}
+
+.field small{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+.form .button{
+    background-color: rgb(90,102,235);
+    border: 2px solid rgb(90,102,235);
+    color:white;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+}
+
+.field.success input{
+    border-color: #2ecc71;
+}
+
+.field.error input{
+    border-color: #e74c3c;
+}
+
+.field.success span.success{
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.field.error span.error{
+  color:   #e74c3c;
+  visibility: visible;
+}
+
+.field.error span.success{
+    visibility: none;
+}
+
+.field.success span.error{
+    visibility: none;
+}
+
+.field.error small{
+    visibility:visible;
+    color: #e74c3c;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="header">
+            <h2>Register Here</h2>
+        </div>
+
+        <form action="index.html" class="form" id="form">
+
+            <!--user name field-->
+            <div class="field">
+                <label>UserName</label>
+                <input type="text" placeholder="Enter User Nmae" id="uname">
+                <span class="material-symbols-outlined success">
+                    check_circle
+                    </span>
+                    <span class="material-symbols-outlined error">
+                        error
+                        </span>
+                <small>Error Message</small>
+            </div>
+
+
+                <!--password field-->
+            <div class="field" style="margin-bottom: 5px;">
+                <label>Password</label>
+                <input type="password" placeholder="password" id="password">
+                <span class="material-symbols-outlined success">
+                    check_circle
+                    </span>
+                    <span class="material-symbols-outlined error">
+                        error
+                        </span>
+                <small>Error Message</small>
+            </div>
+
+
+                <!--mobile number field-->
+            <div class="field">
+                <label>Enter Mobile Number</label>
+                <input type="number" placeholder="Mobile number" class="unmber" id="unumber">
+                <span class="material-symbols-outlined success">
+                    check_circle
+                    </span>
+                    <span class="material-symbols-outlined error">
+                        error
+                        </span>
+                <small>Error Message</small>
+            </div>
+           
+            <!--date field-->
+            <div class="field">
+                <label>Date of birth</label>
+                <input type="date" placeholder="Date of birth" id="dob">
+                <span class="material-symbols-outlined success">
+                    check_circle
+                    </span>
+                    <span class="material-symbols-outlined error">
+                        error
+                        </span>
+                <small>Error Message</small>
+            </div>
+
+
+            <!--address field-->
+            <div class="field">
+                <label>Enter Address</label>
+                <input type="text" placeholder="address" id="address">
+                <span class="material-symbols-outlined success">
+                    check_circle
+                    </span>
+                    <span class="material-symbols-outlined error">
+                        error
+                        </span>
+                <small>Error Message</small>
+            </div>
+
+            <input type="submit" class="button">
+        </form>
+    </div>
+
+
+
+    <script >
+        const form = document.getElementById("form")
+    
+        const uname = document.getElementById("uname")
+
+        const password = document.getElementById("password")
+
+        const dateofbirth = document.getElementById("dob");
+
+        const unumber = document.getElementById("unumber") 
+
+        const address = document.getElementById("address")      
+
+
+        form.addEventListener('submit',(e)=>{
+            e.preventDefault()
+        
+            Validate()
+        })
+
+
+
+        function Validate(){
+          let nameValue = uname.value.trim()
+          let passwordValue = password.value.trim()
+          let mnumberValue = unumber.value.trim()
+          let addressValue = address.value.trim()
+          
+         
+         // user name validation
+
+         if(nameValue === ''){
+          setError(uname,"user name can not be empty")
+          
+         }
+         else if(nameValue.length<8){
+         setError(uname,'user name should be minium 6 character')
+         }
+         else if(!unmCheck(nameValue)){
+            setError(uname,"user name does not allow special charactors & numbers")
+         }
+         else{
+          setSuccesss(uname)
+         }
+
+
+         
+         //password validation
+
+         if(passwordValue===''){
+          setError(password,'password cannot be empty')
+         } 
+         else if(passwordValue.length<6){
+         setError(password,'password shoud be minimum 6 charatcers')
+         }
+         else if(!passwordCheck(passwordValue)){
+            setError(password,"password contain one upper & lower case & special charactor")
+         }
+         else{
+          setSuccesss(password)
+         }
+
+
+         //mobile number validation
+
+         if(mnumberValue === ''){
+            setError(unumber,"number can not be empty")
+         }
+         else if(!umnCheck(mnumberValue)){
+            setError(unumber,"enter valid number")
+         }
+         else{
+            setSuccesss(unumber)
+         }
+
+        
+       
+         
+         // address validation
+
+         if (addressValue === ''){
+            setError(address,"address can not be empty")
+         }
+         else if(!adCheck(addressValue)){
+            setError(address,"enter valid adress")
+         }
+         else{
+            setSuccesss(address)
+         }
+
+        
+
+
+
+
+         function setError(input,message){
+            let parent = input.parentElement;
+            let small = parent.querySelector('small')
+            small.innerText = message
+            parent.classList.add('error')
+            parent.classList.remove('success')
+         }
+
+
+         function setSuccesss(input){
+            let parent = input.parentElement;
+            parent.classList.add('success')
+            parent.classList.remove('error')
+         }
+
+
+
+           //username condition check
+
+           function unmCheck(input){
+                let userReg = /^[a-zA-Z\_]+$/;
+                let valid = userReg.test(input)
+                console.log(valid)
+                return valid
+                userCtrl.focus();
+                
+
+            }
+
+            // password condition check
+
+            function passwordCheck(input){
+                let passReg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/;
+                let valid = passReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            // mobile number condition check
+
+            function umnCheck(input){
+                let umnReg = /^\d{10}$/
+                let valid = umnReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            // addres condition check
+
+            function adCheck(input){
+                let adReg = /^[a-zA-Z\,]+$/;
+                let valid = adReg.test(input)
+                console.log(valid)
+                return valid
+            }
+
+            //date of borth validatio
+            
+            
+             if (dateofbirth.value == "") {
+               setError(dob,"Date of Birth is not valid")
+               return false;
+            }
+            else{
+                setSuccesss(dob)
+            }
+            
+           // sir actually this is not wire frame from internet, this my practice validation form, sorry for the putting this form actually that day i am going to home so i am did that, pls check the resubmission form i am satisfy all your form validation conditions except date validation , i am unable to under stand the date validation, i am taking current date in JavaScript by newDate() method and  getting individual date , month , year  from current date, how to compare these current date to user given date, how to split and get individual date , month , year from user given date.
+            
+
+           
+       
+
+
+        
+            
+            
+
+        };
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <input type="button" (click)= "navigateRoute('')" class="btn btn-link" value="Home">&nbsp; &nbsp;|&nbsp; &nbsp;
+    <input type="button" (click)= "navigateRoute('employee')"class="btn btn-link" value="employee">&nbsp; &nbsp;|&nbsp; &nbsp;
+    <input type="button" (click)= "navigateRoute('customer')"class="btn btn-link" value="customer">&nbsp; &nbsp;|&nbsp; &nbsp;
+    </div>
+  </div>
+  <div class="row" style="min-height: 500px;">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      Designed by:sai
+      </div>
+  </div>
+</div>
