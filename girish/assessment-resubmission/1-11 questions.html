@@ -1,0 +1,167 @@
+question 1.what is a call back function and call back hell in java script?
+Ans:
+call back function is executed after one function is executed .
+
+const message = function() {  
+    console.log("This message is shown after 3 seconds");
+}
+ 
+setTimeout(message, 3000);
+the “message” function is being called after 3 seconds have passed.
+
+
+call back:
+The situation where callbacks are nested within other callbacks in pyramidal order, potentially making it difficult to understand and maintain the code.
+let words = document.querySelectorAll(".word");
+  
+const animateAll = (animate) => {
+    setTimeout(() => {
+        animate(words[0]);
+        setTimeout(() => {
+            animate(words[1]);
+            setTimeout(() => {
+                animate(words[2]);
+            }, 1000)
+        }, 1000)
+    }, 1000)
+}
+
+
+
+<Question:2 -iterate an object in java script?>
+ans:
+Object.keys(obj).forEach((k, i) => {
+    if (i >= 100 && i < 300) {
+        console.log(obj[k]);
+    }
+});
+we use iteration to perform a loop for certain amount of times until the out is acheived.
+
+
+
+<Question:3explain about promises and create a custom promisewith example?>
+ans:
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value
+The promise object returned by the new Promise constructor has these internal properties:
+
+state — initially "pending", then changes to either fulfilled when resolve is called or rejected when reject is called.
+result — initially undefined, then changes to value when resolve(value) is called or error when reject(error) is called.
+
+let promise = new Promise(function(resolve, reject) {
+    setTimeout(() => resolve("done!"), 1000);
+  });
+  
+  // resolve runs the first function in .then
+  promise.then(
+    result => alert(result), // shows "done!" after 1 second
+    error => alert(error) // doesn't run
+  );
+
+
+  <Question:4:type conversion in java script?>
+    ans:
+    type conversion is defined as transforming data from one data type to other data type.
+    <p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML =
+Number("3.14") + "<br>" +
+Number(Math.PI) + "<br>" +
+Number("    ") + "<br>" +
+Number("") + "<br>" +
+Number("99 88") + "<br>" +
+Number("John") + "<br>";
+</script>
+
+</body>
+this converts variable to number data type.
+
+
+
+
+Question:5 :passed by value and passed by reference in java script?
+ans:
+In pass by value in JavaScript, a copy of the original variable is created so any changes made to the copied variable do not affect the original variable.
+
+In pass by reference in JavaScript, we pass the reference of the actual parameter. No copy is created in the memory.
+tmp = b;
+b = a;
+a = tmp;
+console.log(`Inside Pass by value 
+    function -> a = ${a} b = ${b}`);
+}
+
+let a = 1;
+let b = 2;
+console.log(`Before calling Pass by value 
+    Function -> a = ${a} b = ${b}`);
+
+Passbyvalue(a, b);
+
+console.log(`After calling Pass by value 
+   Function -> a =${a} b = ${b}`);
+
+
+   Question:6:
+   ans:
+   flex :it is used in creating responsive styling for html documents.
+   example.
+   display:flex;
+   flex direction:justify
+
+
+
+   grid:basically grid is used to produce the elelments in rows and columns order
+
+
+   display:grid;
+
+
+   Question:7:currying?
+   evaluating functions with multiple arguments and decomposing them into a sequence of functions with a single argument
+
+
+   const addCurry =(a) => {
+    return (b)=>{
+        return (c)=>{
+            return a+b+c
+        }
+    }
+}
+console.log(addCurry(2)(3)(5)) // 10
+
+
+
+
+Question:8:
+object-prototype:
+every functions and objects by default in JavaScript, where function's prototype property is accessible and modifiable and object's prototype property is not visible. Every function includes prototype object by default.
+example: 
+const myFather = new Person("John", "Doe", 50, "blue");
+const myMother = new Person("Sally", "Rally", 48, "green");
+
+
+Question:9:access data from ine js file to another?
+ans:In JavaScript, variables can be accessed from another file using the   import or export statement
+example:
+var Student = {
+	name : "ABC",
+	age : 18,
+	dept : "CSE",
+	score : 90
+};
+module.exports = {Student};
+
+
+
+Question:9_java script and type script?
+
+
+JavaScript is a scripting language which helps you create interactive web pages whereas Typescript is a superset of JavaScript.
+Typescript code needs to be compiled while JavaScript code doesnt need to compile.
+Comparing TypeScript and JS, Typescript supports a feature of prototyping while JavaScript doesnt support this feature.
+Typescript uses concepts like types and interfaces to describe data being used whereas JavaScript has no such concept.
+Typescript is a powerful type system, including generics & JS features for large size project whereas JavaScript is an ideal option for small size project.
+
+
+
