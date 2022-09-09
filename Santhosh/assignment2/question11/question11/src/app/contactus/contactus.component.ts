@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-contactus',
+  selector: 'app-root',
   templateUrl: './contactus.component.html',
   styleUrls: ['./contactus.component.css']
 })

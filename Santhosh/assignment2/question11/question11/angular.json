@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "question11": {
+    "AsesQ11": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/question11",
+            "outputPath": "dist/ases-q11",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+
+            ]
           },
           "configurations": {
             "production": {
@@ -64,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "question11:build:production"
+              "browserTarget": "AsesQ11:build:production"
             },
             "development": {
-              "browserTarget": "question11:build:development"
+              "browserTarget": "AsesQ11:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "question11:build"
+            "browserTarget": "AsesQ11:build"
           }
         },
         "test": {
@@ -99,6 +103,6 @@
     }
   },
   "cli": {
-    "analytics": "daecf173-4701-4efd-9078-445f0f286fe8"
+    "analytics": false
   }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Advantages of Arrow function</h3>
+    <ol>
+        <li>This arrow function reduces lots of code and makes the mode more readable.</li>
+        <li>Arrow function syntax automatically binds “this” to the surrounding code’s context.</li>
+        <li>Writing the arrow => is more flexible as compared with the writing function keyword.</li>
+    </ol>
+
+
+    <script>
+
+         document.write('<br><br>'+'arrow function diclaration'+'<br><br>')
+          var sum = (num1,num2)=>{
+            var result = num1 + num2
+            return result
+        }
+
+        document.write(sum(2,4));
+
+
+        document.write('<br><br>'+'arrow function using in single state ments'+'<br><br>')
+
+        product = (num1,num2)=> num1*num2
+        document.write(product(5,7))
+
+
+        document.write('<br><br>'+'arrow function using in single parameter'+'<br><br>')
+
+        product = (num1)=>num1*num1*num1
+        document.write(product(5))
+
+
+        document.write('<br><br>'+'arrow function using in no arguments'+'<br><br>')
+
+        var greet = ()=>document.write("Good morning")
+
+        greet()
+
+
+
+    </script>
+</body>
+</html>

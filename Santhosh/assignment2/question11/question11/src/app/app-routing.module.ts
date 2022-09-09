@@ -2,9 +2,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: home },
-  { path: 'about', loadChildren: () => import("./about/about.module").then(x => x.aboutModule) },
-  { path: 'contactus', loadChildren: () => import("./contactus/contactus.module").then(x => x.ContactusModule) }
+  { path:"", loadChildren: () => import('./home/home.module').then(x => x.HomeModule) },
+  { path:"about", loadChildren: () => import('./about/about.module').then(x => x.AboutModule) },
+  { path:"services", loadChildren: () => import('./services/services.module').then(x => x.ServicesModule) },
+  { path:"contactus", loadChildren: () => import('./contact/contact.module').then(x => x.ContactModule) },
+
+
 ];
 
 @NgModule({
@@ -12,4 +15,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
