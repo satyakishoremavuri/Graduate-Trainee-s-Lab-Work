@@ -98,14 +98,14 @@
 
 7)BUILDING BLOCKS OF ANGULAR:
   The basic building blocks of angular are:
-   Modules
-   Components
-   Templates
-   Metadata
-   Data binding
-   Directives
-   Services
-   Dependency injection
+   ->Modules
+   ->Components
+   ->Templates
+   ->Metadata
+   ->Data binding
+   ->Directives
+   ->Services
+   ->Dependency injection
 
  ->Modules:
   In angular we have  at least one module which we call app module.

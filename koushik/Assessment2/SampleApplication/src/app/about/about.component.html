@@ -1,0 +1,16 @@
+<body ng-app="">
+
+    <p>Choose a option:</p>
+
+    <select ng-model="home">
+    <option value="companyoverview">COMPANY OVERVIEW</option>
+    <option value="leadership">LEADERSHIP</option>
+    </select>
+
+    <div ng-class="home">
+    </div>
+    </body>
+
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+        <h1 ng-style="myObj">Welcome to here</h1>
