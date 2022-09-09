@@ -62,8 +62,6 @@
                 }
                 document.getElementById("passwordError").innerHTML = "";
                     return true;
-
-
         }
 
         function validateMobile() {
@@ -83,10 +81,8 @@
                 
                     document.getElementById("MobilenumError").innerHTML = "";
                     return true;
-                
             }
         }
-
         function validateDateofBirth() {
             var dateofbirth = document.getElementById("dob");
             let parts = dateofbirth.value.split('-');
@@ -155,11 +151,10 @@
             let mStatus = validateMobile();
             let bStatus = validateDateofBirth();
             let aStatus = validateAddress();
-            events.preventDefault();
-
+            let message = [];
 
             if (uStatus == false || pStatus == false || mStatus == false || bStatus == false || aStatus == false) {
-                event.preventDefault();
+                message.push('enter all Details properly')
             }
             else{
                 var address={
@@ -177,17 +172,27 @@
 
                 }
                 console.log(persons);
-                event.preventDefault();
-
             }
+            e.preventDefault()
+
+            reginfo.push(Info);
+            document.forms[0].reset();
+            console.warn('added', { reginfo });
+            let pre = document.querySelector('#msg pre');
+            pre.textContent = '\n' + JSON.stringify(reginfo, '\t', 5);
+
         }
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.getElementById('btn').addEventListener('click', addInfo);
+        });
 
     </script>
 
 </head>
 
 <body>
-
+    <center>
     <form  novalidate onsubmit="validateData()">
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
@@ -240,7 +245,7 @@
             
         </table>
     </form>
-
+</center>
 </body>
 
 </html>

@@ -1,0 +1,203 @@
+1)CLOSURES:
+  A closure is the combination of a function bundled together (enclosed) with references to its surrounding state 
+  and it gives access to an outer function's scope from an inner function. 
+  closures are created every time a function is created.
+   
+  example:
+   function myFun() {
+   const name = 'koushik';
+   function displayName() {
+    console.log(name);
+  }
+  return displayName;
+  }
+  const displayFun = myFun();
+  displayFun();
+
+2)SHALLOW COPY:
+   Shallow copy is done when a reference variable is copied into a new reference variable using assignment operator and new reference object is created.
+   In a shallow copy the old variable address is stored and whenever a new variable is created the address of old one is stored in new object and shares the same memory location.
+   hence,the changes made in here are reflects in both new and old object. 
+   Example:
+     var employee = {
+    eid: "12",
+    ename: "koushik",
+    eaddress: "Hyderabad",
+    salary: 20000
+   }
+  
+   console.log("Employee=> ", employee);
+   var newEmployee = employee;  
+   console.log("New Employee=> ", newEmployee);
+   newEmployee.ename = "anumasa";
+   console.log("Employee=> ", employee);
+   console.log("New Employee=> ", newEmployee);
+
+
+  DEEP COPY:
+    Deep copy is quite opposite than the shallow copy.
+    Because,deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object.
+    since,every object has different memory location the changes made in object doesn't effect the other objects like in shallow copy. 
+    In deep copy JSON.parse() and JSON.stringify() methods are used. 
+    Example:
+    var employee = {
+    eid: "21",
+    ename: "koushik",
+    eaddress: "Hyderabad",
+    salary: 20000
+    }
+    var newEmployee = JSON.parse(JSON.stringify(employee));
+    console.log("Employee=> ", employee);
+    console.log("New Employee=> ", newEmployee);
+    newEmployee.ename = "anumasa";
+    newEmployee.salary = 30000;
+    console.log("Employee=> ", employee);
+    console.log("New Employee=> ", newEmployee);
+
+3)DESTRUCTING OF AN OBJECT IN JAVASCRIPT:
+   Destructuring in java script allows to extract the data from arrays,abjects and maps and set them into a new variable.
+   it allows to extract multiple items at a time in an array.
+
+  Example:
+  let a, b;
+  [a, b] = [10, 20];
+  console.log(a);
+  console.log(b);
+
+4)Advantages of using Arrow Function:
+  The advantages of arrow functions,they are:
+  1.arrow functions reduces lots of code and makes more readable.
+  2.it's syntax automatically binds 'this' to surrounding content.
+  3.it is more easy to write arrow function than writing every time function keyword.
+  Example:
+  
+    let checkNumber = (num) => num > 10 ?
+        console.log("Yes") : console.log("No");
+ 
+    checkNumber(5);
+    checkNumber(10);
+    checkNumber(20);
+    checkNumber(32);
+
+
+5)HIGHER-ORDER FUNCTION:
+  A function that receives another function as an argument or that returns a new function or both is called Higher-order functions. 
+  Higher-order functions are only possible because of the First-class function.
+  The “higher-order” concept can be applied to functions in general, like functions in the mathematical sense.
+  The presence of a Higher-order function does not imply the presence of a First-order function.
+  Functions such as filter(),map(),reduce(),some() etc, are examples of Higher-Order Functions.
+
+
+
+6)EVENT LOPPING:
+  An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+  The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded.
+  the callback function in the event queue has not yet run and is waiting for its time into the stack when the SetTimeOut() is being executed and the Web API is making the mentioned wait.
+  When the function stack becomes empty, the function gets loaded onto the stack and the event loop comes into picture, it takes the first event from the Event Queue and places it onto the stack 
+  i.e in this case the callback function. From here, this function executes calling other functions inside it.
+
+7)BUILDING BLOCKS OF ANGULAR:
+  The basic building blocks of angular are:
+   Modules
+   Components
+   Templates
+   Metadata
+   Data binding
+   Directives
+   Services
+   Dependency injection
+
+ ->Modules:
+  In angular we have  at least one module which we call app module.
+   A module is a container for a group of related components. 
+   There are two types of modules one is encapsulating block of function within the single component and the other is encapsulating block of function within a single or group of components by providing exposure in an interface.
+   we need to divide our app module into sub smaller modules and each module is responsible for a specific section.
+
+ ->Components:
+   component represents a unique "View" and "View Model" in angular.
+   The "View" shows how the complete component will look–when displayed on the browser. 
+   The "View Model" has all required logic parts to provide "View" with rich functionality and data.
+
+ ->Data binding 
+   Data binding is a technique, where the data stays in sync between the component and the view. 
+   There are two different types of data bindings.they are: 
+   1.one-way  
+   2.two-way binding. 
+
+  ->Directives 
+    There are three types of Directives present in Angular.they are:
+    1.Components directive.
+    2.Structural directive.
+    3.attribute directive.
+
+    Components Directive :
+    The component can be used as a directive. 
+    when every component has an and Output option to pass between the component and its parent HTML elements.
+
+    Structural Directive:
+    it is like *ngFor and *ngIf which enables you to make changes to DOM with the help of adding or by the Input moving nodes.
+    
+    Attribute Directive:
+    It helps in adding behavior or do a change in the look or appearance of a specific element just like ngmodel directive which implements two-way data binding is an Attribute Directive.
+
+
+
+8)BENEFITS OF USING ANGULAR:
+  8 Benefits of Using AngularJS for Web App Development
+  There are many benefits we can get by using AngularJS.they are:
+  1.it allows Optimal web application Management.
+  2.it allows two way binding.
+  3.it is a powerful framework.
+  4.real time testing.
+  5.
+  6.
+
+9)SINGLE PAGE APPLICATION:
+  single page application are easy to use.Becaues every content required for the user will be on the same page.
+  These are perfect choice for business to build engaging and unique experiences for the user.
+  It is the reason why many organizations have started of their web applications as Single Page Application.
+
+  Single Page Application Pros
+  1. Ease for building an app.
+  2. Seamless User Experience.
+  3. Quick Loading Time.
+  4. Uses Less Bandwidth.
+  
+
+
+10)DATA BINDING:
+   It is an mechanism that binds the user interface to models.using data binding we can able to manipulate the data present in website using browser.
+   Therefore, whenever the cahnges are made in data, that particular data change must be reflected in the document Object model.
+   In angular data binding is interaction between the components and document object model.
+   Types of data binding are:
+   1.one way data binding.
+   2.two way data binding.
+
+  ->One-way Data Binding:
+    In one-way data binding, data flows only in one direction i.e from the models to the views.
+    one-way data binding in Angular can be of three types,they are:
+     ->Interpolation
+     ->Property binding 
+     ->Event binding.
+
+    Interpolation Binding:
+    Interpolation binding is used to return HTML output from TypeScript code i.e. from the components to the views. 
+    the template expression is specified within double curly braces. 
+    Through Interpolation, strings can be added into the text that is present between HTML element tags and within attribute assignments.
+    These strings are calculated using Template expressions. 
+
+    Property Binding:
+    In Property binding, value flows from a component’s property into the target elements property. 
+    Therefore, Property binding can’t be used to read or pull data from the target elements or to call a method that belongs to the target element.
+    In general, one can say that the component property value will be set to the element property using Property binding. 
+    Event Binding:
+    The Event binding feature lets you listen to certain events such as mouse movements, keystrokes, clicks, etc. 
+    In Angular, event binding can be achieved by specifying the target event name within regular brackets on the left of an equal to ( = ) sign, and the template statement on the right side within quotes (” “).
+
+   ->Two-way Binding
+     Angular allows two-way data binding that will allow your application to share data in two directions i.e. from the components to the templates and vice versa. 
+     This makes sure that the models and the views present in your application are always synchronized.
+     Two-way data binding will perform two things i.e. setting of the element property and listening to the element change events.
+     The syntax of two way binding is – [( )}.
+     it is a combination of the property binding syntax i.e. [ ] and the event binding syntax ( ).
+      
