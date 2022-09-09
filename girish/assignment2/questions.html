@@ -1,0 +1,147 @@
+Question 1.what are closures in java script ?
+Ans:basically, closures are used to access data from outer function to inner function.
+<script>
+function main() {
+    const name = 'Girish';
+    function displayName() {
+      console.log(name);
+    }
+    return displayName;
+  }
+  
+  const special = main();
+  special();
+</script>
+
+
+
+Question2.what is ahallow copy and deep copy?
+Ans:shallow copy refers to reference location of the original object,it only copies the reference address of the object and do not any duplicate object created.it just copies the original objects properties
+  <script>
+    let student = {  
+        name: 'girish',  
+        department: 'Computer Science',  
+                enroll_no: '1829939',  
+        permanent_address: {  
+            house_no: '200',  
+             
+            city: 'New York',  
+            
+        }  
+    };  
+    console.log("Before applying Shallow Copy");  
+    console.log(student);  
+    let createcopy = Object.assign({}, student);  
+    createcopy.name = 'jagan ';  
+    createcopy.enroll_no = '1829887';  
+    createcopy.permanent_address.house_no = '321';  
+    createcopy.permanent_address.locality = 'Santa Maria';  
+  
+    console.log("After applying Shallow Copy");  
+    console.log(createcopy);  
+    </script>  
+
+    2.deep copy :its completely opposite from shallow copy 
+    If we want to copy an object so that we can modify it without affecting the original object, we need to make a deep copy. 
+    <script>
+        let adam = {name: "Adam"};
+ 
+ let jason = adam;
+ jason.name = "Jagan mohan";
+  
+ console.log(adam.name);  
+ console.log(jason.name);
+    </script>
+
+
+Question:3-explain about destructing in java script ?
+Ans: destructing is used to differ array elements in to different parts
+<script>
+    let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+
+
+console.log(b);
+
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+
+</script>
+
+
+Question:4-advantages of arrow functions
+Ans:
+the main advantage of arrow function is it has small syntax, and it uses, in JavaScript (before arrow functions) every function defined its reference of this and it depends on how the function was called
+<script>
+    let greetings = {
+    msg: 'Hello World!',
+    greet: function(){
+        console.log(this.msg);
+    }
+}
+
+    greetings.greet();
+
+</script>
+
+Qestion:5-Higher order function?
+Ans:A higher-order function is a function that accepts functions as parameters and/or returns a function. we can use filters
+<script>
+   
+function greet() {
+    console.log('Hello world');
+}
+
+setTimeout(greet, 3000);
+console.log('This message is shown first');
+</script>
+
+
+Question:7- what are building blocks  in angular ?
+Ans:basically main building blocks are
+modules,components ,data bimding ,directives like ng-if,ng-for etc,services,metadata,data injection.
+
+
+
+Question:8-advantages of angular in web development ?
+Ans:the major advantage is two way data binding ,easy to learn and implement
+Angular is a popular web development framework that provides rich user experiences, quick responsiveness, and accessible code maintenance
+
+
+
+
+Question:9-single page application and its advantages?
+Ans:A single-page application is an app that doesn't need to reload the page during its use and works within a browser.
+load a single HTML page and only a part of the page instead of the entire page gets updated with every click of the mouse
+
+Advantages : excellent to offer an outstanding user experience.
+app speed is very good.
+it has ability to work offilne too.
+use less bandwidth.
+uses bowser a lot.
+it has good security available.
+
+
+
+question:10-different data bindings in angular?
+Ans:the different data bindings are 
+1.data binding
+2.oneway and two way binding.
+3. event binding.
+4.property binding.
+->One way databinding is a simple one way communication where HTML template is changed when we make changes in TypeScript code.
+-> Whenever you make changes in the Model, it will be reflected in the View and when you make changes in View, it will be reflected in Model.this is two way binding.
+
+->Property Binding is also a one-way data binding technique. In property binding, we bind a property of a DOM element to a field which is a defined property in our component TypeScript code.
+
+->In Angular 8, event binding is used to handle the events raised from the DOM like button click, mouse move etc. When the DOM event happens (eg. click, change, keyup), it calls the specified method in the component.
+<button (click)="cook()"></button> 
+
+
+Question:6-evevnt looping in java script?
+Ans:
+JavaScript has a runtime model based on an event loop, which is responsible for executing the code, collecting and processing events, and executing queued sub-tasks. This model is quite different from models in other languages like C and Java.
