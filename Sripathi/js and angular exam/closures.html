@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>closers:-</h3>
+    <p>A closure is the combination of a function bundled together (enclosed) 
+        with references to its surrounding state (the lexical environment).
+         In other words, a closure gives you access to an outer function's scope from an inner function. 
+         In JavaScript, closures are created every time a function is created, at function</p>
+
+         <h4>accessing variables of function even its execution completes or out of its scope</h4>
+
+
+    <script>
+
+        //accessing variables of function even its execution completes or out of its scope
+
+        function outer(){
+            var x = 10;
+
+            function inner(){
+                var y = 100
+                console.log(x)
+            }
+            return inner
+        }
+        
+
+        var res = outer()
+
+        res()
+
+
+    </script>
+</body>
+</html>

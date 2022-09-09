@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>for-in loop</h3>
+
+    <script>
+        var fruits = ['mango','apple','banana','kiwi']
+         
+
+        //for of in using an array
+        for(index in fruits){
+            document.write(index +fruits[index]+'<br><br>')
+        }
+
+        //for of using in an array
+
+        for(value of fruits){
+            document.write(value+"<br><br>")
+        }
+
+
+        //for in using in objects
+
+        var students = {'name':"sri",'age':25,'place':'hyd'}
+
+        for(key in students){
+            document.write(key +":"+students[key]+'<br><br>')
+        }
+
+        
+
+
+    </script>
+
+
+</body>
+</html>
