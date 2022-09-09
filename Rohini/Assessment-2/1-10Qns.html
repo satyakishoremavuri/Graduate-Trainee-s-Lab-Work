@@ -1,0 +1,111 @@
+1Q:Explain about closures with example in javascript?
+currying can be achived by using the Closers.closers is nothing but converting a sateless function to function which return other function.Function inside the another function,outside function going to the inside function.the inside function accessibility variable of outside function.closers maintain successfull function calls.closers is used to create standalone isolation entity.lot of memory can hold use this  closers. 
+example:function outerfunction(){
+    let count = 0;
+    return function innerfunction(){
+        counter ++;
+        console.log(counter);
+    }
+}
+let fun()=outerfunction();
+fun();
+fun();
+fun();
+let fun1()=outerfunction();
+fun1();
+fun();
+2Q:. Explain about shallow copy and deep copy?
+shallow copy is nothing but we reference variable copied into a new reference variable using the assignment operator.we didnt create object in shallow copy.
+example:let empObj={
+    firstName:"Sri",
+    lastName:"Vani"
+};
+let copiedObj = empObj;
+console.log(empObj);
+console.log(copiedObj);
+copiedObj.firstName = "Madhura";
+console.log(empObj);
+console.log(copiedObj);
+Deep Copy:copy of all the members of the old objects,allocates separate memory location  for the new object and assign the copied members of the new project. In this way both objects are independent of each other and any modification to either one to other not effected.
+example:let empObj={
+    firstName:"Sri",
+    lastName:"Vani"
+};
+let copiedObj = json.parse(json.stringify(empObj));
+console.log(empObj);
+console.log(copiedObj);
+copiedObj.firstName = "Madhura";
+console.log(empObj);
+console.log(json.stringify(empObj));
+3Q:Explain about destructing of an object in javascript?
+Object destructing is nothing but assign propertys to individual elements.The object destructing when we have lot of propertys it is utilized.
+let empObj ={
+    firstName:"Rohini",
+    lastName:"Reddy"
+};
+let {firstName:fname,lastName:lname} = empObj;
+console.log(fname);
+console.log(lname);
+4Q:What are the advantages of using arrow functions and give an example?
+arrow function is nothing but short and sweetest function.points to always the parent node.single statement function default function in return.the arrow function reduce lot of code and more readability.
+Example:var mul1=(a,b)=>a*b;
+console.log(mul1(100,200));
+5Q:Explain about higher order functions in javascript?
+higher order function is nothing but the function that accepts function as parameters and returns a function.
+example:const returnFunc = ()=>{return newFunc};
+returnFunc();
+reduce method:
+marks=[10,20,30,40,50];
+let totalMarks = marks.reduce((sum,ele)=>){
+    sum=sum+ele;
+    return sum;
+},0);
+console.log(totalMarks);
+let newmarks = marks.map((ele)=> ele+5);
+console.log(newmarks);
+let average = [45,60,75,80,87,90];
+let first = average.filter((ele)=>ele>=60);
+console.log(first);
+6Q:Explain about event looping in javascript?
+The eventloop is the secret behind javascript asynchronous programming.javascript excute all operations on a single thread,javascript has a run time model based on eventloop,which is responsible for excute the code and collecting and processing the events.excuteing the tasks.
+7Q:Explain about building blocks of an angular application?
+the building blocks of an angular is 
+.module -- @NgModule()
+.components  --@NgComponents()
+.Services --- @Injectable()
+.Directives    --@Directive()
+.pipes   --@pipe()
+.Interceptors   --@Injectable()
+.Guards       ---@Injectable()
+.Routing 
+module:module is nothing but group of components and Directives,pipes,and sevices that are related in such way that can be combined with the modules.modules are 2 types root modules and feature modules.
+components:angular components are a subset of directives always associates with a template directives.
+Service:angular service is plain typescript class having one or more methods along with @Injectable decorator.
+Directives:dirrctive is a typescript function when this function excute angular compiler checked it inside dom element.directive begain with ng,ng stand for angular extends html tag with @directive decorator.
+Routing:the process of defining navigation element and the corresponding view is called Routing.
+8Q:What are the advantages of using Angular in web app development?
+angular is a open source .these all are two way binding mainly develop single page application and one html entire project.
+angular is impliment lazyloade concept.the total application will transfer to the server to client eagarly loaded.angular will able to  supports modularity.
+angular is easy to learn.angular is Real time testing. it is a Single page application.
+9Q: What is Single Page Application and explain about the advantages?
+the single page application is a single page that continuously interact with user by dynamically rewritting the current page rather than loading entire page from server.
+ex:gmail,facebook.
+advantages of single page application.
+.quick loading time.
+.ease to build features.
+.uses less bandwidth.
+10Q:. Explain about different data bindings in angular?
+ data binding is used to define the communication between a component and the dom element.
+ there are One way binding,Two way binding,event binding,property binding,string interpolation.
+ one way binding:one way communication where html template changed when we make change in typescript code 
+ example:<li> Name :{{username}}</li>
+ Two way binding: in two way binding automatically synchronization of data happens between model to view and view to model.here change is reflected in both components.
+ ex:[(ng model)] = ("property of your component")
+ event binding:is used to handle the events raised from the dom like button click.
+ ex:<button (click) = "cookbacon()"></button>
+ property binding:is similar to one way binding,in property binding we bind a property of a dom element to a field.
+ ex:<img [src] = "imgurl"/>
+ string interpolation: is similar to one way  binding.
+
+
+

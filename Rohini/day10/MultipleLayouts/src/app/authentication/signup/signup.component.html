@@ -1,0 +1,31 @@
+<form name="login" >
+    <div class="mb-3">
+        <label for="username" class="form-label">User Name</label>
+        <input type="text" name="username" id="username" class="form-control"
+            placeholder="User Name" aria-describedby="username" >
+        <small id="username" class="text-muted"></small>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="text" name="password"  id="password" class="form-control"
+            placeholder="Password" aria-describedby="password" >
+        <small id="password" class="text-muted"></small>
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" name="email"  id="email" class="form-control"
+            placeholder="Email" aria-describedby="email" >
+        <small id="email" class="text-muted"></small>
+    </div>
+    <div class="mb-3">
+        <label for="phonenumber" class="form-label">Phone Number</label>
+        <input type="number" name="phonenumber"  id="phonenumber" class="form-control"
+            placeholder="Phone Number" aria-describedby="phonenumber" >
+        <small id="phonenumber" class="text-muted"></small>
+    </div>
+    <div class="mb-3">
+        <input type="submit" class="btn btn-primary" value="Submit">
+    </div>
+    <br>
+   Existing User <a [routerLink]="['/']">Login</a>Here
+</form>
