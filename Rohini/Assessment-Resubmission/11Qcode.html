@@ -11,6 +11,18 @@
         }
     </style>
     <script>
+
+        function blockSpecialChar(e) {
+            var k;
+            document.all ? k = e.keyCode : k = e.which;
+            return ((k > 65 && k < 90) || (k > 97 && k < 122) || k == 95);
+        }
+        function bSpecialChar(e) {
+            var k;
+            document.all ? k = e.keyCode : k = e.which;
+            return ((k > 64 && k < 90) || (k > 96 && k < 122) || k == 8 || k == 32 || (k >= 48 && k <= 57) || k == 45 || k == 44);
+        }
+
         
 
     function validateUserName() {
@@ -21,7 +33,7 @@
                 return false;
             }
             else {
-                if (userCtrl.value.length < 6 && userCtrl.value.match[A-Za-z_]) {
+                if (userCtrl.value.length < 6 ) {
                     document.getElementById("userNameError").innerHTML = "Min. 6 characters are required";
                     passCtrl.focus();
                     return false;
@@ -38,18 +50,7 @@
                 passCtrl.focus();
                 return false;
             }
-    // function checksPassword(password){
-    //    var pattern = /^.*(?=.{8,20})(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%&!-_]).*$/;
-    //    if(!pattern.test(password)) {
-    //    $(".spassword_error").show();
-      
-    //    }else
-    //    {
-    //    $(".spassword_error").hide();
-     
-    //     }
-       
-    // }    
+    
 
         else{
                
@@ -64,6 +65,17 @@
             
 
     }    
+    function password_check() {
+            pass = document.getElementById("password").value;
+            console.log(pass);
+            regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+            if (regex.exec(pass) == null) {
+                document.getElementById("passwordError").innerHTML = "Password Should contain atleast 1 upper case, 1 lower case, 1 digit , 1 spl character and minimum 6 characters ";
+            }
+            else {
+                document.getElementById("passwordError").innerHTML = "";
+            }
+        }
 
 
         
@@ -103,6 +115,21 @@
 
             }
         }
+        function checkDOB() {
+            var dateString = document.getElementById('dob').value;
+            var myDate = new Date(dateString);
+            var today = new Date();
+            if (myDate >= today) {
+                document.getElementById("doberror").innerHTML = "Date of Birth should not be currentdate and above";
+
+                return false;
+            }
+            else {
+                document.getElementById("doberror").innerHTML = "";
+                return true;
+
+            }
+        }
         function validateAddress() {
             var Address = document.getElementById("address");
           
@@ -116,28 +143,63 @@
 
             else {
 
-                  reg = "[^a-zA-Z]+", "";
-                    if (reg.exec(a) == null) {
+                //   reg = "[^a-zA-Z]+", "";
+                //     if (reg.exec(a) == null) {
                     document.getElementById("adderror").innerHTML = "";
                     return true;
                     }
             }
-        }
-        function validateData(){
+        
+        let reginfo = [];
+        const addInfo = (e) => {
+            let Info = {
+                UserName: document.getElementById('userName').value,
+                Password: document.getElementById('password').value,
+                MobileNumber: document.getElementById('number').value,
+                DateofBirth: document.getElementById('dob').value,
+                Address: document.getElementById('address').value
+            }
+     
             let uStatus = validateUserName();
             let pStatus = validatePassword();
             let mStatus = validateMobile();
             let bStatus = validateDateofBirth();
             let aStatus = validateAddress();
-            events.preventDefault();
+            let message = [];
 
 
              if (uStatus == false || pStatus == false || mStatus == false || bStatus == false || aStatus == false) {
-                event.preventDefault();
+                 message.push('enter all Details properly')
             }
+            else {
+                console.log("submitted success")
+            }
+            e.preventDefault()
+
+
+
+
+
+            reginfo.push(Info);
+            document.forms[0].reset();
+            console.warn('added', { reginfo });
+            // let pre = document.querySelector('#msg pre');
+            // pre.textContent = '\n' + JSON.stringify(reginfo, '\t', 5);
+
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+
+            document.getElementById('btn').addEventListener('click', addInfo);
+        });
+
+
+
+
+               
+            
            
         
-        }  
+        
        
             
         
@@ -145,20 +207,20 @@
     </script>
 </head>
 <body>
-    <form  action="login.aspx" method="post" novalidate onsubmit="validateData()" >
+    <form   novalidate onsubmit="validateData()" >
         <table border="1" cellpadding="10" cellspacing="0">
             <tr>
                 <td>Enter User Name</td>
                 <td>
                     <input type="text" id="userName" value="" placeholder="User Name" onblur="validateUserName()"
-                        required > <br>
+                     required onkeypress="return blockSpecialChar(event)"> <br>
                     <span id="userNameError"></span>
                 </td>
             </tr>
             <tr>
                 <td>Enter Password</td>
                 <td>
-                    <input type="password" id="password" value="" placeholder="Password" onblur="validatePassword()" required>
+                    <input type="password" id="password" value="" placeholder="Password" onblur="password_check()" >
                     <br>
                     <span id="passwordError"></span>
                 </td>
@@ -166,7 +228,7 @@
             <tr>
                 <td>Enter Mobile Number</td>
                 <td>
-                    <input type="number" id="number" value="" placeholder="Mobile Number" onblur="validateMobile()">
+                    <input type="number" id="number" value="" placeholder="Mobile Number" onblur="validateMobile()" required>
                     <br>
                     <span id="MobilenumError"></span>
                 </td>
@@ -174,7 +236,7 @@
             <tr>
                 <td>Enter Date of Birth</td>
                 <td>
-                    <input type="date" id="dob" value="" placeholder="Date of Birth"  onblur="validateMobile()">
+                    <input type="date" id="dob" value="" placeholder="Date of Birth"  onblur="checkDOB()" required>
                     <br>
                     <span id="doberror"></span>
                 </td>
@@ -182,7 +244,7 @@
             <tr>
                 <td>Enter Address</td>
                 <td>
-                    <input type="text" id="address" value="" placeholder="Address"  onblur="validateAddress()">
+                    <input type="text" id="address" value="" placeholder="Address"  onblur="validateAddress()"  onkeypress="return bSpecialChar(event)" required>
                     
 
                     <br>
@@ -192,7 +254,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type="submit" value="Submit Details">
+                    <input type="button" id='btn' value="Register User"s>
                 </td>
             </tr>
         </table>

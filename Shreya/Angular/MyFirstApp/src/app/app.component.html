@@ -1,2 +1,21 @@
-<h1>Welcome to Angular</h1>
-  
+<h1>Welcome To Angular</h1>
+<h1>My First Name is {{firstName}}</h1>
+<input type="text" [value]="lastName"> <br>
+<br>
+<input type="button" value="Click Me" (click)="showMessage()">
+<br>
+<br>
+<input type="text" name="rama" [(ngModel)]="firstName">
+<br>
+<br>
+<table border="1" [cellPadding]="10" [cellSpacing]="0">
+  <tr>
+    <td>EmpNumber</td>
+    <td>EmpName</td>
+    <td>EmpSalary</td>
+  </tr>
+  <tr>
+    <td attrib.colspan="colSpanValue"></td>
+
+
+  </tr></table>

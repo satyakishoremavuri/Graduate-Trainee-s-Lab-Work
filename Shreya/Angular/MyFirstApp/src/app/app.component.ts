@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'MyFirstApp';
+
+  firstName = "Shreya";
+  colSpanValue = 2;
+  lastName: string = "Tr";
+  title: any;
+  showMessage() {
+    console.log("This is a show message");
+  }
+
+
 }
