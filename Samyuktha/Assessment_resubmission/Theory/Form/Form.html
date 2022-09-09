@@ -32,13 +32,13 @@
             }
             else if (userCtrl.value.length < 6) {
                     document.getElementById("userNameError").innerHTML = "Min. 6 characters are required";
-                    passCtrl.focus();
+                    userCtrl.focus();
                     return false;
                 }
             else if(!validUsername){
                 document.getElementById("userNameError").innerHTML = "Please enter a valid UserName";
-                passCtrl.focus();
-                return false
+                userCtrl.focus();
+                return false;
             }
                 document.getElementById("userNameError").innerHTML = "";
                 return true;
@@ -55,14 +55,12 @@
             }
 
             else if(validpassword){
-
-                        document.getElementById("passwordError").innerHTML = "Password Should contain atleast 1 upper case, 1 lower case, 1 digit , 1 spl character and minimum 8 characters ";
-                        passCtrl.focus();
-                        return false;
+             document.getElementById("passwordError").innerHTML = "Password Should contain atleast 1 upper case, 1 lower case, 1 digit , 1 spl character and minimum 8 characters ";
+                 passCtrl.focus();
+                 return false;
                 }
                 document.getElementById("passwordError").innerHTML = "";
                     return true;
-
 
         }
 
@@ -125,7 +123,7 @@
                     return true;    
             }
         }
-        function validateAddress() {
+          function validateAddress() {
             var add = document.getElementById("address");
             var spt=add.value.split(",")
             var door=spt[0]
@@ -181,6 +179,7 @@
 
             }
         }
+    
 
     </script>
 
@@ -232,7 +231,7 @@
                 </td>
             </tr>
             <tr>
-                <td></td>
+                
                 <td>
                     <input type="submit" value="Submit Details">
                 </td>
