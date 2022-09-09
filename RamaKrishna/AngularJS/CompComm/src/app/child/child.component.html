@@ -1,0 +1,8 @@
+<ng-content select=".parent"></ng-content>
+<h3>Child Component</h3>
+<h5>{{childUserName}}</h5>
+<br>
+<br>
+<app-grandchild [grandChildUserName]="childUserName" (capitalCaseUserName)="capitalCase($event)">
+    <h1 class="child">Child Data Sending to Grand Child</h1>
+</app-grandchild>

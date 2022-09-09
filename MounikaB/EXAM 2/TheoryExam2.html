@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    1Q:Explain about closures with example in javascript?
+    Ans:a closure gives you access to an outer function's scope from an inner function. 
+    In JavaScript, closures are created every time a function is created, at function creation time.
+
+    Ex:
+    <script>
+
+        function outerFunction(a) {
+            //let a = 100;
+            return function innerFunction(b) {
+                //let b = 200;
+                return function subFunction(c) {
+                    return a + b + c;
+                }
+            }
+        }
+        // let fun = outerFunction(100);
+        // console.log(fun(200));
+
+        console.log(outerFunction(100)(200)(300));   
+
+        let fun = outerFunction(100);
+        let fun2 = fun(200);
+        console.log(fun2(300));
+
+
+    </script>
+
+    2Q:Explain about shallow copy and deep copy?
+    Ans:Shallow copy:When a reference variable is copied into a new reference variable using the assignment operator a shallow copy of the referenced object is created. 
+    A reference variable mainly stores the address of the object it refers to. 
+    When a new reference variable is assigned the value of the old reference variable the address stored in the old reference variable is copied into the new one. 
+    This means both the old and new reference variable point to the same object in memory. 
+    As a result if the state of the object changes through any of the reference variables it is reflected for both.
+
+    Ex:
+    const empObj = {
+        firstName:'Mounika',
+        lastName:'Boinapally',
+       getFullName:function() {
+            return this.firstName + " " + this.lastName;
+        },
+        address: {
+            cityName: 'Hyderabad'
+        }
+    };
+    
+
+
+   let copiedObj = empObj;
+    console.log(empObj);
+    console.log(copiedObj);
+    copiedObj.firstname = "Hira";
+    console.log(empObj);
+    console.log(copiedObj);
+
+
+    let copiedObj = JSON.parse(JSON.stringify(empObj));
+    console.log(empObj);
+    console.log(copiedObj);
+    copiedObj.firstname="Hira";
+    console.log(empObj);
+    console.log(copiedObj);
+
+
+   let copiedObj=Object.assign({},empObj);
+    console.log(empObj);
+    console.log(copiedObj);
+    copiedObj.firstname="Hira";
+    copiedObj.address.cityName = "Mumbai";
+    console.log(empObj);
+    console.log(copiedObj);
+
+
+    Deep copy:deep copy makes a copy of all the members of the old object, allocates separate memory location for the new object and then assigns the copied members to the new object. 
+    In this way, both the objects are independent of each other and in case of any modification to either one the other is not affected.
+
+    Ex:
+
+        let copiedObj = {
+            ...empObj,
+            address: { ...empObj.address }
+        };
+        console.log(empObj);
+        console.log(copiedObj);
+        copiedObj.firstName = "Hira";
+        copiedObj.address.cityName = "Mumbai";
+        console.log(empObj);
+        console.log(copiedObj);
+        
+
+        3Q:Explain about destructing of an object in javascript?
+        Ans:Destructuring is a javascript expression that allows us to extract data from arrays,objects and set them into new different variables.
+        Object destructuring is used for extracting values from an object property and assigning them to another variable.
+        The Object destructuring is also possible for Arrays.
+        
+
+        Ex:
+        let empObj = {
+            firstName: "Mounika",
+            LastName: "Boinapally"
+        };
+
+        let { firstName: fName, LastName: lName } = empObj;
+        console.log(fName);
+        console.log(lName);
+
+
+        4Q:What are the advantages of using arrow functions and give an example?
+        Ans:This arrow function reduces lots of code and makes the mode more readable.
+        Arrow function syntax automatically binds this to the surrounding code context.
+        Writing the arrow => is more flexible as compared with the writing function keyword.
+        
+        Ex:
+        let checkNumber = (num) => num > 16;
+        console.log("Yes") : console.log("No");
+ 
+    checkNumber(5);
+    checkNumber(10);
+    checkNumber(20);
+    checkNumber(32);
+
+
+    5Q:Explain about higher order functions in javascript?
+    Ans:Higher order functions in JavaScript are a special category of functions that either accept functions as an argument or return functions.
+
+    On the other side, if the function uses only primitives or objects as arguments or return values, these functions are firstorder.
+    
+    Higher order functions provide the reusability.
+
+
+    6Q:Explain about event looping in javascript?
+    Ans:Event loop: An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+
+
+    7Q:Explain about building blocks of an angular application?
+    Ans:Modules
+    Components
+    Templates
+    Metadata
+    Data binding
+    Directives
+    Services
+    Dependency injection
+
+    8Q:What are the advantages of using Angular in web app development?
+    Ans:Advantages of using Angular: 
+     It is used in large scale and used to build single page applications.
+     Code is more understandable.
+     It helps to deal with formatting and reversing a text
+     Angular contains lot of different solutions such as routing modules etc
+     Easy to Learn.
+     It has a Two-Way Binding Feature.
+     Supports SPA features.
+     Has a Declarative UI.
+     Supported by Google.
+     Allows for Optimal Web Application Management.
+     It is a Powerful Framework.
+     Real-Time Testing.
+
+    9Q:What is Single Page Application and explain about the advantages?
+    Ans: A single-page application is a web app that consists of a single HTML page loads new JSON data from the server and rewrites the page in response to user actions.
+    This allows for creating single-page applications that run in a browser yet have UIs and functionality similar to that of desktop apps.
+
+    advantages:
+    Fast and responsive.
+    Debugging is easier
+    Browsing or navigating through the website is easy.
+
+    10Q:Explain about different data bindings in angular?
+    Ans:Data Binding is the mechanism that binds the applications UI to the models. 
+    Using Data Binding, the user will be able to manipulate the elements present on the website using the browser. 
+    Whenever some variable has been changed that particular change must be reflected in the DOM.
+    Angular allows both One way and Two way Data Binding.
+
+    One way binding:In one-way data binding, data flows only in one direction, from the models to the views. 
+    one-way data binding in Angular can be of three types, Interpolation, Property binding, and Event binding.
+    
+    Two way binding:Angular allows two-way data binding that will allow to share data in two directions, from the components to the templates and vice versa.
+    This helps the models to always be synchronized. 
+    
+
+    
+</body>
+</html>
