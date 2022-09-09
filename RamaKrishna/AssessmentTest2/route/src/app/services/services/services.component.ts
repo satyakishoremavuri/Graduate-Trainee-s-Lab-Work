@@ -12,9 +12,24 @@ export class ServicesComponent implements OnInit {
 
 
 
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.employees = [
+      { enumber: 101, ename: 'Ramakrishna', esalary: 50000, eaddress: 'Khammam' },
+      { enumber: 102, ename: 'Rama', esalary: 50000, eaddress: 'Delhi' },
+      { enumber: 103, ename: 'krishna', esalary: 50000, eaddress: 'Vza' },
+      { enumber: 104, ename: 'kiran', esalary: 50000, eaddress: 'Hyd' },
+
+
+    ];
+
+
+
+  }
+  selectTab(val: Number) {
 
   }
 
