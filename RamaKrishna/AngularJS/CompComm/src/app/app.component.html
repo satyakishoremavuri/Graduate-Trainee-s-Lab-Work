@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3>Parent Component</h3>
+      <h5>{{userName}}</h5>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <app-child [childUserName]="userName" (capitalCaseUserName)="capitalCase($event)">
+        <h1 class="parent">Parent Data Sending to Child</h1>
+      </app-child>
+    </div>
+  </div>
+</div>
