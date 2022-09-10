@@ -6,22 +6,42 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    //Returnable Methods
-    internal class Class6
-    {
-        public int Sum(int x, int y)
-        {
-            return x + y;
-        }
-        public int Mul(int x, int y)
-        {
-            return x * y;
-        }
+    public class Class6 {
+       
+
+
+
+
+    
+
+
+
+    
         static void Main(string[] args)
         {
-            Class6 class6 = new Class6();
-            Console.WriteLine("Sum of Two Integers is :" + class6.Sum(10, 20));
-            Console.WriteLine("Mul of Two Integers is :" + class6.Mul(10, 20));
+            string str = "rAMAKRISHNA";
+            if (str.Length == 0)
+
+                Console.Write("Empty String");
+            else if (str.Length == 1)
+
+                Console.Write(char.ToUpper(str[0]));
+
+            for (i = 0; i < str.Length; i++)
+            {
+                string new= str[i];
+            }
+
+              
+
+            else
+
+                string str1 = str.Substring(1);
+                    Console.Write(char.ToUpper(str[0]) + char.ToLower(str.Substring(1)));
+            
+            
+
+           
         }
     }
 }
