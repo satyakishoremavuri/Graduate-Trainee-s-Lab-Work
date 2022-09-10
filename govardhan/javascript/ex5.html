@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //Hoisting --> It moves all the declarations to the top with in the scope
+
+        console.log(a);
+
+        var a = 100;
+
+        function show() {
+            console.log(a);     //200
+            var a = 200;
+        }
+        show();
+        console.log(a);     //100
+
+        console.log(window);
+
+        show();
+        function show() {
+            console.log("This is show Function");
+        }
+
+        //var, let, const
+
+        function display() {
+            //console.log(x);     //undefined 
+            if (true) {
+                let x = 100;
+                const MAXSAL = 65000;
+            }
+            console.log(MAXSAL);
+            // console.log(x);
+        }
+        display();
+
+        var y = 100;
+        var y = 200;
+
+        let z = 200;
+        //let z = 200;
+
+        const MAXAGE = 30;
+
+        MAXAGE = 40;
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

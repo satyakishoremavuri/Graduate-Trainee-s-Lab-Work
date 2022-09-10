@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>what is promise:-</h3>
+    <p>Promises are used to handle asynchronous operations in JavaScript. They are easy to manage when dealing with multiple asynchronous operations where callbacks can create callback hell leading to unmanageable code. </p>
+
+    <script>
+     var promise = new Promise(function(resolve, reject) {
+         const x = "true";
+         const y = "true"
+          if(x === y) {
+	        resolve();
+          } else {
+	         reject(); 
+          }
+        });
+
+        promise.
+	      then(function () {
+		  console.log('Success');
+	    }).
+	      catch(function () {
+		    console.log('error');
+	    });
+
+
+    </script>
+
+
+</body>
+</html>

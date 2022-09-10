@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>How to iterate an object</h3>
+
+    <script>
+         //object.keys()
+         //
+         //
+
+         const obj ={
+            name: "sri",
+            age:25,
+            city: "hyd",
+         }
+
+         //object.keys()
+         //object.values()
+         //object.entries()
+         //using for loop
+
+          const keys = Object.keys(obj);
+          console.log(keys);
+
+
+          //object.value
+          const value = Object.values(obj);
+          console.log(value);
+
+          //object.entries
+          const entries = Object.entries(obj);
+          console.log(entries);
+
+          //every key value and pair
+
+          for(let i of Object.entries(obj)){
+            console.log(`${i[0]}:${i[1]}`);
+          }
+    </script>
+
+
+</body>
+</html>

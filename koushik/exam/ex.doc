@@ -1,0 +1,48 @@
+1)  CallBack Fuction:
+    It is used to pass the arguments of function to another function based on the results of another function that executes the callBAck. 
+    Call BAck Hell:
+    It is a nested Call Back stacked below one another and Every callBAck waits fot previous callBAck.
+    it forms a pyramidlike structure and this pyramid lke structure affects the readability and maintainability of the code. 
+
+3) Promises:
+    promise is an object that contains both producing and consuming code.
+
+    promise objects are :
+    1.pending
+    2.fulfilled.
+    3.Rejected.
+
+    Pending: it means the state of the object is undefined.
+    Fulfilled:it means object is working and completed.
+    Rejected:it means the object is failed.
+
+4)implicit conversion:
+   Implicit coversion is done automatically in javascript.
+   here one type of value is converted to another type automatically without any external help.
+   Because,some operators and functions helps for the conversion.
+   
+
+5)Passed By value:
+  It directly passes the value of the variable as argument.
+  the values passed function creates its own copy.so the changes made in function doesn't effect the original value.
+  because,the changes made inside the function is made to the copied value not to the original value .
+
+ Passed By ReferenceIn:
+  It directly passing the address of the variable as an argument.
+  if the values are changed inside the function the original value also changes.
+
+6)Flex:
+   Flex is one dimensional.
+  Grid:
+   it is a two dimensional.
+
+7)Curring:
+    It is a function which takes one value at a time and returnsa new function and expects the next argument.
+
+9)javascript:
+   It is an programming language which connects both Html and css.using java script we can perform many opertions on a webpage.
+   Javascript is losely packed.
+ Typescript:
+   Typescript is an extension of javaScript.It contains all the user features of javascript and it is tightly packed.
+     
+10)To access the data from one script block to another script block we have to use the javaScript extension.

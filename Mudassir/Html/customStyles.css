@@ -1,0 +1,35 @@
+div{
+    height: 50px;
+    width: 200px;
+    background-color: blueviolet ;
+  }
+
+  #div3{
+    height: 50px;
+    width: 250px;
+    background-color: aliceblue;
+  }
+
+  .div4{
+    height: 150px;
+    width: 220px;
+    background-color: aqua;
+    color:yellowgreen;
+  }
+
+  div[title]{
+    height: 50px;
+    width: 350px;
+    background-color: bisque;
+  }
+
+  div[title=Test]{
+    height: 50px;
+    width: 400px;
+    background-color: brown;
+
+    
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 24pt;
+  color:violet !important ;
+  }

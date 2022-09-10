@@ -1,0 +1,31 @@
+<!-- ngstyle:
+<p>passing an object ton ngstyle:</p>
+<button [ngstyle]="{background:'black'}">Button</button> -->
+
+
+    <body ng-app="">
+    
+    <p>Choose a option:</p>
+    
+    <select ng-model="home">
+    <option value="companyoverview">COMPANY OVERVIEW</option>
+    <option value="leadership">LEADERSHIP</option>
+    </select>
+    
+    <div ng-class="home">
+    </div>
+    </body>
+
+    <body ng-app="myApp" ng-controller="myCtrl">
+
+        <h1 ng-style="myObj">Welcome to SNAD Developers</h1>
+        <!-- var app = angular.module("myApp", []);
+    app.controller("myCtrl", function($scope) {
+    $scope.myObj = {
+    "color" : "white",
+    "background-color" : "coral",
+    "font-size" : "60px",
+    "padding" : "50px"
+    }
+    }); -->
+        

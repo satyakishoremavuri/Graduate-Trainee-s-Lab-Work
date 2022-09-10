@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Naming conventions
+      //variable and function names  camelCase;
+      //class names-PascaleCase
+      //Constants-CAPITAL LETTERS
+      //Private variables--  _name
+      //Functions
+      function showName(name) {
+        console.log("My name is", name);
+      }
+      showName("Shreya");
+      //Returnable function
+      function sum(a, b) {
+        return a + b;
+      }
+      console.log(sum("10", "20"));
+      function sum1() {
+        var s = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          s = s + arguments[i];
+        }
+        console.log(s);
+      }
+
+      sum1(10, 20);
+      sum1(10, 20, 30);
+      sum1(10, 20, 30, 40, 50, 60);
+
+      //Function Expression
+      var Mul = function (a, b) {
+        return a * b;
+      };
+      console.log(Mul(20, 7));
+      //IIFE--> Immediately Invokable Function Expression
+      (function display() {
+        console.log("This is display function");
+      })();
+      //Default Arguments
+      function calculate(a, b = 100) {
+        return a * b;
+      }
+      console.log(calculate(10, 20));
+      //Arrow Functions
+      var mul1 = (a, b) => a * b;
+      console.log(mul1(100, 100));
+      var mul2 = (a) => a * 100;
+      console.log(mul2(10));
+      var mul3 = () => 100 * 100;
+      console.log(mul3());
+    </script>
+  </body>
+</html>

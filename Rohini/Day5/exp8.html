@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<script>
+    function BaseClass(){
+        this.SubmitData = function(){
+            console.log("BaseClass Submit Method");
+        }
+        this.ValidataData = function(){
+            console.log("BaseClass ValidataData");
+
+        }
+    }
+    function DerivedClass(){
+     //this.SubmitData = function(){
+    //console.log("DerivedClass Submit Method");
+     //}
+    }
+    let baseobj = new BaseClass();
+    // DerivedClass.prototype = baseobj;
+    DerivedClass.prototype.SubmitData = baseobj.SubmitData;
+
+    let derivedobj = new DerivedClass();
+     console.log(derivedobj);
+      derivedobj.SubmitData();
+
+
+      
+
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>

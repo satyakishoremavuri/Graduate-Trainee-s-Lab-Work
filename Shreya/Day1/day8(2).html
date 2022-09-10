@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Enter
+    <script>
+      //date
+      let d = new Date();
+      console.log(d.toLocaleDateString());
+      console.log(d.toLocaleString());
+      console.log(d.getTime());
+      console.log(d.getHours());
+      console.log(d.getHours(), d.getMinutes(), d.getSeconds());
+
+      //0 1 1 2 3 5 8 13 21...
+      let a = 0;
+      let b = 1;
+      let c = a + b;
+      let series = [];
+      series.push(a);
+      series.push(b);
+      series.push(c);
+      for (let i = 0; i < 20; i++) {
+        a = b;
+        b = c;
+        c = a + b;
+        series.push(c);
+      }
+      console.log(series);
+
+      //reverse string
+      let str = "My name is Shreya";
+      reverse = "ayerhS si eman yM";
+      reverse2 = "Ym eman si ayerhS";
+      console.log("Reverse Entire String is :" + reverseString(str));
+      let ar = str.split(" ");
+      console.log(ar);
+      let newArray = ar.map((ele) => {
+        return reverseString(ele);
+      });
+      console.log(newArray.join(" "));
+
+      function reverseString(str) {
+        let rst = "";
+        for (let i = str.length - 1; i >= 0; i--) {
+          rst = rst + str[i];
+        }
+        return rst;
+      }
+    </script>
+  </body>
+</html>

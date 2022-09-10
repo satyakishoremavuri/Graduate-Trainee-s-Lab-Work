@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //template iterals
+        let firstName = "sathesh";
+        let lastName = "Kumar";
+        let cityName = "Hyderabad";
+        let stateName = "TS";
+
+        //let str = "My Name is " + firstName + ", Last Name is " + lastName + " from " + cityName + " and State is " + stateName;
+
+        let str = `My First Name is ${firstName}, Last Name is ${lastName} from 
+        ${cityName} and State is ${stateName}, ${show()}, ${10 == 10}`;
+
+        console.log(str);
+
+        function show() {
+            console.log("This is Show Function");
+        }
+        //object destructing
+        let empobj ={
+            firstName:"rohini",
+            lastName:"reddy"
+
+        };
+        let {firstName:fName,lastName:lName} = empobj;
+        console.log(fName);
+        console.log(lName);
+    </script>
+      
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //call,apply,bind
+        function getFullName(cityName,state){
+            // console.log(this);
+        console.log(`${this.firstName} ${this.lastName} from ${cityName} state is ${state}`);
+            
+        }
+        let empObj = {
+            firstName:"Tony",
+            lastName:"Reddy"
+        };
+        getFullName.call(empObj, "Hyd","TS");
+
+        let custObj = {
+            firstName:"Rohi",
+            lastName:"Reddy"
+        };
+        //call
+        getFullName.call(custObj, "Vijaya","AP");
+        //apply
+        getFullName.apply(empObj, ["Hyd","TS"]);
+        getFullName.apply(custObj, ["Vijaya","AP"]);
+        //bind
+       let ts= getFullName.bind(custObj, "Hyd","TS");
+        let ap=getFullName.bind(empObj, "Vijaya","AP");
+        ts();
+        ap();
+        ts();
+        ap();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

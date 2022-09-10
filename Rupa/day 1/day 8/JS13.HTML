@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // LOCAL STORAGE & SESSION STORAGE
+        let userName = "rupa";
+        let emailId = "kandipallyrupa@gamil.com";
+
+        localStorage.setItem("userName",userName);
+        localStorage.setItem("emailId",emailId);
+
+        sessionStorage.setItem("userName",userName);
+        sessionStorage.setItem("emailId",emailId);
+
+        console.log(localStorage.getItem("userName"));
+        console.log(localStorage.getItem("emailId"));
+
+        console.log(sessionStorage.getItem("userName"));
+        console.log(sessionStorage.getItem("emailId"));
+
+        localStorage.removeItem('userName');
+        localStorage.removeItem('email');
+
+        localStorage.clear();
+        sessionStorage.clear();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
