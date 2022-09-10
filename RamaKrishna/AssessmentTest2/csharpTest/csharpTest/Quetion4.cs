@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace csharpTest
 {
-  public  class Quetion4
+    public class Quetion4
     {
         static void Main(string[] args)
         {
@@ -25,9 +25,6 @@ namespace csharpTest
             else
 
                 Console.Write(char.ToUpper(str[0]) + str.Substring(1));
-
-
-
 
         }
     }
