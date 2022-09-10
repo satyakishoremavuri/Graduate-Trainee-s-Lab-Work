@@ -1,0 +1,72 @@
+4)
+a)Multi threading:
+   It is a process of multiple threads executes at same time without dependency of other threads. Many operating systems support kernel thread and user thread in a combined way.
+   Multi threading model are of 2 types. Process based and thread based multithreading
+   Example:
+   public class guruThread1 implements Runnable
+   {
+       public static void main(String[] args) {
+        Thread guruThread1 = new Thread("Guru1");
+        Thread guruThread2 = new Thread("Guru2");
+        guruThread1.start();
+        guruThread2.start();
+        System.out.println("Thread names are following:");
+        System.out.println(guruThread1.getName());
+        System.out.println(guruThread2.getName());
+    }
+      public void run() {
+      }
+    }
+
+
+b)Thread:Thread is a seperate flow of execution.
+  there are 2 types of threads. 
+  1.by extends thread class
+  2.by implementing runnable interface
+  Example extends:
+  public class Main extends Thread {
+  public static void main(String[] args) {
+    Main thread = new Main();
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+ }
+  Example runnable:
+  public class Main implements Runnable {
+  public static void main(String[] args) {
+    Main obj = new Main();
+    Thread thread = new Thread(obj);
+    thread.start();
+    System.out.println("This code is outside of the thread");
+  }
+  public void run() {
+    System.out.println("This code is running in a thread");
+  }
+  }
+
+
+c)synchronization:
+  Synchronization is the capability to control the access of multiple threads to any shared resource.
+  In the Multithreading concept, multiple threads try to access the shared resources at a time to produce inconsistent results. 
+  The synchronization is necessary for reliable communication between threads.
+  There are two types of synchronization,they are:
+  1)Process Synchronization.
+  2)Thread Synchronization.
+
+d)Synchronization:
+  Synchronization is the capability to control the access of multiple threads to any shared resource.
+  In the Multithreading concept, multiple threads try to access the shared resources at a time to produce inconsistent results. 
+  The synchronization is necessary for reliable communication between threads.
+  There are two types of synchronization,they are:
+  1)Process Synchronization.
+  2)Thread Synchronization.
+
+  Synchronized block:
+  Synchronized block can be used to perform synchronization on any specific resource of the method.
+  Scope of synchronized block is smaller than the method.
+  A Java synchronized block doesn't allow more than one JVM, to provide access control to a shared resource.
+  The system performance may degrade because of the slower working of synchronized keyword.
+  Java synchronized block is more efficient than Java synchronized method.
