@@ -1,0 +1,39 @@
+1)
+a)What is java and what are features of java?
+ans:JAVA:it is an programming language.it is used for performing various operations.
+    it is widely used programming language to develop many applications rather than any other programming languages like c,c#,c++etc.
+   Features of Java:
+   ->it supports object oriented programming(oop) concepts.
+   ->it is a simple programming language due to the concepts of inbuilt library.
+   ->java is platform independent language.
+   ->it is Architecturally neutral because one the program is written in one platform it can be executed in any other platform.
+   
+b)Architecture of JVM:
+   Java virtual machine(JVM) acts as a run-time engine.JVM is the one that actually calls the main method present in a java code. 
+   JVM is a part of Java Runtime Environment(JRE).
+   ->JVm consits of mainly three blocks 
+   1)class loader.
+   2)Interpretor.
+   3)Java intime compiler.
+
+   Class loader:it take the .class file and loads the all data of the class file here the checking of the all the data inputs are validated and next it is mived to interpretor.
+
+   Interpretor:In interpretor the code which is recieved from the compiler which will be in intermediate language is converted into binary code.
+
+   Java time compiler:it checks the syntax and symantics of the code.
+   if there is any error in the code which is not detected during the compilation time is detected here and gives the run time error.
+   if there are no errors the java runtime compiler executes the code and gives output.
+
+
+c)       JDK                               JRE                                                             JVM
+
+   ->Java development kit(JDK) is the  ->Java runtime environment(JRE)                         ->Java virtual machine(JVM) it is used
+     combination of both jvm and jre      is the implementation of JVM                           to perform the execution of program.
+
+   ->JDK is primarily used for code    ->JRE is majorly responsible                            ->JVM on other hand specifies all the implementations 
+     execution and has prime             for creating environment for code execution.            and responsible to provide these implementations to JRE.
+     functionality of development.
+
+   ->JDK is platform dependent          ->JRE is also platform dependent.                       ->JVM is platform independent.
+     i.e for different platforms 
+     different JDK required.
