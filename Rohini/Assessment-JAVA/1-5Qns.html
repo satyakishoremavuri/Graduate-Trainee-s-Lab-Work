@@ -1,0 +1,491 @@
+1Q:JAVA Basics:
+a)	What is Java? What is features of java?
+java is a class based, object oriented programming language.java is a very easy to learn and its syntax is simple and easy to understand.
+most important features of java language is ,
+.Simple 
+. Object oriented 
+. portable 
+. platform independent 
+. secured 
+. Robust 
+. Architecture neutral 
+. Interpreted 
+. High performance 
+. multithreaded 
+. Dynamic 
+b)	Explain The Architecture of JVM?
+JVM stands for Java Virtual Machine which is used to excute JAVA bytecode.
+.sourcecode compile bytecode. 
+CLASS LOADER 
+   |
+JVM METHOD AREA --> HEAP AREA --> JVM STACK AREA --> PC REGISTER --> NATIVE METHOD AREA. 
+method area: the memory block whether the class is loaded is known as method area. 
+heap area : the memory block where the object is created is known as heap area. 
+java stack area : the memory block where all the methods are excuted is known as java stack area. 
+pc register: pc register contains the address of the java virtual machine instruction currently being executed. 
+native method: it contains all the native methods used in application. 
+once complete the Jvm memory execution send the code to excution engine. 
+EXCUTION ENGINE ---> NATIVE METHOD INTERFACE --> NATIVE METHODS LIBRARY 
+excution engine:excute .classfile read the in jvm memory with help native methods excute the code. 
+native method interface : it is a frame work which provides an interface to communicate with another application.
+native method libraries: installed java in local machine in built libraries. 
+c)	What is difference between JDK, JRE, JVM? 
+s.no          key                  JDK                                              JRE                                                 JVM
+1          Defination         jdk means java development kit         JRE means java runtime environment                   jvm is an abstract machine that is platform dependent
+                             it is a software development kit       it is implementation of jvm and is defined as a       and has three notions as a specification,a document that
+                             to develop applications in java        as a software package that provides java class        describes require of jvm implementation, implementation 
+                             in addition to JRE,JDK also contain    libraries, along with jvm and other components        a computer program that meets jvm requirements.
+                             no of development tools.               to run application.                                   jvm on the hand specifies all the implementations and the
+2         prime             jdk is primary used for code excution   on other hand JRE is majorly responsible forcreating  implementation and responsible to provide these implementation
+          functionality     and has prime functionality of          environment for code excution.                         to JRE 
+                            development                           
+3         platform           jdk is platform dependent                like of jdk jre is also platform dependent.          jvm is platform independent.
+        independence  
+2Q: JAVA OOPS
+a)	Explain OOPs Concepts with example programs for each concept?
+OOPS is a object oriented programming system.oops is a methodology or paradigm to design a progrm using classes and objects.
+oops concept in 6 types there are 
+.Object 
+.Class 
+.Inheritance 
+. Encapsulation
+. Polymorphism 
+.Abstraction 
+.Object:object is a real word entity,An entity that has state and behaviour is known as an object.it can be physical or logical.an object can be defined as an instance of a class.
+syntax: class_name object_name = new class_name();
+new operate using create a object. n no of objects we created. object can call method.
+ex: A obj = new A();
+
+class:collection of objects is called class.it is a logical entity.a class can also br defined as a blueprint from which you can create an individual object from which you can create an individual object class doesnt consume any space.
+syntax: class<class_name>{
+    feild ;
+    method;
+    }
+  ex:public class main {
+    int x = 5;
+  } 
+  Inheritance:when one object acquires all the properties and behaviours of a parent object it is known as Inheritance.it provide code reusability,it is used to achieve runtime Polymorphism.provide reusability.we add extend keyword.
+  Inheritance are three types 
+  .single level Inheritance.
+  . Multilevel Inheritance. 
+  . Hierachical Inheritance.
+  Inheritance doesnt support Multilevel Inheritance.
+  example:class Employee{  
+    float salary=40000;  
+   }  
+   class Programmer extends Employee{  
+    int bonus=10000;  
+    public static void main(String args[]){  
+      Programmer p=new Programmer();  
+      System.out.println("Programmer salary is:"+p.salary);  
+      System.out.println("Bonus of Programmer is:"+p.bonus);  
+   }  
+   }  
+Encapsulation: encapsulation is nothing but binding the code and data members.together into a single unit are known as a capsule it is wrapped with different medicines.
+encapsulation is providing security to our application.it provide easy to testing.it provide data hideing .it provide  control over the data.
+example:class Test{  
+    public static void main(String[] args){  
+   
+    Student s=new Student();  
+  
+    s.setName("vijay");  
+  
+    System.out.println(s.getName());  
+    }  
+    }  
+Polymorphism:one task is performed in different ways, it is known as Polymorphism.
+example:                  
+class Bike{  
+    void run(){System.out.println("running");}  
+  }  
+  class Splendor extends Bike{  
+    void run(){System.out.println("running safely with 60km");}  
+    
+    public static void main(String args[]){  
+      Bike b = new Splendor();
+      b.run();  
+    }  
+  }     
+it provide flexbility.in java we used method overloading and overriding to achieve Polymorphism.
+overloading:same method name with different parameters with in the same class is called overloading.
+class Adder{  
+    static int add(int a,int b){return a+b;}  
+    static int add(int a,int b,int c){return a+b+c;}  
+    }  
+    class TestOverloading1{  
+    public static void main(String[] args){  
+    System.out.println(Adder.add(11,11));  
+    System.out.println(Adder.add(11,11,11));  
+    }}  
+overriding:same method name with same parameters in different class is called overriding.
+class Vehicle{  
+  
+    void run(){System.out.println("Vehicle is running");}  
+  }  
+ 
+  class Bike2 extends Vehicle{  
+  
+    void run(){System.out.println("Bike is running safely");}  
+    
+    public static void main(String args[]){  
+    Bike2 obj = new Bike2();
+    obj.run();//calling method  
+    }  
+  } 
+Abstraction:is nothing but Hide there internal implementation and showing functionality is known as Abstraction.
+abstract class Animal {
+    public abstract void animalSound();
+    public void sleep() {
+      System.out.println("Zzz");
+    }
+  }
+  b)	Explain Constructor, this, final, super keywords with example programs? 
+ Constructor:when we used new keyword operator. whenever we compile code as compiler provide object for you default constructor.the constructor provide object for you intialized the object. 
+ there are two types constructor:
+. default constructor.
+. parametrized constructor.
+default:it constructor doesnt have any parameter.
+class Student{
+    int id ;
+    string name;
+    void diplay()
+    System.out.println(id+""+name);
+                          
+public static void main (string args[]){
+    Student s1 = new Student();
+    Student s2 = new Student();
+   s1.display();
+   s2.display();
+}
+}
+ Student(int i,string n){
+    id =1;
+    name = n;
+ }
+Parametrized Constructor:A constructor which has a specific number of parameters is called a parameterized constructor.
+class Student4{  
+    int id;  
+    String name;  
+    
+    Student4(int i,String n){  
+    id = i;  
+    name = n;  
+    }  
+   
+    void display(){System.out.println(id+" "+name);}  
+   
+    public static void main(String args[]){  
+   
+    Student4 s1 = new Student4(111,"Karan");  
+    Student4 s2 = new Student4(222,"Aryan");  
+  
+    s1.display();  
+    s2.display();  
+   }  
+}  
+This Keyword:The this keyword can be used to refer current class instance variable.
+example:class Student{  
+    int rollno;  
+    String name;  
+    float fee;  
+    Student(int rollno,String name,float fee){  
+    this.rollno=rollno;  
+    this.name=name;  
+    this.fee=fee;  
+    }  
+    void display(){System.out.println(rollno+" "+name+" "+fee);}  
+    }  
+      
+    class TestThis1{  
+    public static void main(String args[]){  
+    Student s1=new Student(111,"ankit",5000f);  
+    Student s2=new Student(112,"sumit",6000f);  
+    s1.display();  
+    s2.display();  
+    }}  
+Super Keyword:The super keyword in Java is a reference variable which is used to refer immediate parent class object.super can be used to refer immediate parent class instance variable.
+super can be used to invoke immediate parent class method.
+example:class Animal{  
+    Animal(){System.out.println("animal is created");}  
+    }  
+    class Dog extends Animal{  
+    Dog(){  
+    super();  
+    System.out.println("dog is created");  
+    }  
+    }  
+    class TestSuper3{  
+    public static void main(String args[]){  
+    Dog d=new Dog();  
+    }}  
+Final Keyword:when applicable classes also methods also variable also.whenever we declare a class is a final so the class should not be extends.inheritance is not possible for final class.
+example:class Bike9{  
+    final int speedlimit=90;
+    void run(){  
+     speedlimit=400;  
+    }  
+    public static void main(String args[]){  
+    Bike9 obj=new  Bike9();  
+    obj.run();  
+    }  
+   }   
+c)	Explain difference between Interface and Abstract class with example programs?
+     Abstract class                                                                  Interface
+ Abstract class can have abstract and non-abstract methods.	                        Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+ Abstract class doesn't support multiple inheritance.	                            Interface supports multiple inheritance.
+ Abstract class can have final, non-final, static and non-static variables.	        Interface has only static and final variables.
+ Abstract class can provide the implementation of interface.	                     Interface can't provide the implementation of abstract class.
+ The abstract keyword is used to declare abstract class.                            	The interface keyword is used to declare interface.
+ An abstract class can extend another Java class and implement multiple               	An interface can extend another Java interface only.    
+ Java interfaces.
+3Q:JAVA Exception Handling:
+a)	Explain The concept of Exception and Error with architecture? 
+Exception is an abnormal condition.In Java, an exception is an event that disrupts the normal flow of the program. It is an object which is thrown at runtime.
+Error is irrecoverable. Some example of errors are OutOfMemoryError, VirtualMachineError, AssertionError etc.
+Throwable class is the rootcause of the exception hierachy. 2 types of Exception and Error.
+most of the time exception caused by our program only.
+                                 Throwable
+                 Exception                                      Error 
+                 IO Exception                                 Stack over flow Error
+                 SQL Exception                                Virtual Machine Error
+                Class not found Exeption                      Out of memory Error
+                     |
+                     ------->Run Time Exeption 
+                                .Arthmetic Exception
+                                . Null Pointer Exception.
+                                .Number Format Exception.
+                                . Index Out Of Bound.
+                                     |
+                                     ----->Array Index Exception
+                                     ---->String Index Excepti
+ b)	What is the concept of Exception handling? Provide  Examples?
+ Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+ The core advantage of exception handling is to maintain the normal flow of the application.
+There are mainly two types of exceptions: checked and unchecked. 
+Checked Exception:The classes that directly inherit the Throwable class except RuntimeException and Error are known as checked exceptions.
+unchecked Exception:The classes that inherit the RuntimeException are known as unchecked exceptions. For example, ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException, etc.
+five keywords that are used to handle the exception.
+try:The "try" keyword is used to specify a block where we should place an exception code. It means we can't use try block alone. The try block must be followed by either catch or finally.
+catch:The "catch" block is used to handle the exception. It must be preceded by try block which means we can't use catch block alone. It can be followed by finally block later.
+finally:The "finally" block is used to execute the necessary code of the program. It is executed whether an exception is handled or not.
+throw:The "throw" keyword is used to throw an exception.
+throws:The "throws" keyword is used to declare exceptions. It specifies that there may occur an exception in the method. It doesn't throw an exception. It is always used with method signature.
+Example:
+public class JavaExceptionExample{  
+    public static void main(String args[]){  
+     try{  
+      int data=100/0;  
+     }catch(ArithmeticException e){System.out.println(e);}  
+      System.out.println("rest of the code...");  
+    }  
+  } 
+  c)	Explain about throw and throws keywords with examples?
+Throw:it is user defined Exception.using the throw keyword we can create object.we will handover to the jvm.
+main purpose of throw keyword is deligate responsible to exception handling to the coller method.
+class Test 
+public static void main (string args[])
+{
+    System.out.println(10/0);
+}
+Throws: The "throws" keyword is used to declare exceptions. It specifies that there may occur an exception in the method. It doesn't throw an exception. It is always used with method signature.
+example:
+class M{  
+ void method()throws IOException{  
+  throw new IOException("device error");  
+ }  
+}  
+class Testthrows4{  
+   public static void main(String args[])throws IOException{//declare exception  
+     M m=new M();  
+     m.method();  
+  
+    System.out.println("normal flow...");  
+  }  
+} 
+4Q:JAVA-Multithreading:
+a)	Explain the concept of multi-Threading? Provide Examples?
+Multithreading in Java is a process of executing multiple threads simultaneously.
+Multithreading is develop multimedia,graphics and develop animations and video games also. 
+Multitasking: different task performing simultaneously where each task have independent program.
+Multitasking is divided into 2 types:
+. Process Based 
+. Thread Based 
+.process Based:Each process has an address in memory. In other words, each process allocates a separate memory area.
+.Thread Based:Threads share the same address space.
+
+example:
+public class Multi extends Thread {
+    public void run()
+    {
+        System.out.println("Thread is running");
+    }
+    public static void main (string args[])
+    {
+        Multi t1 = new Multi();
+        t1.start();
+    }
+}     
+b)	What is Thread? How many types we can define a thread? Provide Examples for each?
+thread: thread is a separate flow of execution we can define a thread following two types.
+. By Extending thread Class 
+. By implementing runnable interface 
+By Extending Thread Class:provide constructors and methods to create and perform operations on a thread.thread class extends object class and implements runnable interface.
+in thread class there are four types:
+thread 
+thread(string name)
+thread (runnable r)
+thread (runnabler,stringname)
+example:
+class Multi extends Thread{  
+    public void run(){  
+    System.out.println("thread is running...");  
+    }  
+    public static void main(String args[]){  
+    Multi t1=new Multi();  
+    t1.start();  
+     }  
+    }  
+Runnable interface:should be implemented by any class.whose instances are intended to be executed by a thread .runnable interface have only one method named run().
+example:
+class Multi3 implements Runnable{  
+    public void run(){  
+    System.out.println("thread is running...");  
+    }  
+      
+    public static void main(String args[]){  
+    Multi3 m1=new Multi3();  
+    Thread t1 =new Thread(m1);   
+    t1.start();  
+     }  
+    }  
+c)	What is Synchronization? Provide Examples?
+Synchronization is avoid data inconsistancy.
+The synchronization is mainly used to
+To prevent thread interference.
+To prevent consistency problem.
+class Table{  
+    synchronized void printTable(int n){  
+      for(int i=1;i<=5;i++){  
+        System.out.println(n*i);  
+        try{  
+         Thread.sleep(400);  
+        }catch(Exception e){System.out.println(e);}  
+      }  
+     
+    }  
+   }  
+    public class TestSynchronization3{  
+   public static void main(String args[]){  
+   final Table obj = new Table();//only one object  
+     
+   Thread t1=new Thread(){  
+   public void run(){  
+   obj.printTable(5);  
+   }  
+   };  
+   Thread t2=new Thread(){  
+   public void run(){  
+   obj.printTable(100);  
+   }  
+   };  
+     
+   t1.start();  
+   t2.start();  
+   }  
+   }  
+d)	What is Difference between Synchronization and synchronized block? Provide Examples?
+Synchronization is avoid data inconsistancy.
+the performance is low.
+the waiting time is high.
+Synchronization block:whenever useing synchronization block multiple thread trying to enter in to a synchronization block.there will be a lock is required.
+the performance is high.
+the waiting time is low.
+5Q:	Java Programs 
+a)	Java program to display Fibonacci series?
+  class FibonacciExample1{  
+  public static void main(String args[])  
+    {    
+     int n1=0,n2=1,n3,i,count=10;    
+     System.out.print(n1+" "+n2); 
+        
+     for(i=2;i<count;++i)
+     {    
+      n3=n1+n2;    
+      System.out.print(" "+n3);    
+      n1=n2;    
+      n2=n3;    
+     }    
+      
+    }}  
+e)	Java Program to generate Multiplication Table?  
+
+public class TableExample  
+{  
+public static void main(String args[])   
+{  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter number: ");       
+ 
+int num=sc.nextInt();  
+
+for(int i=1; i <= 10; i++)  
+{  
+   
+System.out.println(num+" * "+i+" = "+num*i);  
+}  
+}  
+} 
+c)	Java Program to Reverse a String?
+class Reverse{
+    public static void main(String[] args)
+    {
+     String str="Rohini";
+     String empty="";
+     char ch;
+     for(int i=0;i<str.length();i++)
+     {
+       ch=str.charAt(i);
+       empty=ch+empty;
+     }
+     System.out.println(empty);
+    } 
+}
+
+d)	Java Program to Check Leap Year?
+public class LeapYear {
+    public static void main(String[] args){
+       int year;
+       System.out.println("Enter an Year :: ");
+       Scanner sc = new Scanner(System.in);
+       year = sc.nextInt();
+ 
+       if (((year % 4 == 0) && (year % 100!= 0)) || (year%400 == 0))
+          System.out.println("Specified year is a leap year");
+       else
+          System.out.println("Specified year is not a leap year");
+    }
+ }
+b) Java program to Create Pyramids and Patterns?
+public class Main {
+
+    public static void main(String[] args) {
+      int rows = 5, k = 0;
+  
+      for (int i = 1; i <= rows; ++i, k = 0) {
+        for (int space = 1; space <= rows - i; ++space) {
+          System.out.print("  ");
+        }
+  
+        while (k != 2 * i - 1) {
+          System.out.print("* ");
+          ++k;
+        }
+  
+        System.out.println();
+      }
+    }
+  }
+
+    
+
+
