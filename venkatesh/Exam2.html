@@ -1,0 +1,226 @@
+1.What is call by value and call refrence ? Explain with example 
+A. Call by value: means callig in a method with a parameter as value 
+In this parameter passing method, values of actual parameters are copied to functions’s formal parameters and the two types of parameters are stored in different memory locations. 
+So any changes made inside functions are not reflected in actual parameters of the caller.
+B. call by refrence : Both the actual and formal parameters refer to the same locations,
+ so any changes made inside the function are actually reflected in actual parameters of the caller.
+ EX:
+ class Operation{  
+    int data=50;  
+     
+    void change(int data){  
+    data=data+100;
+    }  
+        
+    public static void main(String args[]){  
+      Operation op=new Operation();  
+     
+      System.out.println("before change "+op.data);  
+      op.change(500);  
+      System.out.println("after change "+op.data);  
+     
+    }  
+}
+call by refrence ex:
+Void inc(int );
+Public static voidmain(string args[]) {
+int a = 10;
+System.out.println("Before function was called the Value of a = ", a);
+void inc();
+System.out.println("After function is called Value of a = ", a);
+}
+Void inc(intx) {
+int x = x + 1;
+}
+
+2 .Write a C# Sharp program to print on screen the output of adding, subtracting, 
+multiplying and dividing of two numbers which will be entered by the user. 
+using System;
+public class Exercise7
+{
+    public static void Main()
+    {
+        Console.Write("Enter a number: ");
+        int num1= Convert.ToInt32(Console.ReadLine());
+ 
+        Console.Write("Enter another number: ");
+        int num2= Convert.ToInt32(Console.ReadLine());
+   
+        Console.WriteLine("{0} + {1} = {2}", num1, num2, num1+num2);
+        Console.WriteLine("{0} - {1} = {2}", num1, num2, num1-num2);
+        Console.WriteLine("{0} x {1} = {2}", num1, num2, num1*num2);
+        Console.WriteLine("{0} / {1} = {2}", num1, num2, num1/num2);
+   }
+}
+
+3. Write a method or program to find a Nth highest or lowest number in a given series of numbers 
+
+using System;
+
+class venky 
+{
+
+static void findNthTerm(int n)
+{
+	
+	if (n % 2 == 0)
+	{
+		n = n / 2;
+		Console.WriteLine(Math.Pow(3, n - 1));
+	}
+	
+
+	else
+	{
+		n = (n / 2) + 1;
+		Console.WriteLine(Math.Pow(2, n - 1));
+	}
+}
+
+
+public static void Main()
+{
+	int N = 4;
+	findNthTerm(N);
+
+	N = 11;
+	findNthTerm(N);
+}
+}
+4. Write a program to convert first letter of each word into upper case and others into lower case from the given string 
+
+using System;
+
+class lowertoupper {
+	
+	static String convert(String str)
+	{
+
+		
+		char []ch = str.ToCharArray();
+		
+		for (int i = 0; i < str.Length; i++)
+		{
+
+		
+			if (i == 0 && ch[i] != ' ' ||
+				ch[i] != ' ' || ch[i - 1] == ' ')
+			{
+
+				
+				if (ch[i] >= 'a' ||ch[i] <= 'z')
+				{
+
+					
+					ch[i] = (char)(ch[i] - 'a' + 'A');
+				}
+			}
+
+			
+			else if (ch[i] >= 'A' && ch[i] <= 'Z')
+
+				
+				ch[i] = (char)(ch[i] + 'a' - 'A');		
+		}
+
+		
+		String st = new String(ch);
+		
+		return st;
+	}
+
+	
+	public static void Main()
+	{
+		String str = "gOOD Mrng";
+		Console.Write(convert(str));
+	}
+}
+
+5.Write a program to Print how many caps letters, small letters, words present in a given string 
+
+using System;
+
+class Count {
+	
+	public static void Main()
+	{
+		
+		String str = "#UPPERlower123!@#";
+		int upper = 0, lower = 0;
+		int number = 0, special = 0;
+
+		for(int i = 0; i < str.Length; i++)
+		{
+			char ch = str[i];
+			if (ch >= 'A' && ch <= 'Z')
+				upper++;
+			else if (ch >= 'a' && ch <= 'z')
+				lower++;
+			else if (ch >= '0' && ch <= '9')
+				number++;
+			else
+				special++;
+		}
+		Console.WriteLine("Upper_case letters : " + upper);
+		Console.WriteLine("Lower _case letters : " + lower);
+		Console.WriteLine("Number : " + number);
+		Console.Write("Special characters : " + special);
+	}
+}
+6. Explain the differences between Abstract class and Interfaces 
+An abstract class is a way to achieve the abstraction in C#.
+  
+ It contains both declaration and definition part.    	It contains only a declaration part.
+ It contain constructor.                                It does not contain constructor.
+ It can contain static members.                         It does not contain static members.
+ It can contain different types of access modifiers like public, private, protected etc.    It only contains public access modifier because everything in the interface is public.
+ The performance of an abstract class is fast.         The performance of interface is slow because it requires time to search actual method in the corresponding class.
+ It is used to implement the core identity of class.   It is used to implement peripheral abilities of class.
+
+ 7.Explain about method overloading and overriding with example ?
+ Method Overriding means having two methods with same name and same signatures (parameters), 
+ one should be in the base class and other method should be in a derived class
+ 
+ 8.Write a method with 2 parameters (sorting type, sort data) and return the sorted data 
+ A sorting operation orders the elements of a sequence based on one or more attributes. 
+ The first sort criterion performs a primary sort on the elements. 
+ By specifying a second sort criterion, you can sort the elements within each primary sort group.
+
+ 9.Write a C# program to Remove Duplicate characters from a given String 
+
+ using System;
+using System.Linq;
+using System.Collections.Generic;
+
+
+   class Program {
+      static void Main(string[] args) {
+         string myStr = "aabbhhssskss";
+         Console.WriteLine("Initial String: "+myStr);
+         var unique = new HashSet<char>(myStr);
+         Console.Write(" removing duplicates: ");
+         foreach (char c in unique)
+         Console.Write(c);
+      }
+   }
+
+   10.Write a C# Method which takes string parameter and returns a reversed string / number given in a parameter.'
+   ' do this program without using direct C# method 
+ 
+   static void Main(string[] args)  
+   {  
+        ReverseStringWithInbuiltMethod("chichas tea stall ");  
+   }  
+     
+   private static void ReverseStringWithInbuiltMethod(string stringInput)  
+   {  
+        
+          char[] charArray = stringInput.ToCharArray();  
+          Array.Reverse(charArray);  
+          Console.WriteLine(new string(charArray));  
+   }   
+ 
+11.Retrieve data from database using ADO.Net in 3-tier architecture and display that data in console application and for inserting data also. 
+
+  
