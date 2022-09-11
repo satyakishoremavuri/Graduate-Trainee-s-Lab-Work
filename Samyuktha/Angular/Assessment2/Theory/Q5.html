@@ -1,0 +1,21 @@
+5.Explain about higher order function in javascript.
+In JavaScript, the functions can use primitive types like numbers, strings.objects like arrays, plain objects, regular expressions.
+as arguments, and return a primitive type or object too.The higher-order functions help reduce the code duplication and favor the 
+single-responsibility principle.
+example:
+function calculate(operation, initialValue, numbers) {
+    let total = initialValue;
+    for (const number of numbers) {
+      total = operation(total, number);
+    }
+    return total;
+  }
+  function sum(n1, n2) {
+    return n1 + n2;
+  }
+  function multiply(n1, n2) {
+    return n1 * n2;
+  }
+  calculate(sum, 0, [1, 2, 4]);      
+  calculate(multiply, 1, [1, 2, 4]); 
+  

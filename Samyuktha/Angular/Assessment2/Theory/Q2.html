@@ -1,0 +1,38 @@
+2.Explain about shallow copy and deep copy.
+Shallow copy:An Object can be considered as Shallow Copied when a separate copy of top-level value type properties is assigned
+to the new Object and the properties that  will represent an object are copied by reference to the destination folder.
+Example:
+class Shallow  
+{   
+int x = 30;  
+}  
+public class ShallowCopyExample   
+{      
+public static void main(String argvs[])   
+{  
+Shallow obj1 = new Shallow();  
+Shallow obj2 = obj1;  
+obj2.x = 6;  
+System.out.println("The value of x is: " + obj1.x);  
+}  
+}   
+
+Deep copy:When we do a copy of some entity to create two or more than two entities such that changes in one entity are not
+reflected in the other entities, then we can say we have done a deep copy. In the deep copy a new memory allocation happens
+for the other entities, and reference is not copied to the other entities.Each entity has its own independent reference. 
+Example:
+class DeepCopy  
+{    
+int x = 30;  
+}  
+public class DeepCopyExample   
+{       
+public static void main(String argvs[])   
+{    
+DeepCopy obj1 = new DeepCopy();  
+DeepCopy obj2 = new DeepCopy();  
+obj2.x = 6;     
+System.out.println("The value of x is: " + obj1.x);  
+}  
+}   
+  

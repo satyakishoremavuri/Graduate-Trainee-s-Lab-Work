@@ -1,0 +1,275 @@
+a)Java is a fully object-oriented language It supports every OOP concept such as Abstraction, Encapsulation, Inheritance, Polymorphism. 
+Java programs are developed using classes and objects
+The feauters of java are A general-purpose programming language made for developers 
+to write once run anywhere that is compiled Java code can run on all platforms that support Java.
+some main feauters of java :
+Object Oriented. In Java, everything is an Object.
+Platform Independent.
+Simple.
+Secure.
+Architecture-neutral.
+Portable.
+Robust.
+Multithreaded.
+
+b)
+JVM (Java Virtual Machine) Architecture. JVM (Java Virtual Machine) is an abstract machine.
+ It is a specification that provides runtime environment in which java bytecode can be executed.
+  JVMs are available for many hardware and software platforms
+ 
+ c)the difference between JRE, and JVM JDK is a software development kit.
+ JRE is only used by them who only wants to run the Java Programs.
+ Java Virtual machine (JVM) is a very important part of both JDK and JRE because it is inbuilt in both.
+ Java program you run using JRE or JDK goes into JVM and JVM is responsible.
+
+ 2
+ a)Object-Oriented programming, or OOPs concepts with examples
+ the main concepts in OOPs are 
+Object
+Class
+Inheritance
+Polymorphism
+Abstraction
+Encapsulation 
+example:class Employee{  
+ float salary=5000;  
+}  
+class Programmer extends Employee{  
+ int bonus=30000;  
+ public static void main(String args[]){  
+   Programmer p=new Programmer();  
+   System.out.println("Programmer salary is:"+p.salary);  
+   System.out.println("Bonus of Programmer is:"+p.bonus);  
+}  
+}  
+
+b)
+ A constructor in Java is a special method that is used to initialize objects.
+ The constructor is called when an object of a class is created. It can be used to set initial values for object attributes.
+ In Java, a constructor is a block of codes similar to the method. It is called when an instance of the class is created. 
+ At the time of calling the constructor, memory for the object is allocated in the memory. It is a special type of method which is used to initialize the object.
+ Every time an object is created using the new() keyword, at least one constructor is called.
+  this keyword
+ In java, super keyword is used to access methods of the parent class while this is used to access methods of the current class.
+this keyword is a reserved keyword in java i.e, we can�t use it as an identifier
+
+super keyword 
+super is a reserved keyword in java i.e, we can�t use it as an identifier.
+super is used to refer super-class�s instance as well as static members.
+
+c)
+Abstract class vs Interface
+Type of methods: Interface can have only abstract methods. An abstract class can have abstract and non-abstract methods
+Final Variables: Variables declared in a Java interface are by default final.
+Type of variables: Abstract class can have final, non-final, static and non-static variables
+example://interface declaration
+interface Polygon_Shape {
+    void calculateArea(int length, int breadth);
+}
+ 
+//implement the interface
+class Rectangle implements Polygon_Shape {
+    //implement the interface method
+    public void calculateArea(int length, int breadth) {
+        System.out.println("The area of the rectangle is " + (length * breadth));
+    }
+}
+ 
+class Main {
+    public static void main(String[] args) {
+        Rectangle rect = new Rectangle();       //declare a class object
+        rect.calculateArea(10, 20);             //call the method
+    }
+}
+
+
+3)
+a) Java exception architecture.     
+Exceptions are errors that occur during program operation. 
+The exception handling framework of the Java language is an important manifestation of the robustness of the Java language. 
+Java treats exceptions as objects and defines a base class java.lang.Throwable as the superclass of all exceptions. 
+Many exception classes have been defined in the Java API. These exception classes are divided into two categories, Error and Exception.
+
+b)
+The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that the normal flow of the application can be maintained.
+The core advantage of exception handling is to maintain the normal flow of the application.
+Types of Java Exceptions
+There are mainly two types of exceptions: checked and unchecked. An error is considered as the unchecked exception.there are three types of exceptions namely:
+Checked Exception
+Unchecked Exception
+Error 
+example:
+public class JavaExceptionExample{  
+  public static void main(String args[]){  
+   try{  
+      //code that may raise exception  
+      int data=100/0;  
+   }catch(ArithmeticException e){System.out.println(e);}  
+   //rest code of the program   
+   System.out.println("rest of the code...");  
+  }  
+}
+
+c)
+The throw keyword in Java is used to explicitly throw an exception from a method or any block of code. We can throw either checked or unchecked exception.
+ The throw keyword is mainly used to throw custom exceptions.
+
+// Java program that demonstrates the use of throw
+class ThrowExcep
+{
+	static void fun()
+	{
+		try
+		{
+			throw new NullPointerException("demo");
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("Caught inside fun().");
+			throw e; 
+		}
+	}
+
+	public static void main(String args[])
+	{
+		try
+		{
+			fun();
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("Caught in main.");
+		}
+	}
+}
+  
+4A) concept of multi-Threading
+Multithreading is the process of executing more than a thread in the system, 
+where the execution of these threads can be of two different types, such as Concurrent and Parallel multithread executions.
+ A Thread can be defined as a chunk or unit of a process that can be identified as either a user-level thread or a Kernel-level thread. 
+ It is usually used for its essential characteristics like it uses the system resources efficiently, high performance, greatly responsive, 
+ and also its parallel execution ability.
+
+example:// Java code for thread creation by extending
+// the Thread class
+class MultithreadingDemo extends Thread {
+	public void run()
+	{
+		try {
+			// Displaying the thread that is running
+			System.out.println(
+				"Thread " + Thread.currentThread().getId()
+				+ " is running");
+		}
+		catch (Exception e) {
+			// Throwing an exception
+			System.out.println("Exception is caught");
+		}
+	}
+}
+
+// Main Class
+public class Multithread {
+	public static void main(String[] args)
+	{
+		int n = 8; // Number of threads
+		for (int i = 0; i < n; i++) {
+			MultithreadingDemo object
+				= new MultithreadingDemo();
+			object.start();
+		}
+	}
+} 
+
+
+b) Thread is a single sequence stream within a process. 
+Threads have same properties as of the process so they are called as light weight processes.
+ Threads are executed one after another but gives the illusion as if they are executing in parallel. Each thread has different states. Each thread has  
+
+A program counter  
+A register set  
+A stack space 
+
+c)
+Multi-threaded programs may often come to a situation where multiple threads try to access the same resources and finally produce erroneous and unforeseen results. 
+
+So it needs to be made sure by some synchronization method that only one thread can access the resource at a given point in time.
+Java provides a way of creating threads and synchronizing their tasks using synchronized blocks.
+Synchronized blocks in Java are marked with the synchronized keyword.
+  A synchronized block in Java is synchronized on some object. 
+  All synchronized blocks synchronize on the same object can only have one thread executing inside them at a time. 
+All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block.
+
+5a) Java program to display Fibonacci series
+class Main {
+  public static void main(String[] args) {
+
+    int n = 10, firstTerm = 0, secondTerm = 1;
+    System.out.println("Fibonacci Series till " + n + " terms:");
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(firstTerm + ", ");
+
+      // compute the next term
+      int nextTerm = firstTerm + secondTerm;
+      firstTerm = secondTerm;
+      secondTerm = nextTerm;
+    }
+  }
+}
+
+c)  Program to Reverse a String
+public class Reverse  
+{  
+    public static void main(String[] args) {  
+        String string = "Dream big";  
+        //Stores the reverse of given string  
+        String reversedStr = "";  
+          
+        //Iterate through the string from last and add each character to variable reversedStr  
+        for(int i = string.length()-1; i >= 0; i--){  
+            reversedStr = reversedStr + string.charAt(i);  
+        }  
+          
+        System.out.println("Original string: " + string);  
+        //Displays the reverse of given string  
+        System.out.println("Reverse of given string: " + reversedStr);  
+    }  
+}  
+
+d) 
+
+   Java program to chech for a leap year
+	
+class Test
+{
+	static boolean checkYear(int year)
+	{
+	// Return true if year is a multiple
+	// of 4 and not multiple of 100.
+	// OR year is multiple of 400.
+	return (((year % 4 == 0) && (year % 100 != 0)) ||
+			(year % 400 == 0));
+	}
+		
+	// Driver method
+	public static void main(String[] args)
+	{
+		int year = 2000;
+		System.out.println(checkYear(2000)? "Leap Year" :
+						"Not a Leap Year" );
+	}
+}
+
+
+e)public class MultiplicationTable {
+
+    public static void main(String[] args) {
+
+        int num = 2;
+        for(int i = 1; i <= 10; ++i)
+        {
+            System.out.printf("%d * %d = %d \n", num, i, num * i);
+        }
+    }
+}

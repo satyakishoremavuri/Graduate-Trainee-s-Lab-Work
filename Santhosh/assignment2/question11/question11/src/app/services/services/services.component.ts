@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  numArray=[1,2,3,4,5,6,7,8,9]
+  numArray=[99,98,97,96,95,94,93,92]
   block = false
 
   constructor() { }

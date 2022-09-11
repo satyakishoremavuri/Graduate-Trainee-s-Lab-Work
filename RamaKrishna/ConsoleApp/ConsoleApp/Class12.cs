@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleApp
 {
     //Method Overloading
-    internal class Class12
+   public class Class12
     {
         public int Sum(int x, int y)
         {
