@@ -12,10 +12,10 @@ namespace csharpTest
     {
         static void Main(string[] args)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-6EOHVMA\\SQLEXPRESS ; initial catalog= snadDB; Trusted_Connection=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-6EOHVMA\\SQLEXPRESS;Initial Catalog=snadDB;Integrated Security=True"))
             {
-                con.Open();
-                using (SqlCommand command = new SqlCommand("SELECT * FROM emp", con))
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT * FROM emp", connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
@@ -33,3 +33,4 @@ namespace csharpTest
         }
     }
 }
+
