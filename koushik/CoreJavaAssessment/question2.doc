@@ -1,0 +1,186 @@
+2)
+a)Object Oriented programming:it is the paradigm which is used to corelate the real time senario in java.
+   OOP consists 4 important concepts:
+   1)Encapsulation.
+   2)Inheritance.
+   3)Polymorphism.
+   4)Abstraction.
+
+   Encapsulation:The process of wrapping the properties and behaviours of an object within the class as a single unit is known as Encapsulation.
+   In Encapsulation getter and setter methods are used.
+   Example:
+   public class Person {
+   private String name; 
+  public String getName() {
+    return name;
+  }
+  public void setName(String newName) {
+    this.name = newName;
+  }
+  }
+   
+   Inheritance:the process of acquiring the properties & behaviour of superclass into the sub class object is known as inheritance.
+   it is of 5 types,they are:
+   1)single level inheritance.
+   2)multi level inheritance.
+   3)hirarchical inheritance.
+   4)multiple inheritance.
+   5)hybrid inheritance.
+
+   single-level:inheritance w.r.t only one single level.i.e one super class having one sub class.
+
+   multi-level:inheritance w.r.t different level. i.e one super class having mutiple sub classes.
+
+   hirarchical:A super class having multiple sub classes in the same level.
+
+   multiple inheritance: A sub class having mutiple super classes at same level.the diamond problem arises due to multiple inheritance.
+   because,it creates confusion for the sub class which super class it have to inherit.
+
+   hybrid inheritance:it is the combination of any 2 types of inheritance.
+   example:
+   class Vehicle {
+  protected String brand = "Ford";     
+  public void honk() {                    
+    System.out.println("Tuut, tuut!");
+  }
+}
+class Car extends Vehicle {
+  private String modelName = "Mustang";  
+  public static void main(String[] args) {
+    Car myCar = new Car();
+    myCar.honk();
+    System.out.println(myCar.brand + " " + myCar.modelName);
+  }
+}
+
+   Polymorphism:The ability  of an object to exhibit in multiple forms is known as Polymorphism.
+   example:
+   class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+
+   Abstraction:the process of providing external features of an application to the user by hiding the internal implementations of the application.
+   example:
+   abstract class Animal {
+  public abstract void animalSound();
+  public void sleep() {
+    System.out.println("Zzz");
+  }
+}
+
+b) Constuctor:
+    These are the like special methods.which are used in object creation to initize non-static properties during the object creation.
+    Constuctors cannot be called seperately in the userlogic but we can call them during the object creation along with new operator.
+    example:
+    class Bike{  
+    Bike1(){
+        System.out.println("Bike is created");
+     }  
+    public static void main(String args[]){   
+    Bike1 b=new Bike();  
+    }  
+    }  
+
+    This:The this keyword can be used to refer current class instance variable. 
+    If there is ambiguity between the instance variables and parameters, this keyword resolves the problem of ambiguity.
+    example:
+    class A{  
+A(){
+    System.out.println("hello a");
+    }  
+A(int x){  
+this();  
+System.out.println(x);  
+}  
+}  
+class TestThis5{  
+public static void main(String args[]){  
+A a=new A(10);  
+}
+}  
+
+    Final:The final keyword is a non-access modifier used for classes, attributes and methods, which makes them non-changeable. 
+    The final keyword is useful when you want a variable to always store the same value.
+    example:
+    class Bike{  
+ final int speedlimit=90;  
+ void run(){  
+  speedlimit=400;  
+ }  
+ public static void main(String args[]){  
+ Bike1 obj=new  Bike();  
+ obj.run();  
+ }  
+}
+
+    Super:The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+    Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.
+    example:
+    class Animal{  
+Animal(){
+    System.out.println("animal is created");
+    }  
+}  
+class Dog extends Animal{  
+Dog(){  
+super();  
+System.out.println("dog is created");  
+}  
+}  
+class TestSuper3{  
+public static void main(String args[]){  
+Dog d=new Dog();  
+}}  
+
+
+c)  Interface:
+    Interface is the 100% pure abstraction and it contains declaration part only.Multiple inheritance can be acheived using interface.
+    It does not contain a constructor.It doesnot contain static members and it contains public access modifiers since everthing is an interface is considered 
+    public.it can use multiple interface.
+    example:
+    interface printable{  
+    void print();  
+    }  
+    class A6 implements printable{  
+    public void print(){System.out.println("Hello");
+    }   
+    public static void main(String args[]){  
+    A6 obj = new A6();  
+    obj.print();  
+    }  
+    }  
+
+    Abstract class:
+    It contains the declaration and defination part.multiple inheritance cannot be implemented by using abstract class.
+    It contains the constructor .It can also contains some static member.It can contain multiple type of access modifiers such as public ,private,protected.
+    The performance of an abstract class is very good because it is quick . A class can use only one abstract class.
+    example:
+    abstract class Bike
+    {  
+    abstract void run();  
+    }  
+    class Honda extends Bike{  
+    void run(){
+    System.out.println("run with top speed");
+    }  
+    public static void main(String args[])
+    {  
+    Bike obj = new Honda();  
+    obj.run();  
+    }  
+    }  
+
