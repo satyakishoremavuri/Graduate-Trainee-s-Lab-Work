@@ -6,7 +6,7 @@ Abstract Class:
 Abstract class can have abstract and non abstract methods.
 Abstract class does not support multiple inheritance.
 Abstract class can have final, non-final, static and non-static variables.
-Abstract class can provide the implementation of interface.
+Abstract class can provide the implementation of the interface.
 
 Interface:
 
