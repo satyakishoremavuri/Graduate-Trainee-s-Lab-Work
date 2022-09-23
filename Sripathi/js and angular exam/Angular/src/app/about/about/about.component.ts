@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+
+  color:string="green";
   constructor() { }
 
   ngOnInit(): void {

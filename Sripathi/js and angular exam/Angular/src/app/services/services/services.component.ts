@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServicesComponent implements OnInit {
 
-  show = 1
+  show = true
   ngOnInit(): void {
 
 
