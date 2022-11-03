@@ -1,0 +1,18 @@
+1.Explain about closures with example in javascript.
+In JavaScript, a closure is a function that references variables in outer scope from its inner scope.
+A closure is a function that preserves the outer scope in its inner scope.
+Example:
+function calculate(x) {
+    function multiply(y) {
+        return x * y;
+    }
+    return multiply;
+}
+const multiply3 = calculate(3);
+const multiply4 = calculate(4);
+
+console.log(multiply3); 
+console.log(multiply3());
+
+console.log(multiply3(6)); 
+console.log(multiply4(2));

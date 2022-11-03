@@ -1,0 +1,34 @@
+div{
+    height: 50px;
+    width: 200px;
+    background-color:beige ;
+    font-size: 20pt;
+    color: black !important;
+}
+/*id selector */
+#div3{
+    height: 50px;
+    width: 200px;
+    background-color:darkmagenta;
+
+}
+/*class selector*/
+.div4{
+    height: 50px;
+    width: 300px;
+    background-color:yellow ;
+    color: white;
+}
+/*attribute slector*/
+div[title]{
+    height: 50px;
+    width:350px;
+    background-color: green;       
+ }
+ /*attribute value selector*/
+ div[title=test]
+ {
+   height:50px;
+   width:400px;
+   background-color:brown;
+ }

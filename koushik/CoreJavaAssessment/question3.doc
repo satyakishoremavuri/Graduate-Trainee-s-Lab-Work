@@ -1,0 +1,83 @@
+3)
+a)Exception:
+   An exception is a problem that arises during the execution of a program. 
+   When an Exception occurs the normal flow of the program is disrupted and the program terminates abnormally,
+   which is not recommended, therefore, these exceptions are to be handled.
+   An exception can occur for many different reasons.when an user has entered an invalid data.
+   A file that needs to be opened cannot be found.
+   A network connection has been lost in the middle of communications or the JVM has run out of memory.
+   we have 2 kinds of exceptions:
+    Checked exceptions :A checked exception is an exception that is checked by the compiler at compilation-time,
+    these are also called as compile time exceptions. These exceptions cannot simply be ignored and should be handled.
+    
+    unchecked exception:An unchecked exception is an exception that occurs at the time of execution. 
+    These are also called as Runtime Exceptions.
+    example:
+    import java.io.*;
+
+    public class ExcepTest {
+
+    public static void main(String args[]) {
+      try {
+         int a[] = new int[2];
+         System.out.println("Access element three :" + a[3]);
+      } catch (ArrayIndexOutOfBoundsException e) {
+         System.out.println("Exception thrown  :" + e);
+      }
+      System.out.println("Out of the block");
+   }
+   }
+   Error:an error is a subclass of Throwable that tells that something serious problem is existing should not try to catch that error.
+   it has been noticed that most of the occurring errors are abnormal conditions and cannot be resolved by normal conditions. 
+   so error and its subclass are referred to as Unchecked Exceptions.
+
+b)ExceptionHandling:
+ The process of handling exceptions is known as exception handling.
+ ExceptionHandling will handle abnormal exception with the help of try-catch block.
+ ExceptionHandling can be done in various ways.some are:
+ using try.
+ using try catch.
+ using try and multiple catch.
+ using try,catch and final.
+  Example:
+  public class Sample {
+    public static void main(String[]args){
+        System.out.println("Main method begins");
+        int a=10;
+        int b=o;
+        try{
+            int c=a/b;
+        }
+        catch(Arthematicexception e){
+            system.out.println("Exception handled");
+        }
+        System.out.println("main method ends");
+    }
+
+
+c)Throw:
+  Throw used with in a method.It can only throw single exception.Followed by a thowable instance.
+  Used to throw an Exception.
+  Example throw:
+  class Main {
+  public static void divideByZero() {
+    throw new ArithmeticException("Trying to divide by 0");
+   }
+
+   public static void main(String[] args) {
+    divideByZero();
+   }
+   }
+  
+  Throws:
+  Throws used with method signature.it can declare multiple exception.it is followed by an exception class name.
+  it is used to declare an exception.
+  Example throws:
+  class test
+   {
+    public static void main(String[] args)throws InterruptedException
+    {
+        Thread.sleep(10000);
+        System.out.println("test");
+    }
+   }

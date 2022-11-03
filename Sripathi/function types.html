@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>functions types </h3>
+
+    <ol>
+        <li>named functions</li>
+        <li>Anonymous Functions</li>
+        <li>iife</li>
+        <li>Arrow functions</li>
+    </ol>
+
+
+    <script>
+
+
+        // anonomyous function
+        var sum = function(num1,num2){
+            var result = num1 + num2
+            return result
+        }
+
+        document.write(sum(2,4));
+
+
+        document.write('<br><br>'+'iife'+'<br><br>')
+
+
+        //iife 
+        var sum = (function add(num1,num2){
+            var result = num1 + num2
+            return result
+        })(5,7)
+
+        document.write(sum);
+
+
+        document.write('<br><br>'+'arrow'+'<br><br>')
+
+        var sum = (num1,num2)=>{
+            var result = num1 + num2
+            return result
+        }
+
+        document.write(sum(2,4));
+
+
+        document.write('<br><br>'+'arrow forms single state ments'+'<br><br>')
+
+        product = (num1,num2)=> num1*num2
+        document.write(product(5,7))
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    <br><br><hr><br><br>
+
+    <h3>b).Explain constructor </h3>
+    <p> constructors in Java is a terminology been used to construct something in our programs. A constructor in Java is a special method that is used to initialize objects. The constructor is called when an object of a class is created. It can be used to set initial values for object attributes. </p>
+    <p>There are Two types of constructirs in Java</p>
+    <h3>1)No-argument constructor</h3>
+    <p>A constructor that has no parameter is known as the default constructor. If we don’t define a constructor in a class, then the compiler creates a default constructor(with no arguments) for the class. And if we write a constructor with arguments or no arguments then the compiler does not create a default constructor. </p>
+    <h3>2)Parameterized Constructor</h3>
+    <p> A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then use a parameterized constructor.</p>
+
+    <br><br>
+
+
+
+    <h3>.Super keyword</h3>
+    <p>The super keyword in java is a reference variable that is used to refer to parent class objects. An understanding of Inheritance and Polymorphism is needed in order to understand the super keyword. The keyword “super” came into the picture with the concept of Inheritance. </p>
+    <h3> It is majorly used in the following contexts:</h3>
+    <ul>
+        <li>Use of super with variables</li>
+        <p>This scenario occurs when a derived class and base class has the same data members. In that case, there is a possibility of ambiguity for the JVM.</p>
+        <li> Use of super with methods</li>
+        <p>This is used when we want to call the parent class method. So whenever a parent and child class have the same-named methods then to resolve ambiguity we use the super keyword.</p>
+        <li> Use of super with constructors</li>
+        <p>The super keyword can also be used to access the parent class constructor. One more important thing is that ‘super’ can call both parametric as well as non-parametric constructors depending upon the situation.</p>
+    </ul>
+
+    <br><br>
+
+    <h3>This keyword in java</h3>
+    <p>There can be a lot of usage of Java this keyword. In Java, this is a reference variable that refers to the current object.</p>
+    <h3>Usages of java This keyword</h3>
+    <ol>
+        <li>this can be used to refer current class instance variable.</li>
+        <li>this can be used to invoke current class method (implicitly)</li>
+        <li>this() can be used to invoke current class constructor.</li>
+        <li>this can be passed as an argument in the method call.</li>
+        <li>this can be passed as argument in the constructor call.</li>
+        <li>this can be used to return the current class instance from the method.</li>
+    </ol>
+
+
+
+
+
+
+    <br><br>
+
+
+    <h3>Final keyword</h3>
+    <p>final keyword is used in different contexts. First of all, final is a non-access modifier applicable only to a variable, a method, or a class. </p>
+    <h3>different contexts where final is used.</h3>
+
+    <ol>
+        <li>Final Variable --> To Create const variable</li>
+        <li>Final Method --> Prevent Method Overriding</li>
+        <li>Final Class --> Prevent Inheritance</li>
+    </ol>
+
+    <br><br><hr><br><br>
+
+
+    <h3>c)Difference between Abstract class vs Interface </h3>
+    <p>abstraction refers to hiding the internal implementation of the feature and only showing the functionality to the users. i.e. what it works (showing), how it works (hiding). Both abstract class and interface are used for abstraction, henceforth Interface and Abstract Class are required prerequisites.</p>
+
+    <br><br>
+
+    
+
+
+    <h3>Abstract class</h3>
+    <ol>
+        <li>Type of methods</li>
+        <p> An abstract class can have abstract and non-abstract methods</p>
+        <li>Final Variables</li>
+        <p>An abstract class may contain non-final variables.</p>
+        <li>Implementation</li>
+        <p>Abstract class can provide the implementation of the interface.</p>
+        <li>Inheritance</li>
+        <p>abstract class can be extended using the keyword “extends”.</p>
+        <li>Multiple implementations</li>
+        <p>an abstract class can extend another Java class and implement multiple Java interfaces.</p>
+        <li>Multiple Inheritance</li>
+        <p>an abstraction does not support multiple inheritance.</p>
+        <li>Accessibility of Data Members</li>
+        <p> A Java abstract class can have class members like private, protected, etc.</p>
+
+
+
+    </ol>
+
+    <h3>Interface</h3>
+    <ol>
+        <li>Type of methods</li>
+        <p>Interface can have only abstract methods.</p>
+        <li>Final Variables</li>
+        <p> Variables declared in a Java interface are by default final.</p>
+        <li>Implementation</li>
+        <p>Interface can’t provide the implementation of an abstract class.</p>
+        <li>Inheritance</li>
+        <p>A Java interface can be implemented using the keyword “implements”</p>
+        <li>Multiple implementations</li>
+        <p> An interface can extend one or more Java interfaces</p>
+        <li>Multiple Inheritance</li>
+        <p> Interface supports multiple inheritance</p>
+        <li>Accessibility of Data Members</li>
+        <p>Members of a Java interface are public by default.</p>
+
+
+
+    </ol>
+</body>
+</html>

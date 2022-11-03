@@ -1,0 +1,17 @@
+6.Explain about event looping in javascript
+An event looping is a programming construct that allows for asynchronous programming and can be used to improve
+the performance of an application.The event loop is a mechanism that allows JavaScript to perform non-blocking operations.
+When an asynchronous task is started, the event loop will start running. Once the task is completed, the event loop will
+again check for any other tasks that need to be performed. 
+Example:
+const lunch = () => console.log("It's time for lunch!");
+
+const dinner = () => console.log("It's time for dinner!");
+
+const breakfast = () => {
+  console.log("Time to breakfast!");
+  setTimeout(lunch, 3000);
+  dinner();
+};
+
+breakfast();

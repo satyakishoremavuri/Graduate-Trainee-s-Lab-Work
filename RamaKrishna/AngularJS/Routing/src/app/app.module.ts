@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ɵclearResolutionOfComponentResourcesQueue } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -6,6 +6,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { CustomerComponent } from './customer/customer.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+
+  { path: '', component: HomeComponent },
+  { path: 'Employee', component: EmployeeComponent },
+  { path: 'Customer', component: CustomerComponent }
+];
 
 @NgModule({
   declarations: [
@@ -16,7 +24,8 @@ import { CustomerComponent } from './customer/customer.component';
     CustomerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [LayoutComponent]

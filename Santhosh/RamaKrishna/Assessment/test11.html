@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function Name() {
+            var userCtrl = document.getElementById('userName');
+            if (userCtrl.value == "") {
+                document.getElementById("userError").innerHTML = "please Enter your user name";
+                userCtrl.focus();
+                return false;
+            }
+            else {
+                if (userCtrl.value.length < 6) {
+                    document.getElementById("userError").innerHTML = "User name should be min 6 characters";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("userError").innerHTML = "";
+                return true;
+            }
+            console.log(userCtrl);
+        }
+        function mobile() {
+            var userCtrl = document.getElementById('mobilenumber');
+            if (userCtrl.value == "") {
+                document.getElementById("mobilerror").innerHTML = " Please Enter mobile number";
+                userCtrl.focus();
+                return false;
+            }
+            else {
+                if (userCtrl.value.length < 10) {
+                    document.getElementById("mobilerror").innerHTML = "Please Enter 10 digit mobile Number";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("mobilerror").innerHTML = "";
+                return true;
+            }
+        }
+
+        function Pwd() {
+            var passCtrl = document.getElementById("pwd");
+            if (passCtrl.value == "") {
+                document.getElementById("pwdError").innerHTML = "please Enter the password";
+                passCtrl.focus();
+                return false;
+            }
+
+            else {
+                if (userCtrl.value.length < 6) {
+                    document.getElementById("pwdError").innerHTML = "Password Length should be min 6 characters";
+                    passCtrl.focus();
+                    return false;
+                }
+                document.getElementById("pwdError").innerHTML = "";
+                return true;
+            }
+        }
+        function validData() {
+            let user = Name();
+            let pwd = Pwd();
+            let mobile = mobile();
+
+            if (uer == false || pwd == false || mmobile == false) {
+                event.preventDefault();
+            }
+        }
+        function sConsole() {
+            var userCtrl = document.getElementById("userName");
+            var userCtrl = document.getElementById("pwd");
+            var userCtrl = document.getElementById("mobilenumber");
+
+            console.log(userName.value());
+            console.log(pwd.value());
+            console.log(mobilenumber.value());
+
+        }
+        sConsole();
+
+    </script>
+</head>
+
+<body>
+
+    <form onsubmit="validData()">
+
+        <table align="center" style="margin-top: 150px;">
+            <th>
+                <h2 align="center">Registration Form</h2>
+
+            </th>
+            <tr>
+                <td> Enter User Name :</td>
+                <td>
+                    <input type="text" id="userName" value="" placeholder="User Name" onblur="Name()"> <br>
+                    <span id="userError" style="color: red;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Password :</td>
+                <td>
+                    <input type="password" id="pwd" value="" onblur="Pwd()">
+                    <br>
+                    <span id="pwdError" style="color: red;"></span>
+                </td>
+            </tr>
+
+            <td>Enter mobile Number : </td>
+            <td>
+                <input type="number" id="mobilenumber" onblur="mobile()">
+                <br>
+                <span id="mobilerror" style="color: red;"></span>
+                </tr>
+                <tr>
+                    <td>Date of Birth : </td>
+                    <td>
+                        <input type="date" name="dob" id="dob">
+
+                    </td>
+                </tr>
+                <tr>
+                    <td> Enter Address :</td>
+                    <td>
+                        <textarea style="width:200px ;" name="ads" id="ads" cols="5" rows="5"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" name="submit" value="Register user" style="text-align: center;">
+                    </td>
+                </tr>
+        </table>
+    </form>
+</body>
+
+</html>
